@@ -27,6 +27,7 @@
 		802402621FAEED4800A6F4C6 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802402601FAEED4800A6F4C6 /* UserModel.swift */; };
 		802402651FB29CB200A6F4C6 /* RealNameView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 802402641FB29CB200A6F4C6 /* RealNameView.xib */; };
 		802402671FB29DC200A6F4C6 /* RealNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802402661FB29DC200A6F4C6 /* RealNameView.swift */; };
+		803408831FBED4F3003DC30C /* MineController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803408821FBED4F3003DC30C /* MineController.swift */; };
 		803E18BF1F8F86EE00745D65 /* JYContactTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803E18BE1F8F86EE00745D65 /* JYContactTool.swift */; };
 		803E18C11F8F89BA00745D65 /* JYCommonObj.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803E18C01F8F89BA00745D65 /* JYCommonObj.swift */; };
 		803E18C51F8F8C3D00745D65 /* JYUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 803E18C31F8F8C3D00745D65 /* JYUtilities.m */; };
@@ -118,6 +119,7 @@
 		802402601FAEED4800A6F4C6 /* UserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		802402641FB29CB200A6F4C6 /* RealNameView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RealNameView.xib; sourceTree = "<group>"; };
 		802402661FB29DC200A6F4C6 /* RealNameView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealNameView.swift; sourceTree = "<group>"; };
+		803408821FBED4F3003DC30C /* MineController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MineController.swift; path = OrderPay/Mine/Controller/MineController.swift; sourceTree = SOURCE_ROOT; };
 		803E18BE1F8F86EE00745D65 /* JYContactTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JYContactTool.swift; sourceTree = "<group>"; };
 		803E18C01F8F89BA00745D65 /* JYCommonObj.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JYCommonObj.swift; sourceTree = "<group>"; };
 		803E18C31F8F8C3D00745D65 /* JYUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYUtilities.m; sourceTree = "<group>"; };
@@ -615,6 +617,7 @@
 			children = (
 				803E1A491FADFF8E00745D65 /* SettingController.swift */,
 				803E1A4F1FAE0ADB00745D65 /* NameAuthenticationController.swift */,
+				803408821FBED4F3003DC30C /* MineController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -990,6 +993,7 @@
 				8041CC891F78A8CC00ACD236 /* AppDelegate.swift in Sources */,
 				803E18FB1F97566E00745D65 /* CityItem.m in Sources */,
 				803E18D91F962CF300745D65 /* OrderDetailView.swift in Sources */,
+				803408831FBED4F3003DC30C /* MineController.swift in Sources */,
 				8041CCB01F78AB6F00ACD236 /* BaseViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
