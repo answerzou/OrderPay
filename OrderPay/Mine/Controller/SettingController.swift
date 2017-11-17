@@ -13,7 +13,7 @@ class SettingController: UIViewController {
     fileprivate lazy var settingView: SettingView = {
         
         let settingV = Bundle.main.loadNibNamed("SettingView", owner: nil, options: nil)?.first as! SettingView
-        
+        //
         return settingV
     }()
     
