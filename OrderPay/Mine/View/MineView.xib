@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="MineView" customModule="OrderPay" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="311" height="132"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" alpha="0.5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="剩余可派送(次)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DIv-0O-3Kd">
+                    <rect key="frame" x="114" y="15" width="83" height="15"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eqC-C9-cKa">
+                    <rect key="frame" x="138" y="55" width="35.5" height="48"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cornerMark" translatesAutoresizingMaskIntoConstraints="NO" id="Faf-zQ-atZ">
+                    <rect key="frame" x="226" y="63.5" width="85" height="30"/>
+                    <gestureRecognizers/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="85" id="Cvv-bZ-N3P"/>
+                        <constraint firstAttribute="height" constant="30" id="bUe-bN-JSA"/>
+                    </constraints>
+                    <connections>
+                        <outletCollection property="gestureRecognizers" destination="pcv-6p-rhT" appends="YES" id="Lgt-fK-Jhh"/>
+                    </connections>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="订单不够?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MIK-8i-iHh">
+                    <rect key="frame" x="226" y="66.5" width="85" height="13.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="立即获取" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r7I-js-NSi">
+                    <rect key="frame" x="226" y="80" width="85" height="11"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="9"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CornerMark_right_row" translatesAutoresizingMaskIntoConstraints="NO" id="5FQ-su-FWh">
+                    <rect key="frame" x="300" y="72.5" width="7" height="12"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="12" id="F6N-Wz-WCv"/>
+                        <constraint firstAttribute="width" constant="7" id="f65-jR-r4N"/>
+                    </constraints>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" red="0.070588235289999995" green="0.59999999999999998" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="eqC-C9-cKa" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Cry-ia-a3o"/>
+                <constraint firstItem="eqC-C9-cKa" firstAttribute="top" secondItem="DIv-0O-3Kd" secondAttribute="bottom" constant="25" id="HC9-gF-1LG"/>
+                <constraint firstItem="r7I-js-NSi" firstAttribute="trailing" secondItem="MIK-8i-iHh" secondAttribute="trailing" id="IIt-fy-ICm"/>
+                <constraint firstItem="r7I-js-NSi" firstAttribute="top" secondItem="MIK-8i-iHh" secondAttribute="bottom" id="JA3-6P-nQw"/>
+                <constraint firstItem="5FQ-su-FWh" firstAttribute="centerY" secondItem="Faf-zQ-atZ" secondAttribute="centerY" id="VCD-4w-Mve"/>
+                <constraint firstItem="Faf-zQ-atZ" firstAttribute="centerY" secondItem="eqC-C9-cKa" secondAttribute="centerY" id="WjY-3g-lyK"/>
+                <constraint firstItem="r7I-js-NSi" firstAttribute="leading" secondItem="MIK-8i-iHh" secondAttribute="leading" id="Xyc-kh-m5v"/>
+                <constraint firstAttribute="trailing" secondItem="5FQ-su-FWh" secondAttribute="trailing" constant="4" id="auL-I5-04f"/>
+                <constraint firstItem="DIv-0O-3Kd" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="bkw-oo-kiw"/>
+                <constraint firstItem="DIv-0O-3Kd" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="15" id="chj-4a-Dwc"/>
+                <constraint firstItem="MIK-8i-iHh" firstAttribute="top" secondItem="Faf-zQ-atZ" secondAttribute="top" constant="3" id="eLz-C3-Pyn"/>
+                <constraint firstItem="MIK-8i-iHh" firstAttribute="leading" secondItem="Faf-zQ-atZ" secondAttribute="leading" id="h9m-Su-FDK"/>
+                <constraint firstAttribute="trailing" secondItem="Faf-zQ-atZ" secondAttribute="trailing" id="iIH-d7-qBc"/>
+                <constraint firstItem="MIK-8i-iHh" firstAttribute="trailing" secondItem="Faf-zQ-atZ" secondAttribute="trailing" id="tdi-th-DXR"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="23" y="-232"/>
+        </view>
+        <tapGestureRecognizer id="pcv-6p-rhT">
+            <connections>
+                <action selector="cornerMarkClick:" destination="iN0-l3-epB" id="J3F-uT-ZUb"/>
+            </connections>
+        </tapGestureRecognizer>
+    </objects>
+    <resources>
+        <image name="CornerMark_right_row" width="21" height="35"/>
+        <image name="cornerMark" width="176" height="62"/>
+    </resources>
+</document>
