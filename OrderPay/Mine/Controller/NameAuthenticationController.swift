@@ -13,7 +13,6 @@ class NameAuthenticationController: UIViewController {
     fileprivate lazy var nameAuthenticationView: NameAuthenticationView = {
         
         let view = Bundle.main.loadNibNamed("NameAuthenticationView", owner: nil, options: nil)?.first as! NameAuthenticationView
-        
         return view
     }()
     
