@@ -55,6 +55,8 @@ class MineController: BaseController {
         tableView.backgroundView = self.backgroundView
         tableView.tableHeaderView = self.mineView
         //高度
+        tableView.estimatedSectionHeaderHeight = 0
+        tableView.estimatedSectionFooterHeight = 0
         
         return tableView
     }()
