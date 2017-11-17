@@ -17,6 +17,7 @@ class OrderController: BaseController {
     // 顶部刷新
     var header = MJRefreshNormalHeader()
     
+    
     fileprivate lazy var topView:UIView = {
         let topView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: ScreenWidth, height: 70))
         return topView
