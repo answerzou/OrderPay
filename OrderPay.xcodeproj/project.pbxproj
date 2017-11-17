@@ -81,7 +81,6 @@
 		8041CCB01F78AB6F00ACD236 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8041CCAB1F78AB6F00ACD236 /* BaseViewController.swift */; };
 		8041CCB11F78AB6F00ACD236 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8041CCAC1F78AB6F00ACD236 /* MainTabBarController.swift */; };
 		8041CCB71F78ABF900ACD236 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8041CCB61F78ABF900ACD236 /* HomeController.swift */; };
-		8041CCC41F78ACA000ACD236 /* MineController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8041CCC31F78ACA000ACD236 /* MineController.swift */; };
 		8041CCCD1F78ADC300ACD236 /* ApiMacro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8041CCC81F78ADC300ACD236 /* ApiMacro.swift */; };
 		8041CCCE1F78ADC300ACD236 /* AppMacro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8041CCC91F78ADC300ACD236 /* AppMacro.swift */; };
 		8041CCCF1F78ADC300ACD236 /* GlobalMacro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8041CCCA1F78ADC300ACD236 /* GlobalMacro.swift */; };
@@ -205,7 +204,6 @@
 		8041CCAB1F78AB6F00ACD236 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		8041CCAC1F78AB6F00ACD236 /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		8041CCB61F78ABF900ACD236 /* HomeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
-		8041CCC31F78ACA000ACD236 /* MineController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MineController.swift; sourceTree = "<group>"; };
 		8041CCC81F78ADC300ACD236 /* ApiMacro.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiMacro.swift; sourceTree = "<group>"; };
 		8041CCC91F78ADC300ACD236 /* AppMacro.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppMacro.swift; sourceTree = "<group>"; };
 		8041CCCA1F78ADC300ACD236 /* GlobalMacro.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalMacro.swift; sourceTree = "<group>"; };
@@ -615,7 +613,6 @@
 		8041CCB81F78AC1F00ACD236 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				8041CCC31F78ACA000ACD236 /* MineController.swift */,
 				803E1A491FADFF8E00745D65 /* SettingController.swift */,
 				803E1A4F1FAE0ADB00745D65 /* NameAuthenticationController.swift */,
 			);
@@ -987,7 +984,6 @@
 				803E1A281F9A263100745D65 /* JYRefreshFooter.swift in Sources */,
 				802402491FAEE03300A6F4C6 /* LoginHeaderView.swift in Sources */,
 				8041CCCE1F78ADC300ACD236 /* AppMacro.swift in Sources */,
-				8041CCC41F78ACA000ACD236 /* MineController.swift in Sources */,
 				8041CCAF1F78AB6F00ACD236 /* BaseNavigationController.swift in Sources */,
 				802402621FAEED4800A6F4C6 /* UserModel.swift in Sources */,
 				803E18D41F8F8D0300745D65 /* NSData+CommonCrypto.m in Sources */,
