@@ -116,11 +116,15 @@ extension OrderController: CityListViewDelegate {
     }
     
     func selectCity() {
-        let cityListView = CityListViewController()
-        cityListView.delegate = self
-        cityListView.arrayLocatingCity = NSMutableArray(array: ["北京"])
-        let navVC = BaseNavigationController.init(rootViewController: cityListView)
-        self.present(navVC, animated: true, completion: nil)
+        JYCitySelectManager.sharedInstance().show { (cityName) in
+            print(cityName ?? "")
+            let provinceCode = UserDefaults.standard.object(forKey: "LiveProvinceCode")
+            let cityCode = UserDefaults.standard.object(forKey: "LiveCityCode")
+            let countyCode = UserDefaults.standard.object(forKey: "LiveCountyCode")
+            
+            print("\(provinceCode) + \(cityCode) +\(countyCode)")
+        }
+    
     }
     
 }

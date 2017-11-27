@@ -21,6 +21,7 @@ class RegisterHeaderView: UIView {
     @IBOutlet weak var registerBtn: UIButton!
     @IBOutlet weak var indicatorView: UIActivityIndicatorView!
     @IBOutlet weak var confirPasswordBottomLine: UIView!
+    @IBOutlet weak var confirPasswordTextField: UITextField!
     
     var nextStepBlock: NextStepClick?
     
@@ -59,11 +60,26 @@ class RegisterHeaderView: UIView {
 
     
     @IBAction func verificationAction(_ sender: UIButton) {
-        startTimer()
+        let mobile = self.accountTextField.text ?? ""
+        
+        if self.accountTextField.text?.isEmpty == true {
+            SVProgressHUD.showError(withStatus: "请先输入手机号")
+            return
+        }
+        let pid = UIDevice.current.identifierForVendor?.uuidString ?? ""
+        let params = ["mobile": mobile, "type": "1", "pid": pid] as NSDictionary
+        SmCodeViewModel.requestData(params: params) { [unowned self] in
+            self.startTimer()
+        }
     }
     
     @IBAction func registerAction(_ sender: UIButton) {
-        self.confirPasswordBottomLine.backgroundColor = UIColor.red
+        if self.passwordTextField.text != self.confirPasswordTextField.text {
+            SVProgressHUD.showError(withStatus: "两次密码不一致，请重新输入")
+            self.confirPasswordBottomLine.backgroundColor = UIColor.red
+            
+            return
+        }
         
         if self.nextStepBlock != nil {
             self.nextStepBlock!()

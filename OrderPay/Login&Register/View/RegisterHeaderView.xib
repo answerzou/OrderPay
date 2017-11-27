@@ -185,6 +185,7 @@
             <connections>
                 <outlet property="accountTextField" destination="dWz-Bj-Sso" id="JhY-J0-w5x"/>
                 <outlet property="confirPasswordBottomLine" destination="ZEl-3e-NCX" id="6Nm-lR-fQi"/>
+                <outlet property="confirPasswordTextField" destination="dzP-x3-hqb" id="7eZ-iv-Efa"/>
                 <outlet property="contentView" destination="75M-7t-BVa" id="0pa-kZ-B14"/>
                 <outlet property="indicatorView" destination="Q3A-5f-gKb" id="mCC-my-R4h"/>
                 <outlet property="passwordTextField" destination="huE-js-hKa" id="xLv-yS-Rqj"/>

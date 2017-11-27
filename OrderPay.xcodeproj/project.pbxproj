@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04140B071FCC1C8A000C97F7 /* area.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 04140AFC1FCC1C8A000C97F7 /* area.sqlite */; };
+		04140B081FCC1C8A000C97F7 /* JYCityListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04140AFE1FCC1C8A000C97F7 /* JYCityListView.m */; };
+		04140B091FCC1C8A000C97F7 /* JYCityListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04140AFF1FCC1C8A000C97F7 /* JYCityListView.xib */; };
+		04140B0A1FCC1C8A000C97F7 /* JYCitySelectManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 04140B011FCC1C8A000C97F7 /* JYCitySelectManager.m */; };
+		04140B0B1FCC1C8A000C97F7 /* JYLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 04140B031FCC1C8A000C97F7 /* JYLocationManager.m */; };
+		04140B0C1FCC1C8A000C97F7 /* NSString+PinYin.m in Sources */ = {isa = PBXBuildFile; fileRef = 04140B061FCC1C8A000C97F7 /* NSString+PinYin.m */; };
+		04140B101FCC1CD0000C97F7 /* CMColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 04140B0F1FCC1CD0000C97F7 /* CMColor.m */; };
+		04140B131FCC1D8B000C97F7 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04140B111FCC1D8B000C97F7 /* RegisterViewModel.swift */; };
+		04140B141FCC1D8B000C97F7 /* SmCodeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04140B121FCC1D8B000C97F7 /* SmCodeViewModel.swift */; };
 		0468EA601FBEB8AB005E9BAA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0468EA5B1FBEB8AB005E9BAA /* LaunchScreen.storyboard */; };
 		0468EA611FBEB8AB005E9BAA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0468EA5D1FBEB8AB005E9BAA /* Main.storyboard */; };
 		0468EA621FBEB8AB005E9BAA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0468EA5F1FBEB8AB005E9BAA /* Assets.xcassets */; };
@@ -96,6 +105,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		04140AFC1FCC1C8A000C97F7 /* area.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = area.sqlite; sourceTree = "<group>"; };
+		04140AFD1FCC1C8A000C97F7 /* JYCityListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYCityListView.h; sourceTree = "<group>"; };
+		04140AFE1FCC1C8A000C97F7 /* JYCityListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYCityListView.m; sourceTree = "<group>"; };
+		04140AFF1FCC1C8A000C97F7 /* JYCityListView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JYCityListView.xib; sourceTree = "<group>"; };
+		04140B001FCC1C8A000C97F7 /* JYCitySelectManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYCitySelectManager.h; sourceTree = "<group>"; };
+		04140B011FCC1C8A000C97F7 /* JYCitySelectManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYCitySelectManager.m; sourceTree = "<group>"; };
+		04140B021FCC1C8A000C97F7 /* JYLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYLocationManager.h; sourceTree = "<group>"; };
+		04140B031FCC1C8A000C97F7 /* JYLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYLocationManager.m; sourceTree = "<group>"; };
+		04140B051FCC1C8A000C97F7 /* NSString+PinYin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+PinYin.h"; sourceTree = "<group>"; };
+		04140B061FCC1C8A000C97F7 /* NSString+PinYin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+PinYin.m"; sourceTree = "<group>"; };
+		04140B0E1FCC1CD0000C97F7 /* CMColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMColor.h; sourceTree = "<group>"; };
+		04140B0F1FCC1CD0000C97F7 /* CMColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMColor.m; sourceTree = "<group>"; };
+		04140B111FCC1D8B000C97F7 /* RegisterViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
+		04140B121FCC1D8B000C97F7 /* SmCodeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmCodeViewModel.swift; sourceTree = "<group>"; };
 		0468EA5C1FBEB8AB005E9BAA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0468EA5E1FBEB8AB005E9BAA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Main.storyboard; sourceTree = "<group>"; };
 		0468EA5F1FBEB8AB005E9BAA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -232,6 +255,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		04140AFB1FCC1C8A000C97F7 /* JYLocationSelectTools */ = {
+			isa = PBXGroup;
+			children = (
+				04140AFC1FCC1C8A000C97F7 /* area.sqlite */,
+				04140AFD1FCC1C8A000C97F7 /* JYCityListView.h */,
+				04140AFE1FCC1C8A000C97F7 /* JYCityListView.m */,
+				04140AFF1FCC1C8A000C97F7 /* JYCityListView.xib */,
+				04140B001FCC1C8A000C97F7 /* JYCitySelectManager.h */,
+				04140B011FCC1C8A000C97F7 /* JYCitySelectManager.m */,
+				04140B021FCC1C8A000C97F7 /* JYLocationManager.h */,
+				04140B031FCC1C8A000C97F7 /* JYLocationManager.m */,
+				04140B041FCC1C8A000C97F7 /* NSString+PinYin */,
+			);
+			path = JYLocationSelectTools;
+			sourceTree = "<group>";
+		};
+		04140B041FCC1C8A000C97F7 /* NSString+PinYin */ = {
+			isa = PBXGroup;
+			children = (
+				04140B051FCC1C8A000C97F7 /* NSString+PinYin.h */,
+				04140B061FCC1C8A000C97F7 /* NSString+PinYin.m */,
+			);
+			path = "NSString+PinYin";
+			sourceTree = "<group>";
+		};
+		04140B0D1FCC1CD0000C97F7 /* CMColor */ = {
+			isa = PBXGroup;
+			children = (
+				04140B0E1FCC1CD0000C97F7 /* CMColor.h */,
+				04140B0F1FCC1CD0000C97F7 /* CMColor.m */,
+			);
+			path = CMColor;
+			sourceTree = "<group>";
+		};
 		0468EA5A1FBEB8AB005E9BAA /* Base.lproj */ = {
 			isa = PBXGroup;
 			children = (
@@ -302,6 +359,8 @@
 		802402471FAEE01B00A6F4C6 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				04140B111FCC1D8B000C97F7 /* RegisterViewModel.swift */,
+				04140B121FCC1D8B000C97F7 /* SmCodeViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -434,6 +493,7 @@
 		803E19361F9A249D00745D65 /* CommonTools */ = {
 			isa = PBXGroup;
 			children = (
+				04140B0D1FCC1CD0000C97F7 /* CMColor */,
 				803E19341F9A23DF00745D65 /* CMToolsDef.h */,
 				803E19351F9A23DF00745D65 /* CMGlobalDef.h */,
 				803E1A241F9A263100745D65 /* Swift */,
@@ -654,6 +714,7 @@
 		8041CCC11F78AC7E00ACD236 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				04140AFB1FCC1C8A000C97F7 /* JYLocationSelectTools */,
 				04E121541FB9AE06004419A6 /* JYAddressBookModel.h */,
 				04E121531FB9AE06004419A6 /* JYAddressBookModel.m */,
 				04E1214F1FB9AD4E004419A6 /* JYContactManager.swift */,
@@ -824,7 +885,9 @@
 				802402651FB29CB200A6F4C6 /* RealNameView.xib in Resources */,
 				8024024B1FAEE04400A6F4C6 /* LoginHeaderView.xib in Resources */,
 				803E1A2F1FAC1C9C00745D65 /* MineView.xib in Resources */,
+				04140B071FCC1C8A000C97F7 /* area.sqlite in Resources */,
 				0468EA621FBEB8AB005E9BAA /* Assets.xcassets in Resources */,
+				04140B091FCC1C8A000C97F7 /* JYCityListView.xib in Resources */,
 				04C938071FBAE8CB004B290A /* CMTitleAlertView.xib in Resources */,
 				803E19041F97566E00745D65 /* unicode_to_hanyu_pinyin.txt in Resources */,
 				803E1A481FADF1F000745D65 /* SettingView.xib in Resources */,
@@ -883,6 +946,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-OrderPay/Pods-OrderPay-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
 				"${BUILT_PRODUCTS_DIR}/BlocksKit/BlocksKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FMDB/FMDB.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
@@ -900,6 +964,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BlocksKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FMDB.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManager.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
@@ -926,6 +991,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				803E18D51F8F8D0300745D65 /* NSString+Base64.m in Sources */,
+				04140B141FCC1D8B000C97F7 /* SmCodeViewModel.swift in Sources */,
 				803E19011F97566E00745D65 /* PinyinFormatter.m in Sources */,
 				803E1A1D1F9A25F900745D65 /* CMNotification.m in Sources */,
 				04E1214E1FB9AD0E004419A6 /* AddressBookTools.m in Sources */,
@@ -939,6 +1005,7 @@
 				803E18FD1F97566E00745D65 /* ChineseInclude.m in Sources */,
 				803E18F81F97566E00745D65 /* ButtonGroupView.m in Sources */,
 				8041CCEE1F79665300ACD236 /* OrderController.swift in Sources */,
+				04140B0C1FCC1C8A000C97F7 /* NSString+PinYin.m in Sources */,
 				803E18FF1F97566E00745D65 /* HanyuPinyinOutputFormat.m in Sources */,
 				803E19311F9A231600745D65 /* CMRequestEngine.m in Sources */,
 				8041CCAD1F78AB6F00ACD236 /* BaseController.swift in Sources */,
@@ -951,6 +1018,7 @@
 				803E1A2D1FAC193200745D65 /* MineView.swift in Sources */,
 				803E19031F97566E00745D65 /* PinyinHelper.m in Sources */,
 				803E1A4A1FADFF8E00745D65 /* SettingController.swift in Sources */,
+				04140B131FCC1D8B000C97F7 /* RegisterViewModel.swift in Sources */,
 				04C938061FBAE8CB004B290A /* CMTitleAlertView.m in Sources */,
 				8041CCB11F78AB6F00ACD236 /* MainTabBarController.swift in Sources */,
 				802402671FB29DC200A6F4C6 /* RealNameView.swift in Sources */,
@@ -980,12 +1048,16 @@
 				803E19301F9A231600745D65 /* CMRequestEngine+HttpTools.m in Sources */,
 				803E18F91F97566E00745D65 /* CityButton.m in Sources */,
 				8041CCD01F78ADC300ACD236 /* NotificationMacro.swift in Sources */,
+				04140B0A1FCC1C8A000C97F7 /* JYCitySelectManager.m in Sources */,
 				803E18D11F8F8D0300745D65 /* AESCrypt.m in Sources */,
 				803E190A1F9A08BD00745D65 /* UINavigationBar+Awesome.m in Sources */,
+				04140B0B1FCC1C8A000C97F7 /* JYLocationManager.m in Sources */,
+				04140B081FCC1C8A000C97F7 /* JYCityListView.m in Sources */,
 				8041CCD11F78ADC300ACD236 /* VendorMacro.swift in Sources */,
 				8041CCE11F795FBF00ACD236 /* ViewController.swift in Sources */,
 				803E1A281F9A263100745D65 /* JYRefreshFooter.swift in Sources */,
 				802402491FAEE03300A6F4C6 /* LoginHeaderView.swift in Sources */,
+				04140B101FCC1CD0000C97F7 /* CMColor.m in Sources */,
 				8041CCCE1F78ADC300ACD236 /* AppMacro.swift in Sources */,
 				8041CCAF1F78AB6F00ACD236 /* BaseNavigationController.swift in Sources */,
 				802402621FAEED4800A6F4C6 /* UserModel.swift in Sources */,

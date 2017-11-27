@@ -39,8 +39,18 @@ class RegisterController: UIViewController {
         self.view.addSubview(self.tableView)
         
         self.registerHeaderView.nextStepBlock = {[unowned self] in
-            self.tableView.tableHeaderView = self.realNameView
-        };
+            
+            let pwd = self.registerHeaderView.passwordTextField.text ?? ""
+            let smCode = self.registerHeaderView.verificationCodeField.text ?? ""
+            let mobile = self.registerHeaderView.accountTextField.text ?? ""
+            let pid = UIDevice.current.identifierForVendor?.uuidString ?? ""
+            
+            let params = ["mobile": mobile, "pwd": pwd, "smCode": smCode, "pid": pid] as NSDictionary
+            RegisterViewModel.requestData(params: params, returnBlock: {
+                
+                self.tableView.tableHeaderView = self.realNameView
+            })
+        }
 
     }
 

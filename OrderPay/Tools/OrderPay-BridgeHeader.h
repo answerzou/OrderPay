@@ -40,5 +40,8 @@
 #import "AddressBookTools.h"
 #import "JYAddressBookModel.h"
 #import "CMTitleAlertView.h"
+#import "JYCitySelectManager.h"
+#import "CMColor.h"
+#import "FMDB.h"
 
 #endif /* OrderPay_BridgeHeader_h */
