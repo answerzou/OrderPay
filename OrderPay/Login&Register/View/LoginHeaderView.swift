@@ -32,6 +32,8 @@ class LoginHeaderView: UIView {
     
     @IBAction func loginAction(_ sender: UIButton) {
         
+        self.endEditing(true)
+        
         if JYUtilities.verifyPhoneNumber(self.accountTextField.text) == false {
             SVProgressHUD.showError(withStatus: "请输入正确手机号")
             return
