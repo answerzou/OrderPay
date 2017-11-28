@@ -29,6 +29,8 @@ let APP_SERVER_API = "http://192.168.32.174:8080"
 
 //--------用户登录及相关接口--------//
 //登录
+let API_POST_LOGIN         = APP_SERVER_API+"/xdyWeiXinServer/api/APPBizRest/appLogin/v1/"
+
 //注册
 let API_POST_REGISTER         = APP_SERVER_API+"/xdyWeiXinServer/api/APPBizRest/appRegister/v1/"
 //验证码

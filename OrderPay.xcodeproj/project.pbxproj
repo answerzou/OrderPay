@@ -20,6 +20,7 @@
 		0468EA611FBEB8AB005E9BAA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0468EA5D1FBEB8AB005E9BAA /* Main.storyboard */; };
 		0468EA621FBEB8AB005E9BAA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0468EA5F1FBEB8AB005E9BAA /* Assets.xcassets */; };
 		047DD16A1FCD3D3A00A27E45 /* VisibleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047DD1691FCD3D3A00A27E45 /* VisibleController.swift */; };
+		047DD16C1FCD808500A27E45 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047DD16B1FCD808500A27E45 /* LoginViewModel.swift */; };
 		04C938061FBAE8CB004B290A /* CMTitleAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C938041FBAE8CB004B290A /* CMTitleAlertView.m */; };
 		04C938071FBAE8CB004B290A /* CMTitleAlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04C938051FBAE8CB004B290A /* CMTitleAlertView.xib */; };
 		04E1214E1FB9AD0E004419A6 /* AddressBookTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E1214C1FB9AD0E004419A6 /* AddressBookTools.m */; };
@@ -124,6 +125,7 @@
 		0468EA5E1FBEB8AB005E9BAA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Main.storyboard; sourceTree = "<group>"; };
 		0468EA5F1FBEB8AB005E9BAA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		047DD1691FCD3D3A00A27E45 /* VisibleController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisibleController.swift; sourceTree = "<group>"; };
+		047DD16B1FCD808500A27E45 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		04C938031FBAE8CB004B290A /* CMTitleAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMTitleAlertView.h; sourceTree = "<group>"; };
 		04C938041FBAE8CB004B290A /* CMTitleAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMTitleAlertView.m; sourceTree = "<group>"; };
 		04C938051FBAE8CB004B290A /* CMTitleAlertView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CMTitleAlertView.xib; sourceTree = "<group>"; };
@@ -363,6 +365,7 @@
 			children = (
 				04140B111FCC1D8B000C97F7 /* RegisterViewModel.swift */,
 				04140B121FCC1D8B000C97F7 /* SmCodeViewModel.swift */,
+				047DD16B1FCD808500A27E45 /* LoginViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -1060,6 +1063,7 @@
 				8041CCD11F78ADC300ACD236 /* VendorMacro.swift in Sources */,
 				8041CCE11F795FBF00ACD236 /* ViewController.swift in Sources */,
 				803E1A281F9A263100745D65 /* JYRefreshFooter.swift in Sources */,
+				047DD16C1FCD808500A27E45 /* LoginViewModel.swift in Sources */,
 				802402491FAEE03300A6F4C6 /* LoginHeaderView.swift in Sources */,
 				04140B101FCC1CD0000C97F7 /* CMColor.m in Sources */,
 				8041CCCE1F78ADC300ACD236 /* AppMacro.swift in Sources */,
