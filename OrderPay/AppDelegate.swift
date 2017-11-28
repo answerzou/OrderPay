@@ -35,7 +35,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         if #available(iOS 9.0, *) {
             createShortcutItem()
-//            openFromShortcut(launchOptions: launchOptions)
         } else {
             // Fallback on earlier versions
         }
@@ -48,12 +47,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         if shortcutItem.type == "myorder" {
             print("我的订单")
+            
+            //系统自带分享
+//            let xxx = UIActivityViewController.init(activityItems: ["myorder"], applicationActivities: nil)
+//            self.window?.rootViewController?.present(xxx, animated: true, completion: nil)
             let rootVC = UIApplication.shared.keyWindow?.rootViewController as! MainTabBarController
             rootVC.selectedIndex = 1
             UIApplication.shared.keyWindow?.rootViewController = rootVC
-            
+//
         }else if shortcutItem.type == "roborder" {
             print("我的抢单")
+            let rootVC = UIApplication.shared.keyWindow?.rootViewController as! MainTabBarController
+            rootVC.selectedIndex = 0
+            UIApplication.shared.keyWindow?.rootViewController = rootVC
         }
             completionHandler(false)
        
