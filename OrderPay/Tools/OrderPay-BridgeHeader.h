@@ -31,10 +31,9 @@
 #import "CMRequestEngine+HttpTools.h"
 #import "CMNetworkMonitor.h"
 #import "CMRegular.h"
-#import <AFNetworking/AFNetworkReachabilityManager.h>
-#import <AFNetworking/AFNetworking.h>
+//#import <AFNetworking/AFNetworkReachabilityManager.h>
+//#import <AFNetworking/AFNetworking.h>
 #import "MJRefresh.h"
-//#import <SVProgressHUD/SVProgressHUD.h>
 #import "YYWeakProxy.h"
 #import "SVProgressHUD.h"
 #import "AddressBookTools.h"

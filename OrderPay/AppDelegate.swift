@@ -31,7 +31,43 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = MainTabBarController()
         setAppSubject()
         
+        if #available(iOS 9.0, *) {
+            createShortcutItem()
+//            openFromShortcut(launchOptions: launchOptions)
+        } else {
+            // Fallback on earlier versions
+        }
+        
         return true
+    }
+    
+    @available(iOS 9.0, *)
+    func application(_ application: UIApplication, performActionFor shortcutItem: UIApplicationShortcutItem, completionHandler: @escaping (Bool) -> Void) {
+        
+        if shortcutItem.type == "myorder" {
+            print("我的订单")
+            let rootVC = UIApplication.shared.keyWindow?.rootViewController as! MainTabBarController
+            rootVC.selectedIndex = 1
+            UIApplication.shared.keyWindow?.rootViewController = rootVC
+            
+        }else if shortcutItem.type == "roborder" {
+            print("我的抢单")
+        }
+            completionHandler(false)
+       
+    }
+    
+    @available(iOS 9.0, *)
+    func createShortcutItem() {
+        //创建系统风格的icon
+        let icon_myorder = UIApplicationShortcutIcon.init(templateImageName: "my-order")
+        let icon_roborder = UIApplicationShortcutIcon.init(templateImageName: "rob-order")
+        
+        //创建快捷选项
+        let item_myorder = UIApplicationShortcutItem.init(type: "myorder", localizedTitle: "我的订单", localizedSubtitle: nil, icon: icon_myorder, userInfo: nil)
+        let item_roborder = UIApplicationShortcutItem.init(type: "roborder", localizedTitle: "抢单", localizedSubtitle: nil, icon: icon_roborder, userInfo: nil)
+        
+        UIApplication.shared.shortcutItems = [item_myorder, item_roborder]
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

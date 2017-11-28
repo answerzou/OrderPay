@@ -17,10 +17,7 @@ extension JYContactManager {
         if contactArr.count == 0 {
             return
         }
-        if DEBUG_JYAPP {
-            return
-        }
-        
+      
         var parameters:[String: Any] = [String : Any]()
         parameters["userId"] = UserModel.shared.cardNo
         parameters["name"] = UserModel.shared.custName

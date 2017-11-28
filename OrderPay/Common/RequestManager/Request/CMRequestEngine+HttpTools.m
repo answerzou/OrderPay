@@ -25,15 +25,15 @@
     
     
     // adjust network
-    if (![AFNetworkReachabilityManager sharedManager].isReachable){
-        [tip setWithWithCode:JYRequestErrorHostNotReach error:@"local network error!"];
-        [tip processError:^{
-            if(completion){
-                completion(tip,nil);
-            }
-        }];
-        return YES;
-    }
+//    if (![AFNetworkReachabilityManager sharedManager].isReachable){
+//        [tip setWithWithCode:JYRequestErrorHostNotReach error:@"local network error!"];
+//        [tip processError:^{
+//            if(completion){
+//                completion(tip,nil);
+//            }
+//        }];
+//        return YES;
+//    }
     
     //adjust params
     if (![self adjustDictionaryHavingKeys:params,nil]){
