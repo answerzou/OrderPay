@@ -50,10 +50,30 @@ class LoginController: UIViewController {
         
         self.addBackBtn()
         
-        self.loginHeaderView.loginBtnClick = { [unowned self] in
+        self.loginHeaderView.loginBtnClick = { [unowned self] (account, password)  in
+            
+//            print(account, password)
+            
+            let pid = UIDevice.current.identifierForVendor?.uuidString ?? ""
+            let psd = password ?? ""
+            let act = account ?? ""
             self.loginHeaderView.loginBtn.isEnabled = false
+            self.loginHeaderView.loginBtn.setTitle("", for: .normal)
             self.loginHeaderView.indicatorView.startAnimating()
+            
+            let params = ["mobile": act, "pwd": psd, "pid": pid] as NSDictionary
+            LoginViewModel.requestData(headerView: self.loginHeaderView, params: params , returnBlock: {
+                self.dismiss(animated: true, completion: {
+                    let rootVC = UIApplication.shared.keyWindow?.rootViewController as! MainTabBarController
+                    rootVC.selectedIndex = 0
+                })
+            })
         }
+        
+//        self.loginHeaderView.loginBtnClick = { [unowned self] in
+//            self.loginHeaderView.loginBtn.isEnabled = false
+//            self.loginHeaderView.indicatorView.startAnimating()
+//        }
         
         self.loginHeaderView.registerBtnClick = { [unowned self] in
             let registerVC = RegisterController()

@@ -11,16 +11,18 @@ import UIKit
 typealias LoginViewModelBlock = () -> ()
 class LoginViewModel: NSObject {
     
-    class func requestData(headerView: RealNameView, params: NSDictionary, returnBlock: @escaping LoginViewModelBlock) {
+    class func requestData(headerView: LoginHeaderView, params: NSDictionary, returnBlock: @escaping LoginViewModelBlock) {
         CMRequestEngine.sharedInstance().post(withUrl: API_POST_LOGIN, parameters: params as! [AnyHashable : Any], type: .requestTypeLogin) { (tip, result) in
             if (tip?.success)! {
+                
+                print("+++\(result)")
                 SVProgressHUD.dismiss()
                 returnBlock()
                 
             }else {
-//                headerView.registerBtn.setTitle("注册", for: .normal)
-//                headerView.indicatorView.stopAnimating()
-//                headerView.registerBtn.isEnabled = true
+                headerView.loginBtn.setTitle("登录", for: .normal)
+                headerView.indicatorView.stopAnimating()
+                headerView.loginBtn.isEnabled = true
                 SVProgressHUD.showError(withStatus: tip?.errorDesc)
             }
         }

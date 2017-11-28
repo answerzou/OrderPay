@@ -8,7 +8,7 @@
 
 import UIKit
 
-typealias LoginBtnClick = ()->()
+typealias LoginBtnClick = (_ account: String?, _ passwd: String?)-> Void
 typealias RegisterBtnClick = ()->()
 
 
@@ -40,7 +40,7 @@ class LoginHeaderView: UIView {
         }
         
         if (loginBtnClick != nil) {
-            self.loginBtnClick!()
+            self.loginBtnClick!(self.accountStr, self.passwordStr)
         }
 
     }
