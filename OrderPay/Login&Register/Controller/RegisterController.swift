@@ -46,7 +46,7 @@ class RegisterController: UIViewController {
             let pid = UIDevice.current.identifierForVendor?.uuidString ?? ""
             
             let params = ["mobile": mobile, "pwd": pwd, "smCode": smCode, "pid": pid] as NSDictionary
-            RegisterViewModel.requestData(params: params, returnBlock: {
+            RegisterViewModel.requestData(headerView: self.registerHeaderView, params: params, returnBlock: {
                 
                 self.tableView.tableHeaderView = self.realNameView
             })

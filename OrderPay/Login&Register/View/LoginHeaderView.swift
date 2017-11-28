@@ -20,8 +20,8 @@ class LoginHeaderView: UIView {
     @IBOutlet weak var accountTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
-    var accountStr: String?
-    var passwordStr: String?
+    var accountStr: String = ""
+    var passwordStr: String = ""
     
     var loginBtnClick: LoginBtnClick?
     var registerBtnClick: RegisterBtnClick?
@@ -31,6 +31,11 @@ class LoginHeaderView: UIView {
     }
     
     @IBAction func loginAction(_ sender: UIButton) {
+        
+        if JYUtilities.verifyPhoneNumber(self.accountTextField.text) == false {
+            SVProgressHUD.showError(withStatus: "请输入正确手机号")
+            return
+        }
         
         if (loginBtnClick != nil) {
             self.loginBtnClick!()
@@ -47,23 +52,22 @@ class LoginHeaderView: UIView {
 
 extension LoginHeaderView: UITextFieldDelegate {
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        print("xxx")
         
         let nsString = textField.text as NSString?
         let newString = nsString?.replacingCharacters(in: range, with: string)
         
-        if (newString?.isEmpty)! && (self.accountTextField.text?.isEmpty)!{
-            loginBtn.isEnabled = false
-        }else {
-            loginBtn.isEnabled = true
+        switch textField.tag {
+        case AccountTF:
+            self.accountStr = newString ?? ""
+        default:
+            self.passwordStr = newString ?? "" 
+            
+            if self.accountStr.isEmpty || self.passwordStr.isEmpty {
+                loginBtn.isEnabled = false
+            }else {
+                loginBtn.isEnabled = true
+            }
         }
-        
-        
-        let expression = "^-{0,1}[0-9]*((\\.|,)[0-9]{0,2})?$"
-        let regex = try! NSRegularExpression(pattern: expression, options: NSRegularExpression.Options.allowCommentsAndWhitespace)
-        let numberOfMatches = regex.numberOfMatches(in: newString!, options:NSRegularExpression.MatchingOptions.reportProgress, range: NSMakeRange(0, (newString! as NSString).length))
-        
-        return numberOfMatches != 0
-        
+        return true
     }
 }

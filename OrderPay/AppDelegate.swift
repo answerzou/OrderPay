@@ -24,6 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         UIApplication.shared.statusBarStyle = .lightContent
         
+        SVProgressHUD.dismiss(withDelay: 1)
         //保存用户通讯录
 //        JYCommonObj.saveContanctInfo(getSysContacts() as NSArray)
         AddressBookTools.addressBookRequestAccess()

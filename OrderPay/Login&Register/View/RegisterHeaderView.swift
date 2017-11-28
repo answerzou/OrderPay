@@ -10,6 +10,10 @@ import UIKit
 
 typealias NextStepClick = ()->()
 
+let AccountTF = 0
+let PasswordTF = 1
+let ConfirmPasswordTF = 2
+let SMCodeTF = 3
 
 class RegisterHeaderView: UIView {
 
@@ -22,6 +26,15 @@ class RegisterHeaderView: UIView {
     @IBOutlet weak var indicatorView: UIActivityIndicatorView!
     @IBOutlet weak var confirPasswordBottomLine: UIView!
     @IBOutlet weak var confirPasswordTextField: UITextField!
+    
+    ///账号Str
+    var accountStr: String = ""
+    ///密码Str
+    var passwordStr: String = ""
+    ///确认密码Str
+    var confirmPasswordStr: String = ""
+    ///验证码Str
+    var smCodeStr: String = ""
     
     var nextStepBlock: NextStepClick?
     
@@ -60,12 +73,22 @@ class RegisterHeaderView: UIView {
 
     
     @IBAction func verificationAction(_ sender: UIButton) {
+        
+        self.endEditing(true)
+        
         let mobile = self.accountTextField.text ?? ""
         
         if self.accountTextField.text?.isEmpty == true {
             SVProgressHUD.showError(withStatus: "请先输入手机号")
             return
         }
+        
+        
+        if JYUtilities.verifyPhoneNumber(self.accountTextField.text) == false {
+            SVProgressHUD.showError(withStatus: "请输入正确手机号")
+            return
+        }
+        
         let pid = UIDevice.current.identifierForVendor?.uuidString ?? ""
         let params = ["mobile": mobile, "type": "1", "pid": pid] as NSDictionary
         SmCodeViewModel.requestData(params: params) { [unowned self] in
@@ -74,6 +97,8 @@ class RegisterHeaderView: UIView {
     }
     
     @IBAction func registerAction(_ sender: UIButton) {
+         self.endEditing(true)
+        
         if self.passwordTextField.text != self.confirPasswordTextField.text {
             SVProgressHUD.showError(withStatus: "两次密码不一致，请重新输入")
             self.confirPasswordBottomLine.backgroundColor = UIColor.red
@@ -81,10 +106,42 @@ class RegisterHeaderView: UIView {
             return
         }
         
-        if self.nextStepBlock != nil {
-            self.nextStepBlock!()
-        }
+        self.registerBtn.isEnabled = false
+        self.registerBtn.setTitle("", for: .normal)
+        self.indicatorView.startAnimating()
+        print("\(self.accountStr) \(self.passwordStr) \(self.confirmPasswordStr) \(self.smCodeStr)")
+        
+//        if self.nextStepBlock != nil {
+//            self.nextStepBlock!()
+//        }
     }
     
 
+}
+
+extension RegisterHeaderView: UITextFieldDelegate {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let nsString = textField.text as NSString?
+        let newString = nsString?.replacingCharacters(in: range, with: string)
+        
+        switch textField.tag {
+        case AccountTF:
+            self.accountStr = newString ?? ""
+        case PasswordTF:
+            self.passwordStr = newString ?? ""
+        case ConfirmPasswordTF:
+            self.confirmPasswordStr = newString ?? ""
+        default:
+            self.smCodeStr = newString ?? ""
+        }
+        
+        if self.accountStr.isEmpty || self.passwordStr.isEmpty || self.confirmPasswordStr.isEmpty || self.smCodeStr.isEmpty {
+            self.registerBtn.isEnabled = false
+        }else {
+            self.registerBtn.isEnabled = true
+        }
+        
+        return true
+    }
+    
 }

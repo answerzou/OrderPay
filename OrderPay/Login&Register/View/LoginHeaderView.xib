@@ -50,7 +50,7 @@
                             <rect key="frame" x="100" y="65" width="272" height="21"/>
                             <nil key="textColor"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <textInputTraits key="textInputTraits"/>
+                            <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                             <connections>
                                 <outlet property="delegate" destination="T48-XA-ftk" id="1vP-sF-lnx"/>
                             </connections>
