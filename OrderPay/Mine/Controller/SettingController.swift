@@ -35,10 +35,11 @@ class SettingController: UIViewController {
         if userName?.count == 0 || userName != nil {
             let mobile = UserModel.shared.mobile
           
-            let startIndex = mobile?.index((mobile?.startIndex)!, offsetBy:3)
-            let endIndex = mobile?.index(startIndex!, offsetBy:4)
-            let newMobile = mobile?.replacingCharacters(in: startIndex..<endIndex, with:"****")
-            self.settingView.userNameLabel.text = newMobile
+            JYUtilities.replaceAsterisk(mobile, start: 3, length: 4)
+//            let startIndex = mobile?.index((mobile?.startIndex)!, offsetBy:3)
+//            let endIndex = mobile?.index(startIndex!, offsetBy:4)
+//            let newMobile = mobile?.replacingCharacters(in: startIndex..<endIndex, with:"****")
+            self.settingView.userNameLabel.text = JYUtilities.replaceAsterisk(mobile, start: 3, length: 4)
             
         }else {
             self.settingView.userNameLabel.text = UserModel.shared.name
