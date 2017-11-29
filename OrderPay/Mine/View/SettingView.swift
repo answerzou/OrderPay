@@ -11,6 +11,8 @@ import UIKit
 class SettingView: UIView {
 
     @IBOutlet weak var userInfoView: UIView!
+    @IBOutlet weak var userNameLabel: UILabel!
+    @IBOutlet weak var approveBtn: UIButton!
     
     @IBAction func logoutBtnAction(_ sender: UIButton) {
         

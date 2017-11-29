@@ -30,6 +30,20 @@ class SettingController: UIViewController {
         super.viewDidLoad()
 
         self.title = "设置"
+        let userName = UserModel.shared.name
+       
+        if userName?.count == 0 || userName != nil {
+            let mobile = UserModel.shared.mobile
+          
+            let startIndex = mobile?.index((mobile?.startIndex)!, offsetBy:3)
+            let endIndex = mobile?.index(startIndex!, offsetBy:4)
+            let newMobile = mobile?.replacingCharacters(in: startIndex..<endIndex, with:"****")
+            self.settingView.userNameLabel.text = newMobile
+            
+        }else {
+            self.settingView.userNameLabel.text = UserModel.shared.name
+        }
+        
         self.view.addSubview(self.tableView)
     }
 
