@@ -42,5 +42,7 @@
 #import "JYCitySelectManager.h"
 #import "CMColor.h"
 #import "FMDB.h"
+#import "JYDBEngineManage.h"
+#import "CMFile.h"
 
 #endif /* OrderPay_BridgeHeader_h */

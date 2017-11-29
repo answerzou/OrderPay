@@ -21,6 +21,14 @@
 		0468EA621FBEB8AB005E9BAA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0468EA5F1FBEB8AB005E9BAA /* Assets.xcassets */; };
 		047DD16A1FCD3D3A00A27E45 /* VisibleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047DD1691FCD3D3A00A27E45 /* VisibleController.swift */; };
 		047DD16C1FCD808500A27E45 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047DD16B1FCD808500A27E45 /* LoginViewModel.swift */; };
+		047DD17E1FCE9EBF00A27E45 /* BGFMDB.m in Sources */ = {isa = PBXBuildFile; fileRef = 047DD1701FCE9EBF00A27E45 /* BGFMDB.m */; };
+		047DD17F1FCE9EBF00A27E45 /* BGModelInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 047DD1731FCE9EBF00A27E45 /* BGModelInfo.m */; };
+		047DD1801FCE9EBF00A27E45 /* BGTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 047DD1751FCE9EBF00A27E45 /* BGTool.m */; };
+		047DD1811FCE9EBF00A27E45 /* JYFMDBtest.m in Sources */ = {isa = PBXBuildFile; fileRef = 047DD1771FCE9EBF00A27E45 /* JYFMDBtest.m */; };
+		047DD1821FCE9EBF00A27E45 /* NSObject+BGModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 047DD1791FCE9EBF00A27E45 /* NSObject+BGModel.m */; };
+		047DD1831FCE9EC000A27E45 /* people.m in Sources */ = {isa = PBXBuildFile; fileRef = 047DD17B1FCE9EBF00A27E45 /* people.m */; };
+		047DD1841FCE9EC000A27E45 /* JYDBEngineManage.m in Sources */ = {isa = PBXBuildFile; fileRef = 047DD17D1FCE9EBF00A27E45 /* JYDBEngineManage.m */; };
+		047DD1881FCE9F2F00A27E45 /* CMFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 047DD1871FCE9F2F00A27E45 /* CMFile.m */; };
 		04C938061FBAE8CB004B290A /* CMTitleAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C938041FBAE8CB004B290A /* CMTitleAlertView.m */; };
 		04C938071FBAE8CB004B290A /* CMTitleAlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04C938051FBAE8CB004B290A /* CMTitleAlertView.xib */; };
 		04E1214E1FB9AD0E004419A6 /* AddressBookTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E1214C1FB9AD0E004419A6 /* AddressBookTools.m */; };
@@ -126,6 +134,23 @@
 		0468EA5F1FBEB8AB005E9BAA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		047DD1691FCD3D3A00A27E45 /* VisibleController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisibleController.swift; sourceTree = "<group>"; };
 		047DD16B1FCD808500A27E45 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		047DD16F1FCE9EBF00A27E45 /* BGFMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGFMDB.h; sourceTree = "<group>"; };
+		047DD1701FCE9EBF00A27E45 /* BGFMDB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGFMDB.m; sourceTree = "<group>"; };
+		047DD1711FCE9EBF00A27E45 /* BGFMDBConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGFMDBConfig.h; sourceTree = "<group>"; };
+		047DD1721FCE9EBF00A27E45 /* BGModelInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGModelInfo.h; sourceTree = "<group>"; };
+		047DD1731FCE9EBF00A27E45 /* BGModelInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGModelInfo.m; sourceTree = "<group>"; };
+		047DD1741FCE9EBF00A27E45 /* BGTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGTool.h; sourceTree = "<group>"; };
+		047DD1751FCE9EBF00A27E45 /* BGTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGTool.m; sourceTree = "<group>"; };
+		047DD1761FCE9EBF00A27E45 /* JYFMDBtest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYFMDBtest.h; sourceTree = "<group>"; };
+		047DD1771FCE9EBF00A27E45 /* JYFMDBtest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYFMDBtest.m; sourceTree = "<group>"; };
+		047DD1781FCE9EBF00A27E45 /* NSObject+BGModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+BGModel.h"; sourceTree = "<group>"; };
+		047DD1791FCE9EBF00A27E45 /* NSObject+BGModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+BGModel.m"; sourceTree = "<group>"; };
+		047DD17A1FCE9EBF00A27E45 /* people.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = people.h; sourceTree = "<group>"; };
+		047DD17B1FCE9EBF00A27E45 /* people.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = people.m; sourceTree = "<group>"; };
+		047DD17C1FCE9EBF00A27E45 /* JYDBEngineManage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYDBEngineManage.h; sourceTree = "<group>"; };
+		047DD17D1FCE9EBF00A27E45 /* JYDBEngineManage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYDBEngineManage.m; sourceTree = "<group>"; };
+		047DD1861FCE9F2F00A27E45 /* CMFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMFile.h; sourceTree = "<group>"; };
+		047DD1871FCE9F2F00A27E45 /* CMFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMFile.m; sourceTree = "<group>"; };
 		04C938031FBAE8CB004B290A /* CMTitleAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMTitleAlertView.h; sourceTree = "<group>"; };
 		04C938041FBAE8CB004B290A /* CMTitleAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMTitleAlertView.m; sourceTree = "<group>"; };
 		04C938051FBAE8CB004B290A /* CMTitleAlertView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CMTitleAlertView.xib; sourceTree = "<group>"; };
@@ -300,6 +325,45 @@
 				0468EA5D1FBEB8AB005E9BAA /* Main.storyboard */,
 			);
 			path = Base.lproj;
+			sourceTree = "<group>";
+		};
+		047DD16D1FCE9EBF00A27E45 /* JYDBEngineManage */ = {
+			isa = PBXGroup;
+			children = (
+				047DD16E1FCE9EBF00A27E45 /* DBOperation */,
+				047DD17C1FCE9EBF00A27E45 /* JYDBEngineManage.h */,
+				047DD17D1FCE9EBF00A27E45 /* JYDBEngineManage.m */,
+			);
+			path = JYDBEngineManage;
+			sourceTree = "<group>";
+		};
+		047DD16E1FCE9EBF00A27E45 /* DBOperation */ = {
+			isa = PBXGroup;
+			children = (
+				047DD16F1FCE9EBF00A27E45 /* BGFMDB.h */,
+				047DD1701FCE9EBF00A27E45 /* BGFMDB.m */,
+				047DD1711FCE9EBF00A27E45 /* BGFMDBConfig.h */,
+				047DD1721FCE9EBF00A27E45 /* BGModelInfo.h */,
+				047DD1731FCE9EBF00A27E45 /* BGModelInfo.m */,
+				047DD1741FCE9EBF00A27E45 /* BGTool.h */,
+				047DD1751FCE9EBF00A27E45 /* BGTool.m */,
+				047DD1761FCE9EBF00A27E45 /* JYFMDBtest.h */,
+				047DD1771FCE9EBF00A27E45 /* JYFMDBtest.m */,
+				047DD1781FCE9EBF00A27E45 /* NSObject+BGModel.h */,
+				047DD1791FCE9EBF00A27E45 /* NSObject+BGModel.m */,
+				047DD17A1FCE9EBF00A27E45 /* people.h */,
+				047DD17B1FCE9EBF00A27E45 /* people.m */,
+			);
+			path = DBOperation;
+			sourceTree = "<group>";
+		};
+		047DD1851FCE9F2F00A27E45 /* CMFile */ = {
+			isa = PBXGroup;
+			children = (
+				047DD1861FCE9F2F00A27E45 /* CMFile.h */,
+				047DD1871FCE9F2F00A27E45 /* CMFile.m */,
+			);
+			path = CMFile;
 			sourceTree = "<group>";
 		};
 		04C938021FBAE8CB004B290A /* CMAlertView */ = {
@@ -498,6 +562,7 @@
 		803E19361F9A249D00745D65 /* CommonTools */ = {
 			isa = PBXGroup;
 			children = (
+				047DD1851FCE9F2F00A27E45 /* CMFile */,
 				04140B0D1FCC1CD0000C97F7 /* CMColor */,
 				803E19341F9A23DF00745D65 /* CMToolsDef.h */,
 				803E19351F9A23DF00745D65 /* CMGlobalDef.h */,
@@ -719,6 +784,7 @@
 		8041CCC11F78AC7E00ACD236 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				047DD16D1FCE9EBF00A27E45 /* JYDBEngineManage */,
 				04140AFB1FCC1C8A000C97F7 /* JYLocationSelectTools */,
 				04E121541FB9AE06004419A6 /* JYAddressBookModel.h */,
 				04E121531FB9AE06004419A6 /* JYAddressBookModel.m */,
@@ -998,6 +1064,7 @@
 			files = (
 				803E18D51F8F8D0300745D65 /* NSString+Base64.m in Sources */,
 				04140B141FCC1D8B000C97F7 /* SmCodeViewModel.swift in Sources */,
+				047DD1801FCE9EBF00A27E45 /* BGTool.m in Sources */,
 				803E19011F97566E00745D65 /* PinyinFormatter.m in Sources */,
 				803E1A1D1F9A25F900745D65 /* CMNotification.m in Sources */,
 				04E1214E1FB9AD0E004419A6 /* AddressBookTools.m in Sources */,
@@ -1005,6 +1072,7 @@
 				803E19321F9A231600745D65 /* NSURLSessionTask+UserInfo.m in Sources */,
 				04E121511FB9AD4E004419A6 /* JYContactManager.swift in Sources */,
 				803E1A441FADC08D00745D65 /* YYWeakProxy.m in Sources */,
+				047DD1811FCE9EBF00A27E45 /* JYFMDBtest.m in Sources */,
 				803E1A501FAE0ADB00745D65 /* NameAuthenticationController.swift in Sources */,
 				047DD16A1FCD3D3A00A27E45 /* VisibleController.swift in Sources */,
 				8041CCF31F7966BF00ACD236 /* OrderCell.xib in Sources */,
@@ -1012,6 +1080,7 @@
 				803E18FD1F97566E00745D65 /* ChineseInclude.m in Sources */,
 				803E18F81F97566E00745D65 /* ButtonGroupView.m in Sources */,
 				8041CCEE1F79665300ACD236 /* OrderController.swift in Sources */,
+				047DD1881FCE9F2F00A27E45 /* CMFile.m in Sources */,
 				04140B0C1FCC1C8A000C97F7 /* NSString+PinYin.m in Sources */,
 				803E18FF1F97566E00745D65 /* HanyuPinyinOutputFormat.m in Sources */,
 				803E19311F9A231600745D65 /* CMRequestEngine.m in Sources */,
@@ -1033,6 +1102,7 @@
 				803E1A461FADF1E500745D65 /* SettingView.swift in Sources */,
 				803E18FE1F97566E00745D65 /* ChineseToPinyinResource.m in Sources */,
 				8041CCCF1F78ADC300ACD236 /* GlobalMacro.swift in Sources */,
+				047DD17E1FCE9EBF00A27E45 /* BGFMDB.m in Sources */,
 				803E18D71F962C7700745D65 /* OrderDetailController.swift in Sources */,
 				803E18BF1F8F86EE00745D65 /* JYContactTool.swift in Sources */,
 				8041CCD41F78AE8200ACD236 /* UIKit+Extension.swift in Sources */,
@@ -1044,12 +1114,15 @@
 				803E1A1F1F9A25F900745D65 /* CMRegular.m in Sources */,
 				8041CCB71F78ABF900ACD236 /* HomeController.swift in Sources */,
 				04E121521FB9AD4E004419A6 /* JYContactManager+SaveContact.swift in Sources */,
+				047DD1831FCE9EC000A27E45 /* people.m in Sources */,
+				047DD17F1FCE9EBF00A27E45 /* BGModelInfo.m in Sources */,
 				8041CCCD1F78ADC300ACD236 /* ApiMacro.swift in Sources */,
 				803E19071F97581900745D65 /* CustomButtonImageEdgeInsets.swift in Sources */,
 				803E192F1F9A231600745D65 /* CMNetworkMonitor.m in Sources */,
 				803E1A341FAC6EB300745D65 /* MineViewCell.swift in Sources */,
 				803E19001F97566E00745D65 /* NSString+PinYin4Cocoa.m in Sources */,
 				8024024F1FAEE40100A6F4C6 /* RegisterHeaderView.swift in Sources */,
+				047DD1821FCE9EBF00A27E45 /* NSObject+BGModel.m in Sources */,
 				803E18C11F8F89BA00745D65 /* JYCommonObj.swift in Sources */,
 				803E19021F97566E00745D65 /* PinYinForObjc.m in Sources */,
 				803E19301F9A231600745D65 /* CMRequestEngine+HttpTools.m in Sources */,
@@ -1073,6 +1146,7 @@
 				8041CC891F78A8CC00ACD236 /* AppDelegate.swift in Sources */,
 				803E18FB1F97566E00745D65 /* CityItem.m in Sources */,
 				803E18D91F962CF300745D65 /* OrderDetailView.swift in Sources */,
+				047DD1841FCE9EC000A27E45 /* JYDBEngineManage.m in Sources */,
 				803408831FBED4F3003DC30C /* MineController.swift in Sources */,
 				8041CCB01F78AB6F00ACD236 /* BaseViewController.swift in Sources */,
 			);

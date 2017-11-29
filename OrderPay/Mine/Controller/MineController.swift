@@ -117,7 +117,7 @@ class MineController: BaseController {
     
     func settingAction() {
         
-        if UserModel.shared.userName == nil || UserModel.shared.userName == ""{
+        if UserModel.shared.name == nil || UserModel.shared.name == ""{
             let login = LoginController()
             let nav = BaseNavigationController(rootViewController: login)
             
@@ -138,7 +138,7 @@ extension MineController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        if UserModel.shared.userName == nil || UserModel.shared.userName == ""{
+        if UserModel.shared.name == nil || UserModel.shared.name == ""{
             let login = LoginController()
             let nav = BaseNavigationController(rootViewController: login)
             

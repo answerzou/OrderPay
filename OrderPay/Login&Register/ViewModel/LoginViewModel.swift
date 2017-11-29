@@ -16,6 +16,7 @@ class LoginViewModel: NSObject {
             if (tip?.success)! {
                 
                 print("+++\(result)")
+                UserModel.shared.setUserLoginInfo(dict: result as! Dictionary)
                 SVProgressHUD.dismiss()
                 returnBlock()
                 

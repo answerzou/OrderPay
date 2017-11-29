@@ -19,8 +19,8 @@ extension JYContactManager {
         }
       
         var parameters:[String: Any] = [String : Any]()
-        parameters["userId"] = UserModel.shared.cardNo
-        parameters["name"] = UserModel.shared.custName
+//        parameters["userId"] = UserModel.shared.cardNo
+//        parameters["name"] = UserModel.shared.custName
 //        parameters["mobile"] = UserModel.shared.mobile
         let cdicArr = NSMutableArray()
         for model in contactArr {
