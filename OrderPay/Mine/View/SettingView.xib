@@ -45,7 +45,7 @@
                                 <constraint firstAttribute="height" constant="30" id="mMo-c0-Q8y"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                            <state key="normal" title=" 已认证" image="approved">
+                            <state key="normal" title=" 已认证" image="approve">
                                 <color key="titleColor" red="0.090196078431372548" green="0.37647058823529411" blue="0.99607843137254903" alpha="1" colorSpace="calibratedRGB"/>
                             </state>
                         </button>
@@ -100,7 +100,7 @@
         </view>
     </objects>
     <resources>
-        <image name="approved" width="16" height="16"/>
+        <image name="approve" width="14" height="14"/>
         <image name="logOut_bg" width="266" height="51"/>
         <image name="mineIcon" width="33" height="33"/>
         <image name="right_arrows" width="22" height="35"/>
