@@ -40,9 +40,16 @@ class SettingController: UIViewController {
 //            let endIndex = mobile?.index(startIndex!, offsetBy:4)
 //            let newMobile = mobile?.replacingCharacters(in: startIndex..<endIndex, with:"****")
             self.settingView.userNameLabel.text = JYUtilities.replaceAsterisk(mobile, start: 3, length: 4)
+            self.settingView.approveBtn.setImage(UIImage.init(named: "unapprove"), for: .normal)
+            self.settingView.approveBtn.setTitle(" 未认证", for: .normal)
+            self.settingView.approveBtn.setTitleColor(UIColor.init(hexColorString: "CDCDCD"), for: .normal)
             
         }else {
-            self.settingView.userNameLabel.text = UserModel.shared.name
+            self.settingView.approveBtn.setImage(UIImage.init(named: "approve"), for: .normal)
+            self.settingView.approveBtn.setTitle(" 已认证", for: .normal)
+            self.settingView.approveBtn.setTitleColor(UIColor.init(hexColorString: "1760FE"), for: .normal)
+            
+            self.settingView.userNameLabel.text = JYUtilities.replaceAsterisk(UserModel.shared.name, start: 0, length: userName!.count - 1)
         }
         
         self.view.addSubview(self.tableView)

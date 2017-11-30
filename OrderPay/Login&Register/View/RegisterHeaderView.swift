@@ -8,6 +8,8 @@
 
 import UIKit
 
+let type_register = "1"
+let type_forgetPsd = "2"
 typealias NextStepClick = ()->()
 
 let AccountTF = 0
@@ -26,6 +28,9 @@ class RegisterHeaderView: UIView {
     @IBOutlet weak var indicatorView: UIActivityIndicatorView!
     @IBOutlet weak var confirPasswordBottomLine: UIView!
     @IBOutlet weak var confirPasswordTextField: UITextField!
+    
+    ///是否是找回密码
+    var forgetPassword: Bool = false
     
     ///账号Str
     var accountStr: String = ""
@@ -90,9 +95,17 @@ class RegisterHeaderView: UIView {
         }
         
         let pid = UIDevice.current.identifierForVendor?.uuidString ?? ""
-        let params = ["mobile": mobile, "type": "1", "pid": pid] as NSDictionary
-        SmCodeViewModel.requestData(params: params) { [unowned self] in
-            self.startTimer()
+        
+        if self.forgetPassword == true {
+            let params = ["mobile": mobile, "type": type_forgetPsd, "pid": pid] as NSDictionary
+            SmCodeViewModel.requestData(params: params) { [unowned self] in
+                self.startTimer()
+            }
+        }else {
+            let params = ["mobile": mobile, "type": type_forgetPsd, "pid": pid] as NSDictionary
+            SmCodeViewModel.requestData(params: params) { [unowned self] in
+                self.startTimer()
+            }
         }
     }
     
@@ -111,9 +124,9 @@ class RegisterHeaderView: UIView {
         self.indicatorView.startAnimating()
         print("\(self.accountStr) \(self.passwordStr) \(self.confirmPasswordStr) \(self.smCodeStr)")
         
-//        if self.nextStepBlock != nil {
-//            self.nextStepBlock!()
-//        }
+        if self.nextStepBlock != nil {
+            self.nextStepBlock!()
+        }
     }
     
 

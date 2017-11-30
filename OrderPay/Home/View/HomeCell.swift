@@ -1,32 +1,23 @@
 //
-//  OrderCell.swift
+//  HomeCell.swift
 //  OrderPay
 //
-//  Created by answer.zou on 17/9/26.
+//  Created by MAc on 2017/11/30.
 //  Copyright © 2017年 answer.zou. All rights reserved.
 //
 
 import UIKit
 
-class OrderCell: UITableViewCell {
+class HomeCell: UITableViewCell {
     
-    @IBOutlet weak var userNameLabel: UILabel!
-    
-    @IBOutlet weak var loanMoneyLabel: UIButton!
-    
-    @IBOutlet weak var timeLocationLabel: UILabel!
-    
-    @IBOutlet weak var userInfoOneLabel: UILabel!
-    
-    @IBOutlet weak var userInfoTwoLabel: UILabel!
-
-    @IBOutlet weak var userInfoThreeLabel: UILabel!
-    
-    @IBOutlet weak var brokerageLabel: UILabel!
-    
+    ///用户姓名
+    @IBOutlet weak var usernameLabel: UILabel!
+    ///借款金额
+    @IBOutlet weak var loanMoneyBtn: UIButton!
+    ///申请时间
+    @IBOutlet weak var applyTimeLabel: UILabel!
+    ///手机号
     @IBOutlet weak var mobileLabel: UILabel!
-    
-    @IBOutlet weak var timeLocationBottomConstraint: NSLayoutConstraint!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -37,6 +28,7 @@ class OrderCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
+        // Configure the view for the selected state
     }
-
+    
 }

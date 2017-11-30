@@ -19,7 +19,7 @@ class RegisterViewModel: NSObject {
                 returnBlock()
                 
             }else {
-                headerView.registerBtn.setTitle("注册", for: .normal)
+                headerView.registerBtn.setTitle("确定", for: .normal)
                 headerView.indicatorView.stopAnimating()
                 headerView.registerBtn.isEnabled = true
                 SVProgressHUD.showError(withStatus: tip?.errorDesc)

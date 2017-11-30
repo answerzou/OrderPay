@@ -72,8 +72,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let icon_roborder = UIApplicationShortcutIcon.init(templateImageName: "rob-order")
         
         //创建快捷选项
-        let item_myorder = UIApplicationShortcutItem.init(type: "myorder", localizedTitle: "我的订单", localizedSubtitle: nil, icon: icon_myorder, userInfo: nil)
-        let item_roborder = UIApplicationShortcutItem.init(type: "roborder", localizedTitle: "抢单", localizedSubtitle: nil, icon: icon_roborder, userInfo: nil)
+        let item_myorder = UIApplicationShortcutItem.init(type: "myorder", localizedTitle: "派单", localizedSubtitle: nil, icon: icon_myorder, userInfo: nil)
+        let item_roborder = UIApplicationShortcutItem.init(type: "roborder", localizedTitle: "首页", localizedSubtitle: nil, icon: icon_roborder, userInfo: nil)
         
         UIApplication.shared.shortcutItems = [item_myorder, item_roborder]
     }

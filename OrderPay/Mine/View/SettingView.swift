@@ -8,6 +8,8 @@
 
 import UIKit
 
+let logout = 1
+
 class SettingView: UIView {
 
     @IBOutlet weak var userInfoView: UIView!
@@ -16,10 +18,17 @@ class SettingView: UIView {
     
     @IBAction func logoutBtnAction(_ sender: UIButton) {
         
-        //清空数据
-        UserModel.shared.clearUserInfo()
+        CMTitleAlertView.show(withTitle: "您确定退出吗？", completion: { (selecIndex) in
+            print(selecIndex)
+            if selecIndex == logout {
+                
+                //清空数据
+                UserModel.shared.clearUserInfo()
+                
+                self.viewController().navigationController?.popViewController(animated: true)
+            }
+        })
         
-        self.viewController().navigationController?.popViewController(animated: true)
         
     }
     override func draw(_ rect: CGRect) {

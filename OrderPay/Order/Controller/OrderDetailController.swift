@@ -12,11 +12,13 @@ let buttomBtnHeight = CGFloat(50)
 
 class OrderDetailController: BaseController {
     
+    var homeModel: HomeModel?
+    
     ///渐变色
     var navBackLayer:CAGradientLayer?
     
     fileprivate lazy var tableView: UITableView = {
-        let tableView = UITableView(frame: CGRect(x: 0, y: 0, width: ScreenWidth, height: ScreenHeight - StatusBarHeight - NavigationBarHeight - 30), style: .plain)
+        let tableView = UITableView(frame: CGRect(x: 0, y: 0, width: ScreenWidth, height: ScreenHeight - StatusBarHeight - NavigationBarHeight), style: .plain)
         tableView.separatorStyle = .none
         tableView.backgroundColor = UIColor.groupTableViewBackground
         return tableView
@@ -24,6 +26,7 @@ class OrderDetailController: BaseController {
     
     fileprivate var headerView: OrderDetailView {
         let header = Bundle.main.loadNibNamed("OrderDetailView", owner: nil, options: nil)?.last as! OrderDetailView
+        header.homeModel = self.homeModel
         return header
     }
     
@@ -41,10 +44,7 @@ class OrderDetailController: BaseController {
         btn.backgroundColor = UIColor.white
         btn.layer.borderWidth = 0.5
         btn.layer.borderColor = UIColor.groupTableViewBackground.cgColor
-        
-//        let navImageView = UIImageView.init(frame: btn.frame)
-//        navBackLayer = CAGradientLayer.addGradientLayer(left: Gradient_Left_Color, right: Gradient_Right_Color, toView: navImageView, isnavigationBar: true, removeLayer: navBackLayer)
-//        btn.setBackgroundImage(UIImage.imageFromLayer(layer: navBackLayer!), for: .normal)
+
         btn.setTitleColor(Gradient_Right_Color, for: .normal)
         
         return btn
@@ -55,9 +55,11 @@ class OrderDetailController: BaseController {
         self.title = "订单详情"
     
         self.view.addSubview(self.tableView)
+
         self.tableView.tableHeaderView = self.headerView
+
         
-        self.view.addSubview(self.buttomBtn)
+//        self.view.addSubview(self.buttomBtn)
     }
     
 }

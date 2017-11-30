@@ -10,6 +10,8 @@ import UIKit
 
 class RegisterController: UIViewController {
     
+    var forgetPassword: Bool = false
+    
     fileprivate lazy var registerHeaderView: RegisterHeaderView = {
         
         let loginHeaderV = Bundle.main.loadNibNamed("RegisterHeaderView", owner: nil, options: nil)?.first as! RegisterHeaderView
@@ -34,7 +36,13 @@ class RegisterController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.title = "注册"
+        
+        if self.forgetPassword == true{
+            self.title = "忘记密码"
+            self.registerHeaderView.forgetPassword = true
+        }
         
         self.view.addSubview(self.tableView)
         

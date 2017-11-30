@@ -50,8 +50,8 @@ class OrderController: BaseController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "我的订单"
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: self.rightButton)
+        self.title = "派单"
+//        self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: self.rightButton)
         self.view.addSubview(self.topView)
         self.view.addSubview(self.tableView)
         tableView.register(UINib.init(nibName: "OrderCell", bundle: nil), forCellReuseIdentifier: reuseIdentifier)
@@ -90,13 +90,13 @@ extension OrderController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 105
+        return 85
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let detail = OrderDetailController()
-        self.navigationController?.pushViewController(detail, animated: true)
+//        let detail = OrderDetailController()
+//        self.navigationController?.pushViewController(detail, animated: true)
         
         tableView.deselectRow(at: indexPath, animated: true)
         print(indexPath.row)

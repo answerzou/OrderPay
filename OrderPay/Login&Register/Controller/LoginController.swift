@@ -80,6 +80,13 @@ class LoginController: UIViewController {
             
             self.navigationController?.pushViewController(registerVC, animated: true)
         }
+        
+        self.loginHeaderView.forgetBtnClick = { [unowned self] in
+            let registerVC = RegisterController()
+            registerVC.forgetPassword = true
+            
+            self.navigationController?.pushViewController(registerVC, animated: true)
+        }
     }
     
     func shakeToHide(view: UIView) {

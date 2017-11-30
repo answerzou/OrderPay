@@ -88,17 +88,6 @@
                         <action selector="loginAction:" destination="T48-XA-ftk" eventType="touchUpInside" id="IBe-Vo-0Ky"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="moJ-BS-Mny">
-                    <rect key="frame" x="173" y="278" width="46" height="30"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="46" id="Qqd-og-JA5"/>
-                        <constraint firstAttribute="height" constant="30" id="pXQ-eg-K6d"/>
-                    </constraints>
-                    <state key="normal" title="注册"/>
-                    <connections>
-                        <action selector="registerAction:" destination="T48-XA-ftk" eventType="touchUpInside" id="opw-mr-Trd"/>
-                    </connections>
-                </button>
                 <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Jc9-Mu-Iz6">
                     <rect key="frame" x="181.5" y="230" width="30" height="30"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -108,18 +97,53 @@
                     </constraints>
                     <color key="color" red="0.090196078430000007" green="0.37647058820000001" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
                 </activityIndicatorView>
+                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tBx-4m-s1E">
+                    <rect key="frame" x="195" y="290" width="2" height="30"/>
+                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="2" id="Yif-lJ-rZK"/>
+                        <constraint firstAttribute="height" constant="30" id="gkS-wp-eI3"/>
+                    </constraints>
+                </view>
+                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tRo-aC-Wk2">
+                    <rect key="frame" x="232" y="290" width="69" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="Dqr-Qv-bM8"/>
+                    </constraints>
+                    <state key="normal" title="忘记密码?">
+                        <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="fogetPasswordBtnAction:" destination="T48-XA-ftk" eventType="touchUpInside" id="dvD-eg-Mxd"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="moJ-BS-Mny">
+                    <rect key="frame" x="173" y="290" width="46" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="46" id="Qqd-og-JA5"/>
+                        <constraint firstAttribute="height" constant="30" id="pXQ-eg-K6d"/>
+                    </constraints>
+                    <state key="normal" title="注册"/>
+                    <connections>
+                        <action selector="registerAction:" destination="T48-XA-ftk" eventType="touchUpInside" id="opw-mr-Trd"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="tRo-aC-Wk2" firstAttribute="leading" secondItem="tBx-4m-s1E" secondAttribute="trailing" constant="35" id="96i-hp-IUo"/>
+                <constraint firstItem="tBx-4m-s1E" firstAttribute="centerX" secondItem="T48-XA-ftk" secondAttribute="centerX" id="FZf-tM-SgH"/>
                 <constraint firstItem="Jc9-Mu-Iz6" firstAttribute="centerY" secondItem="0zU-DT-lH9" secondAttribute="centerY" id="GiB-Ko-qmD"/>
-                <constraint firstItem="moJ-BS-Mny" firstAttribute="top" secondItem="0zU-DT-lH9" secondAttribute="bottom" constant="8" id="HNZ-SP-2Cx"/>
-                <constraint firstItem="moJ-BS-Mny" firstAttribute="centerX" secondItem="T48-XA-ftk" secondAttribute="centerX" id="RES-xY-YuZ"/>
+                <constraint firstItem="tBx-4m-s1E" firstAttribute="top" secondItem="Jc9-Mu-Iz6" secondAttribute="bottom" constant="30" id="Il9-c3-kt6"/>
+                <constraint firstItem="moJ-BS-Mny" firstAttribute="centerY" secondItem="tBx-4m-s1E" secondAttribute="centerY" id="MjA-nd-dSR"/>
                 <constraint firstAttribute="trailing" secondItem="0zU-DT-lH9" secondAttribute="trailing" constant="30" id="Ucp-7A-ljT"/>
                 <constraint firstAttribute="trailing" secondItem="yS5-9a-Eba" secondAttribute="trailing" constant="10" id="WTw-zG-grx"/>
                 <constraint firstItem="0zU-DT-lH9" firstAttribute="top" secondItem="yS5-9a-Eba" secondAttribute="bottom" constant="100" id="XH0-0l-sWm"/>
                 <constraint firstItem="yS5-9a-Eba" firstAttribute="top" secondItem="T48-XA-ftk" secondAttribute="top" constant="20" id="Zcf-IA-ThF"/>
                 <constraint firstItem="Jc9-Mu-Iz6" firstAttribute="centerX" secondItem="0zU-DT-lH9" secondAttribute="centerX" id="bIx-yq-6mA"/>
+                <constraint firstItem="tRo-aC-Wk2" firstAttribute="centerY" secondItem="tBx-4m-s1E" secondAttribute="centerY" id="gZw-Pn-fXg"/>
                 <constraint firstItem="0zU-DT-lH9" firstAttribute="leading" secondItem="T48-XA-ftk" secondAttribute="leading" constant="30" id="lx3-Pg-mAV"/>
+                <constraint firstItem="moJ-BS-Mny" firstAttribute="centerX" secondItem="T48-XA-ftk" secondAttribute="centerX" id="urG-Dn-26x"/>
                 <constraint firstItem="yS5-9a-Eba" firstAttribute="leading" secondItem="T48-XA-ftk" secondAttribute="leading" constant="10" id="xgd-jE-152"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>

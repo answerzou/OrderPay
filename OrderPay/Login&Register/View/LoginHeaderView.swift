@@ -10,7 +10,7 @@ import UIKit
 
 typealias LoginBtnClick = (_ account: String?, _ passwd: String?)-> Void
 typealias RegisterBtnClick = ()->()
-
+typealias ForgetBtnClick = () -> Void
 
 class LoginHeaderView: UIView {
 
@@ -25,6 +25,7 @@ class LoginHeaderView: UIView {
     
     var loginBtnClick: LoginBtnClick?
     var registerBtnClick: RegisterBtnClick?
+    var forgetBtnClick: ForgetBtnClick?
     
     override func draw(_ rect: CGRect) {
         UIView.addShadow(shadowColor: Shadow_backGroundColor ,shadowOffset: CGSize.init(width: 0, height: 2), shadowRadius: 3, shadowOpacity: 0.7, cornerRadius: 5, masksToBounds: true, toView: self.contentView)
@@ -49,6 +50,13 @@ class LoginHeaderView: UIView {
             self.registerBtnClick!()
         }
     }
+    
+    @IBAction func fogetPasswordBtnAction(_ sender: UIButton) {
+        if forgetBtnClick != nil{
+            self.forgetBtnClick!()
+        }
+    }
+    
     
 }
 
