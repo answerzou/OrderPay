@@ -1277,7 +1277,7 @@
 				INFOPLIST_FILE = OrderPay/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = buyi.OrderPay;
+				PRODUCT_BUNDLE_IDENTIFIER = com.buyi.OrderPay;
 				PRODUCT_MODULE_NAME = "$(PRODUCT_NAME:c99extidentifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/OrderPay/Tools/OrderPay-BridgeHeader.h";
@@ -1299,7 +1299,7 @@
 				INFOPLIST_FILE = OrderPay/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = buyi.OrderPay;
+				PRODUCT_BUNDLE_IDENTIFIER = com.buyi.OrderPay;
 				PRODUCT_MODULE_NAME = "$(PRODUCT_NAME:c99extidentifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/OrderPay/Tools/OrderPay-BridgeHeader.h";
