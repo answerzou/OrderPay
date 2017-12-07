@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		040667E11FCFEACF00DD666A /* HomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040667DF1FCFEACF00DD666A /* HomeCell.swift */; };
-		040667E41FCFEB2800DD666A /* HomeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 040667E31FCFEB2800DD666A /* HomeCell.xib */; };
 		040667E61FCFFB1F00DD666A /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040667E51FCFFB1F00DD666A /* HomeModel.swift */; };
 		04140B071FCC1C8A000C97F7 /* area.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 04140AFC1FCC1C8A000C97F7 /* area.sqlite */; };
 		04140B081FCC1C8A000C97F7 /* JYCityListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04140AFE1FCC1C8A000C97F7 /* JYCityListView.m */; };
@@ -119,7 +118,6 @@
 
 /* Begin PBXFileReference section */
 		040667DF1FCFEACF00DD666A /* HomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCell.swift; sourceTree = "<group>"; };
-		040667E31FCFEB2800DD666A /* HomeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeCell.xib; sourceTree = "<group>"; };
 		040667E51FCFFB1F00DD666A /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeModel.swift; path = OrderPay/Home/Model/HomeModel.swift; sourceTree = SOURCE_ROOT; };
 		04140AFC1FCC1C8A000C97F7 /* area.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = area.sqlite; sourceTree = "<group>"; };
 		04140AFD1FCC1C8A000C97F7 /* JYCityListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYCityListView.h; sourceTree = "<group>"; };
@@ -739,7 +737,6 @@
 			isa = PBXGroup;
 			children = (
 				040667DF1FCFEACF00DD666A /* HomeCell.swift */,
-				040667E31FCFEB2800DD666A /* HomeCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -972,7 +969,6 @@
 				04C938071FBAE8CB004B290A /* CMTitleAlertView.xib in Resources */,
 				803E19041F97566E00745D65 /* unicode_to_hanyu_pinyin.txt in Resources */,
 				803E1A481FADF1F000745D65 /* SettingView.xib in Resources */,
-				040667E41FCFEB2800DD666A /* HomeCell.xib in Resources */,
 				0468EA611FBEB8AB005E9BAA /* Main.storyboard in Resources */,
 				0468EA601FBEB8AB005E9BAA /* LaunchScreen.storyboard in Resources */,
 				803E1A351FAC6EB300745D65 /* MineViewCell.xib in Resources */,
