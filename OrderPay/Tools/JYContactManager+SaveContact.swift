@@ -19,9 +19,8 @@ extension JYContactManager {
         }
       
         var parameters:[String: Any] = [String : Any]()
-//        parameters["userId"] = UserModel.shared.cardNo
-//        parameters["name"] = UserModel.shared.custName
-//        parameters["mobile"] = UserModel.shared.mobile
+        parameters["ecifId"] = UserModel.shared.ecifId
+        parameters["pid"] = UIDevice.current.identifierForVendor?.uuidString ?? ""
         let cdicArr = NSMutableArray()
         for model in contactArr {
             if let model = model as? JYAddressBookModel{
@@ -35,14 +34,14 @@ extension JYContactManager {
         }
         parameters["addressBooks"] = cdicArr as AnyObject?
         JYAPPLog(parameters)
-//        CMRequestEngine.sharedInstance().postWithUrl(url:API_POST_SAVEADDRESSBOOKS, parameters: parameters as NSDictionary, type: JYRequestType.requestTypeSaveAddressBooks) { (tip, obj) in
-//            if tip.success {
-//                JYAPPLog("保存手机相关信息成功")
-//            }else{
-//                JYAPPLog(tip.errorDesc)
-//            }
-//            JYAPPLog("\(obj)")
-//        }
+    
+        CMRequestEngine.sharedInstance().post(withUrl:API_POST_SAVEADDRESSBOOKS, parameters: parameters, type: JYRequestType.requestTypeSaveAddressBooks) { (tip, obj) in
+            if (tip?.success)! {
+                JYAPPLog("保存手机相关信息成功")
+            }else{
+                JYAPPLog(tip?.errorDesc)
+            }
+        }
 
     }
     

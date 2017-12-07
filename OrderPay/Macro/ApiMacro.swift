@@ -36,6 +36,11 @@ let API_POST_REGISTER         = APP_SERVER_API+"/xdyWeiXinServer/api/APPBizRest/
 //验证码
 let API_POST_VERIFICATION     = APP_SERVER_API+"/xdyWeiXinServer/api/APPBizRest/sendSMCode/v1/"
 
+//---------保存用户通讯录----------//
+let API_POST_SAVEADDRESSBOOKS     = APP_SERVER_API+"/xdyWeiXinServer/api/APPBizRest/saveAddressBooks/v1/"
+
+
+
 
 
 

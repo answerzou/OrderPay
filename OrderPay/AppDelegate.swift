@@ -25,6 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UIApplication.shared.statusBarStyle = .lightContent
         
         SVProgressHUD.setMinimumDismissTimeInterval(1)
+        NotificationCenter.default.addObserver(self, selector: #selector(saveContance), name: NSNotification.Name(rawValue: "SAVECONTANCT"), object: nil)
         
         //保存用户通讯录
 //        JYCommonObj.saveContanctInfo(getSysContacts() as NSArray)
@@ -40,6 +41,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         return true
+    }
+    
+    func saveContance() {
+        print("1111");
+       let conArr = getSysContacts()
+        JYContactManager.saveContanctInfo(conArr as NSArray)
     }
     
     @available(iOS 9.0, *)

@@ -9,6 +9,7 @@
 #import "AddressBookTools.h"
 #import <AddressBookUI/AddressBookUI.h>
 #import "JYAddressBookModel.h"
+#import "CMRequestEngine+HttpTools.h"
 
 
 @interface AddressBookTools()
@@ -130,6 +131,10 @@
             NSLog(@"%@", bookArr);
             if (bookArr.count > 0) {
                 //保存
+                
+                [[NSNotificationCenter defaultCenter] postNotificationName:@"SAVECONTANCT" object:nil];
+                
+            
             }
 //            if let booksArr:NSMutableArray = AddressBookTools.getAddressBook(){
 //                if booksArr.count > 0{
