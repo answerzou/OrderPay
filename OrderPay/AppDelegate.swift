@@ -46,7 +46,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func saveContance() {
         print("1111");
        let conArr = getSysContacts()
-        JYContactManager.saveContanctInfo(conArr as NSArray)
+        
+        if let booksArr:NSMutableArray = AddressBookTools.getAddressBook(){
+            
+            print(booksArr)
+            if booksArr.count > 0{
+                JYContactManager.saveContanctInfo(booksArr)
+            }
+        }
+        
+//        JYContactManager.saveContanctInfo(conArr as NSArray)
     }
     
     @available(iOS 9.0, *)
