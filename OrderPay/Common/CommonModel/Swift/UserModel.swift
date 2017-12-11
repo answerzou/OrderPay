@@ -85,7 +85,7 @@ class UserModel: BaseModel {
             return JYUserDefault.object(forKey: "companyName") as? String
         }
     }
-    /// ecif
+    /// custCode
     var custCode:String? {
         set {
             JYUserDefault.set(newValue, forKey: "custCode")
@@ -116,6 +116,19 @@ class UserModel: BaseModel {
             return JYUserDefault.object(forKey: "nickName") as? String
         }
     }
+    
+    ///城市编码
+    var cityCode:String? {
+        set {
+            JYUserDefault.set(newValue, forKey: "cityCode")
+            JYUserDefault.synchronize()
+        }
+        get {
+            return JYUserDefault.object(forKey: "cityCode") as? String
+        }
+    }
+    
+    
     
     /// VIP开始时间
     var strVipBeginTime:String? {
@@ -155,6 +168,7 @@ class UserModel: BaseModel {
         nickName = JYUserDefault.object(forKey: "nickName") as? String ?? ""
         strVipBeginTime = JYUserDefault.object(forKey: "strVipBeginTime") as? String ?? ""
         strVipEndTime = JYUserDefault.object(forKey: "strVipEndTime") as? String ?? ""
+        cityCode = JYUserDefault.object(forKey: "cityCode") as? String ?? ""
     }
     
     deinit {
@@ -178,6 +192,7 @@ extension UserModel {
         nickName = "\(dict["nickName"] ?? "")"
         strVipBeginTime = "\(dict["strVipBeginTime"] ?? "")"
         strVipEndTime = "\(dict["strVipEndTime"] ?? "")"
+        cityCode = "\(dict["strVipEndTime"] ?? "")"
     }
  
     /// 清除用户信息
@@ -194,6 +209,6 @@ extension UserModel {
         nickName = nil
         strVipBeginTime = nil
         strVipEndTime = nil
-       
+       cityCode = nil
     }
 }

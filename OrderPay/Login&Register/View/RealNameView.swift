@@ -13,7 +13,6 @@ typealias SkipBtnBlock = ()->()
 let RealNameTF = 0
 let IdCardTF = 1
 let CompanyNameTF = 2
-let CityTF = 666
 
 class RealNameView: UIView {
     @IBOutlet weak var contenView: UIView!
@@ -32,7 +31,7 @@ class RealNameView: UIView {
     var registerBtnBlock: RegisterBtnBlock?
     var skipBtnBlock: SkipBtnBlock?
     
-    ///真实Str
+    ///真实姓名Str
     var realNameStr: String = ""
     ///身份证Str
     var idCardStr: String = ""
@@ -43,6 +42,7 @@ class RealNameView: UIView {
     
     
     @IBAction func cityBtnAction(_ sender: UIButton) {
+        self.endEditing(true)
         
         JYCitySelectManager.sharedInstance().show { (cityName) in
             
@@ -51,7 +51,7 @@ class RealNameView: UIView {
             let provinceCode = UserDefaults.standard.object(forKey: "LiveProvinceCode")
             let cityCode = UserDefaults.standard.object(forKey: "LiveCityCode")
             let countyCode = UserDefaults.standard.object(forKey: "LiveCountyCode")
-            
+            print(cityName)
             if (cityName?.isEmpty)! {
                 
             }else {
@@ -59,6 +59,12 @@ class RealNameView: UIView {
                 self.cityStr = cityName!
                 self.cityBtn.setTitle(cityName, for: .normal)
                 self.cityBtn.setTitleColor(.black, for: .normal)
+                print("\(self.realNameStr)\(self.idCardStr)\(self.companyNameStr)\(self.cityStr)")
+                if self.realNameStr.isEmpty || self.idCardStr.isEmpty || self.companyNameStr.isEmpty || self.cityStr.isEmpty{
+                    self.registerBtn.isEnabled = false
+                }else {
+                    self.registerBtn.isEnabled = true
+                }
             }
             
         }
@@ -66,6 +72,10 @@ class RealNameView: UIView {
     
     //实名认证按钮
     @IBAction func registerBtnAction(_ sender: UIButton) {
+        
+        self.registerBtn.isEnabled = false
+        self.registerBtn.setTitle("", for: .normal)
+        self.indicatorView.startAnimating()
         
         if self.registerBtnBlock != nil {
             self.registerBtnBlock!()
@@ -95,9 +105,8 @@ extension RealNameView: UITextFieldDelegate {
             self.realNameStr = newString ?? ""
         case IdCardTF:
             self.idCardStr = newString ?? ""
-        case CompanyNameTF:
+        default:
             self.companyNameStr = newString ?? ""
-        default: break
             
         }
         

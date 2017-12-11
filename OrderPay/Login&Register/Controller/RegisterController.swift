@@ -30,7 +30,7 @@ class RegisterController: UIViewController {
         let tableView = UITableView(frame: CGRect(x: 0, y: 0, width: ScreenWidth, height: ScreenHeight), style: .grouped)
         tableView.separatorStyle = .none
         tableView.isScrollEnabled = false;
-        tableView.tableHeaderView = self.registerHeaderView
+        tableView.tableHeaderView = self.realNameView
         return tableView
     }()
 
@@ -62,9 +62,22 @@ class RegisterController: UIViewController {
             })
         }
         
-//        self.realNameView.registerBtnBlock = {[unowned self] in
-//            
-//        }
+        self.realNameView.registerBtnBlock = {[unowned self] in
+            
+            let pid = UIDevice.current.identifierForVendor?.uuidString ?? ""
+            let custCode = UserModel.shared.custCode
+            let mobile = UserModel.shared.mobile
+            let name = UserModel.shared.name
+            let cardNo = self.realNameView.idCardTextField.text
+            let cityCode = UserDefaults.standard.object(forKey: "LiveCityCode")
+            let companyName = self.realNameView.companyNameTextField.text
+            let params = ["pid": pid, "custCode": custCode, "mobile": mobile, "name": name, "cardNo": cardNo, "cityCode": cityCode, "companyName": companyName]
+            print(params)
+            RealNameViewModel.requestData(headerView: self.realNameView, params: params as NSDictionary, returnBlock: {
+                //实名认证成功
+                self.navigationController?.popToRootViewController(animated: true)
+            })
+        }
         
         self.realNameView.skipBtnBlock = {[unowned self] in
             self.navigationController?.popToRootViewController(animated: true)

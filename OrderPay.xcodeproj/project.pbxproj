@@ -115,6 +115,7 @@
 		8041CCF21F79666200ACD236 /* OrderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8041CCF01F79666200ACD236 /* OrderCell.xib */; };
 		8041CCF31F7966BF00ACD236 /* OrderCell.xib in Sources */ = {isa = PBXBuildFile; fileRef = 8041CCF01F79666200ACD236 /* OrderCell.xib */; };
 		8041CCFB1F7969E000ACD236 /* OrderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8041CCFA1F7969E000ACD236 /* OrderCell.swift */; };
+		80AC47DD1FDEC5C30019D8E3 /* RealNameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AC47DC1FDEC5C20019D8E3 /* RealNameViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -274,6 +275,7 @@
 		8041CCED1F79665300ACD236 /* OrderController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderController.swift; sourceTree = "<group>"; };
 		8041CCF01F79666200ACD236 /* OrderCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrderCell.xib; sourceTree = "<group>"; };
 		8041CCFA1F7969E000ACD236 /* OrderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderCell.swift; sourceTree = "<group>"; };
+		80AC47DC1FDEC5C20019D8E3 /* RealNameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealNameViewModel.swift; sourceTree = "<group>"; };
 		83D36AC9204F9F94023DA295 /* Pods-OrderPay.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OrderPay.release.xcconfig"; path = "Pods/Target Support Files/Pods-OrderPay/Pods-OrderPay.release.xcconfig"; sourceTree = "<group>"; };
 		BCB9D4A84D8DEB86F69F63F3 /* Pods_OrderPay.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OrderPay.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -436,6 +438,7 @@
 				04140B111FCC1D8B000C97F7 /* RegisterViewModel.swift */,
 				04140B121FCC1D8B000C97F7 /* SmCodeViewModel.swift */,
 				047DD16B1FCD808500A27E45 /* LoginViewModel.swift */,
+				80AC47DC1FDEC5C20019D8E3 /* RealNameViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -1103,6 +1106,7 @@
 				803E18D31F8F8D0300745D65 /* NSData+Base64.m in Sources */,
 				803E19331F9A231600745D65 /* CMResponseTip.m in Sources */,
 				803E1A2D1FAC193200745D65 /* MineView.swift in Sources */,
+				80AC47DD1FDEC5C30019D8E3 /* RealNameViewModel.swift in Sources */,
 				803E19031F97566E00745D65 /* PinyinHelper.m in Sources */,
 				803E1A4A1FADFF8E00745D65 /* SettingController.swift in Sources */,
 				04140B131FCC1D8B000C97F7 /* RegisterViewModel.swift in Sources */,
