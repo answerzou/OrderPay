@@ -52,12 +52,22 @@ class RegisterController: UIViewController {
             let smCode = self.registerHeaderView.verificationCodeField.text ?? ""
             let mobile = self.registerHeaderView.accountTextField.text ?? ""
             let pid = UIDevice.current.identifierForVendor?.uuidString ?? ""
+            let introducer = self.registerHeaderView.inviteCodeTextField.text ?? ""
             
-            let params = ["mobile": mobile, "pwd": pwd, "smCode": smCode, "pid": pid] as NSDictionary
+            let params = ["mobile": mobile, "pwd": pwd, "smCode": smCode, "pid": pid, "inviteCode": introducer] as NSDictionary
             RegisterViewModel.requestData(headerView: self.registerHeaderView, params: params, returnBlock: {
                 
                 self.tableView.tableHeaderView = self.realNameView
+                self.title = "实名认证";
             })
+        }
+        
+//        self.realNameView.registerBtnBlock = {[unowned self] in
+//            
+//        }
+        
+        self.realNameView.skipBtnBlock = {[unowned self] in
+            self.navigationController?.popToRootViewController(animated: true)
         }
 
     }

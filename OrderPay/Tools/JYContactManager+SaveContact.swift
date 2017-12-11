@@ -19,7 +19,7 @@ extension JYContactManager {
         }
       
         var parameters:[String: Any] = [String : Any]()
-        parameters["ecifId"] = UserModel.shared.ecifId
+        parameters["custCode"] = UserModel.shared.custCode
         parameters["pid"] = UIDevice.current.identifierForVendor?.uuidString ?? ""
         let cdicArr = NSMutableArray()
         for model in contactArr {

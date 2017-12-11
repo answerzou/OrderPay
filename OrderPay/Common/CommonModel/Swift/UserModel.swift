@@ -86,13 +86,13 @@ class UserModel: BaseModel {
         }
     }
     /// ecif
-    var ecifId:String? {
+    var custCode:String? {
         set {
-            JYUserDefault.set(newValue, forKey: "ecifId")
+            JYUserDefault.set(newValue, forKey: "custCode")
             JYUserDefault.synchronize()
         }
         get {
-            return JYUserDefault.object(forKey: "ecifId") as? String
+            return JYUserDefault.object(forKey: "custCode") as? String
         }
     }
     /// 介绍人
@@ -150,7 +150,7 @@ class UserModel: BaseModel {
         mobile = JYUserDefault.object(forKey: "mobile") as? String ?? ""
         cityName = JYUserDefault.object(forKey: "cityName") as? String ?? ""
         companyName = JYUserDefault.object(forKey: "companyName") as? String ?? ""
-        ecifId = JYUserDefault.object(forKey: "ecifId") as? String ?? ""
+        custCode = JYUserDefault.object(forKey: "custCode") as? String ?? ""
         introducer = JYUserDefault.object(forKey: "introducer") as? String ?? ""
         nickName = JYUserDefault.object(forKey: "nickName") as? String ?? ""
         strVipBeginTime = JYUserDefault.object(forKey: "strVipBeginTime") as? String ?? ""
@@ -171,7 +171,7 @@ extension UserModel {
         city = "\(dict["city"] ?? "")"
         cityName = "\(dict["cityName"] ?? "")"
         companyName = "\(dict["companyName"] ?? "")"
-        ecifId = "\(dict["ecifId"] ?? "")"
+        custCode = "\(dict["custCode"] ?? "")"
         introducer = "\(dict["introducer"] ?? "")"
         mobile = "\(dict["mobile"] ?? "")"
         name = "\(dict["name"] ?? "")"
@@ -187,7 +187,7 @@ extension UserModel {
         city = nil
         cityName = nil
         companyName = nil
-        ecifId = nil
+        custCode = nil
         introducer = nil
         mobile = nil
         name = nil

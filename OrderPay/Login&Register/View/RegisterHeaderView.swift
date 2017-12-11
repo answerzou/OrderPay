@@ -16,6 +16,7 @@ let AccountTF = 0
 let PasswordTF = 1
 let ConfirmPasswordTF = 2
 let SMCodeTF = 3
+let InveteCodeTF = 4
 
 class RegisterHeaderView: UIView {
 
@@ -29,6 +30,7 @@ class RegisterHeaderView: UIView {
     @IBOutlet weak var confirPasswordBottomLine: UIView!
     @IBOutlet weak var confirPasswordTextField: UITextField!
     
+    @IBOutlet weak var inviteCodeTextField: UITextField!
     ///是否是找回密码
     var forgetPassword: Bool = false
     
@@ -40,6 +42,8 @@ class RegisterHeaderView: UIView {
     var confirmPasswordStr: String = ""
     ///验证码Str
     var smCodeStr: String = ""
+    ///邀请码Str
+    var inviteCodeStr: String = ""
     
     var nextStepBlock: NextStepClick?
     
@@ -102,7 +106,7 @@ class RegisterHeaderView: UIView {
                 self.startTimer()
             }
         }else {
-            let params = ["mobile": mobile, "type": type_forgetPsd, "pid": pid] as NSDictionary
+            let params = ["mobile": mobile, "type": type_register, "pid": pid] as NSDictionary
             SmCodeViewModel.requestData(params: params) { [unowned self] in
                 self.startTimer()
             }
@@ -144,11 +148,13 @@ extension RegisterHeaderView: UITextFieldDelegate {
             self.passwordStr = newString ?? ""
         case ConfirmPasswordTF:
             self.confirmPasswordStr = newString ?? ""
+        case InveteCodeTF:
+            self.inviteCodeStr = newString ?? ""
         default:
             self.smCodeStr = newString ?? ""
         }
         
-        if self.accountStr.isEmpty || self.passwordStr.isEmpty || self.confirmPasswordStr.isEmpty || self.smCodeStr.isEmpty {
+        if self.accountStr.isEmpty || self.passwordStr.isEmpty || self.confirmPasswordStr.isEmpty || self.smCodeStr.isEmpty{
             self.registerBtn.isEnabled = false
         }else {
             self.registerBtn.isEnabled = true
