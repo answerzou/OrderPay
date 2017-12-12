@@ -22,6 +22,9 @@
 		0468EA601FBEB8AB005E9BAA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0468EA5B1FBEB8AB005E9BAA /* LaunchScreen.storyboard */; };
 		0468EA611FBEB8AB005E9BAA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0468EA5D1FBEB8AB005E9BAA /* Main.storyboard */; };
 		0468EA621FBEB8AB005E9BAA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0468EA5F1FBEB8AB005E9BAA /* Assets.xcassets */; };
+		047B85221FDFBEBA00B51FA8 /* RealNameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047B85211FDFBEBA00B51FA8 /* RealNameController.swift */; };
+		047B85241FDFC4CA00B51FA8 /* OrderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047B85231FDFC4CA00B51FA8 /* OrderModel.swift */; };
+		047B85261FDFC64B00B51FA8 /* OrderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047B85251FDFC64B00B51FA8 /* OrderViewModel.swift */; };
 		047DD16A1FCD3D3A00A27E45 /* VisibleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047DD1691FCD3D3A00A27E45 /* VisibleController.swift */; };
 		047DD16C1FCD808500A27E45 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047DD16B1FCD808500A27E45 /* LoginViewModel.swift */; };
 		047DD17E1FCE9EBF00A27E45 /* BGFMDB.m in Sources */ = {isa = PBXBuildFile; fileRef = 047DD1701FCE9EBF00A27E45 /* BGFMDB.m */; };
@@ -139,6 +142,9 @@
 		0468EA5C1FBEB8AB005E9BAA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0468EA5E1FBEB8AB005E9BAA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Main.storyboard; sourceTree = "<group>"; };
 		0468EA5F1FBEB8AB005E9BAA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		047B85211FDFBEBA00B51FA8 /* RealNameController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealNameController.swift; sourceTree = "<group>"; };
+		047B85231FDFC4CA00B51FA8 /* OrderModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderModel.swift; sourceTree = "<group>"; };
+		047B85251FDFC64B00B51FA8 /* OrderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewModel.swift; sourceTree = "<group>"; };
 		047DD1691FCD3D3A00A27E45 /* VisibleController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisibleController.swift; sourceTree = "<group>"; };
 		047DD16B1FCD808500A27E45 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		047DD16F1FCE9EBF00A27E45 /* BGFMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGFMDB.h; sourceTree = "<group>"; };
@@ -760,6 +766,7 @@
 				803E1A491FADFF8E00745D65 /* SettingController.swift */,
 				803E1A4F1FAE0ADB00745D65 /* NameAuthenticationController.swift */,
 				803408821FBED4F3003DC30C /* MineController.swift */,
+				047B85211FDFBEBA00B51FA8 /* RealNameController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -870,6 +877,7 @@
 		8041CCEA1F79664700ACD236 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				047B85231FDFC4CA00B51FA8 /* OrderModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -888,6 +896,7 @@
 		8041CCEC1F79664700ACD236 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				047B85251FDFC64B00B51FA8 /* OrderViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -1035,6 +1044,7 @@
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/MJExtension/MJExtension.framework",
 				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
 				"${BUILT_PRODUCTS_DIR}/Reachability/Reachability.framework",
 				"${BUILT_PRODUCTS_DIR}/SDCycleScrollView/SDCycleScrollView.framework",
@@ -1053,6 +1063,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManager.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJExtension.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDCycleScrollView.framework",
@@ -1155,14 +1166,17 @@
 				047DD16C1FCD808500A27E45 /* LoginViewModel.swift in Sources */,
 				802402491FAEE03300A6F4C6 /* LoginHeaderView.swift in Sources */,
 				04140B101FCC1CD0000C97F7 /* CMColor.m in Sources */,
+				047B85241FDFC4CA00B51FA8 /* OrderModel.swift in Sources */,
 				8041CCCE1F78ADC300ACD236 /* AppMacro.swift in Sources */,
 				8041CCAF1F78AB6F00ACD236 /* BaseNavigationController.swift in Sources */,
 				802402621FAEED4800A6F4C6 /* UserModel.swift in Sources */,
+				047B85221FDFBEBA00B51FA8 /* RealNameController.swift in Sources */,
 				803E18D41F8F8D0300745D65 /* NSData+CommonCrypto.m in Sources */,
 				8041CC891F78A8CC00ACD236 /* AppDelegate.swift in Sources */,
 				803E18FB1F97566E00745D65 /* CityItem.m in Sources */,
 				803E18D91F962CF300745D65 /* OrderDetailView.swift in Sources */,
 				047DD1841FCE9EC000A27E45 /* JYDBEngineManage.m in Sources */,
+				047B85261FDFC64B00B51FA8 /* OrderViewModel.swift in Sources */,
 				803408831FBED4F3003DC30C /* MineController.swift in Sources */,
 				8041CCB01F78AB6F00ACD236 /* BaseViewController.swift in Sources */,
 			);
@@ -1293,7 +1307,7 @@
 				INFOPLIST_FILE = OrderPay/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.buyiFinancial.OrderPay;
+				PRODUCT_BUNDLE_IDENTIFIER = com.byFinancial.OrderPay;
 				PRODUCT_MODULE_NAME = "$(PRODUCT_NAME:c99extidentifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/OrderPay/Tools/OrderPay-BridgeHeader.h";
@@ -1315,7 +1329,7 @@
 				INFOPLIST_FILE = OrderPay/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.buyiFinancial.OrderPay;
+				PRODUCT_BUNDLE_IDENTIFIER = com.byFinancial.OrderPay;
 				PRODUCT_MODULE_NAME = "$(PRODUCT_NAME:c99extidentifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/OrderPay/Tools/OrderPay-BridgeHeader.h";

@@ -9,7 +9,11 @@
 import UIKit
 
 class NameAuthenticationView: UIView {
-
+    
+    @IBOutlet weak var nameLabel: UILabel!
+    
+    @IBOutlet weak var idCardLabel: UILabel!
+    
     @IBOutlet weak var contentView: UIView!
     
     override func draw(_ rect: CGRect) {

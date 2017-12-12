@@ -30,7 +30,7 @@ class RegisterController: UIViewController {
         let tableView = UITableView(frame: CGRect(x: 0, y: 0, width: ScreenWidth, height: ScreenHeight), style: .grouped)
         tableView.separatorStyle = .none
         tableView.isScrollEnabled = false;
-        tableView.tableHeaderView = self.realNameView
+        tableView.tableHeaderView = self.registerHeaderView
         return tableView
     }()
 
@@ -67,9 +67,10 @@ class RegisterController: UIViewController {
             let pid = UIDevice.current.identifierForVendor?.uuidString ?? ""
             let custCode = UserModel.shared.custCode
             let mobile = UserModel.shared.mobile
-            let name = UserModel.shared.name
+            let name = self.realNameView.realNameTextField.text
             let cardNo = self.realNameView.idCardTextField.text
             let cityCode = UserDefaults.standard.object(forKey: "LiveCityCode")
+            UserModel.shared.cityCode = cityCode as? String ?? ""
             let companyName = self.realNameView.companyNameTextField.text
             let params = ["pid": pid, "custCode": custCode, "mobile": mobile, "name": name, "cardNo": cardNo, "cityCode": cityCode, "companyName": companyName]
             print(params)

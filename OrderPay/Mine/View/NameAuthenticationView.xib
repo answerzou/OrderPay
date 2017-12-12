@@ -86,11 +86,13 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="contentView" destination="EJB-gJ-SeT" id="eyk-E7-Rrc"/>
+                <outlet property="idCardLabel" destination="cQW-vV-kVQ" id="gvR-zb-sbr"/>
+                <outlet property="nameLabel" destination="dDK-tw-dZe" id="oWO-1z-Yg4"/>
             </connections>
             <point key="canvasLocation" x="33.5" y="78"/>
         </view>
     </objects>
     <resources>
-        <image name="authentication" width="230" height="230"/>
+        <image name="authentication" width="200" height="200"/>
     </resources>
 </document>

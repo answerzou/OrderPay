@@ -12,12 +12,12 @@ import SnapKit
 let APP_SERVER_API = "http://192.168.32.174:8080"
 
 //--------用户登录及相关接口--------//
-//登录
+///登录
 let API_POST_LOGIN         = APP_SERVER_API+"/xdyWeiXinServer/api/APPBizRest/appLogin/v1/"
 
-//注册
+///注册
 let API_POST_REGISTER         = APP_SERVER_API+"/xdyWeiXinServer/api/APPBizRest/appRegister/v1/"
-//验证码
+///验证码
 let API_POST_VERIFICATION     = APP_SERVER_API+"/xdyWeiXinServer/api/APPBizRest/sendSMCode/v1/"
 
 //---------保存用户通讯录----------//
@@ -25,6 +25,9 @@ let API_POST_SAVEADDRESSBOOKS     = APP_SERVER_API+"/xdyWeiXinServer/api/APPBizR
 
 //---------保存基本信息----------//
 let API_POST_APPAUTH     = APP_SERVER_API+"/xdyWeiXinServer/api/APPBizRest/appAuth/v1/"
+
+///我的订单
+let API_POST_MYGETLIST     = APP_SERVER_API+"/xdyWeiXinServer/api/APPBizRest/queryMyGetList/v1/"
 
 
 

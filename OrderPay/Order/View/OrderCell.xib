@@ -27,7 +27,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Udr-bz-1Yr">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Udr-bz-1Yr">
                                 <rect key="frame" x="76" y="10" width="49" height="22"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="2万" image="btn_bg_money">
@@ -64,7 +64,7 @@
                             <constraint firstItem="RgP-eh-FKZ" firstAttribute="leading" secondItem="Lsf-4V-XLt" secondAttribute="leading" constant="20" id="6nT-yG-0Lg"/>
                             <constraint firstItem="OoW-Mz-mo7" firstAttribute="centerY" secondItem="UGz-Pq-lZU" secondAttribute="centerY" id="85W-NA-Nny"/>
                             <constraint firstItem="RgP-eh-FKZ" firstAttribute="top" secondItem="Lsf-4V-XLt" secondAttribute="top" constant="12" id="AMi-Hy-uRQ"/>
-                            <constraint firstItem="OoW-Mz-mo7" firstAttribute="leading" secondItem="Udr-bz-1Yr" secondAttribute="leading" id="AmO-17-ews"/>
+                            <constraint firstItem="OoW-Mz-mo7" firstAttribute="leading" secondItem="UGz-Pq-lZU" secondAttribute="trailing" constant="5.5" id="BDB-q7-dxU"/>
                             <constraint firstAttribute="trailing" secondItem="Lld-2s-FIt" secondAttribute="trailing" constant="20" id="BJD-Pf-K1B"/>
                             <constraint firstItem="GEr-Gz-Pt5" firstAttribute="top" secondItem="Lld-2s-FIt" secondAttribute="bottom" constant="15" id="DYU-9S-sNi"/>
                             <constraint firstItem="Lld-2s-FIt" firstAttribute="centerY" secondItem="Udr-bz-1Yr" secondAttribute="centerY" id="Lht-EV-E1a"/>

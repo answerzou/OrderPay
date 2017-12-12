@@ -24,5 +24,6 @@ pod 'SDWebImage', '~> 3.8.1'
 pod 'SnapKit', '~> 3.2.0'
 pod 'SwiftyJSON', '~> 3.1.4'
 pod 'FMDB', '~> 2.6.2'
+pod 'MJExtension'
 
 end

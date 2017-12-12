@@ -14,6 +14,9 @@ class OrderController: BaseController {
     
     let reuseIdentifier = "OrderCell"
     
+    //页码
+    let page: NSInteger = 1
+    
     // 顶部刷新
     var header = MJRefreshNormalHeader()
     
@@ -34,6 +37,12 @@ class OrderController: BaseController {
         return tableView
     }()
     
+    fileprivate lazy var dataArray: NSMutableArray = {
+        let dataArr = NSMutableArray.init(capacity: 0)
+        
+        return dataArr
+    }()
+    
         
     fileprivate lazy var rightButton: UIButton = {
         
@@ -47,10 +56,17 @@ class OrderController: BaseController {
         return btn
     }()
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.tableView.mj_header.beginRefreshing()
+    }
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "派单"
+//        UserModel.shared.custCode = "20171212173233101830"
 //        self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: self.rightButton)
         self.view.addSubview(self.topView)
         self.view.addSubview(self.tableView)
@@ -58,8 +74,9 @@ class OrderController: BaseController {
         
         self.header = MJRefreshNormalHeader(refreshingBlock: {
             print("下拉刷新.")
-            //结束刷新
-            self.tableView.mj_header.endRefreshing()
+            
+            self.requestData()
+            
         })
         self.tableView.mj_header = self.header
         self.header.lastUpdatedTimeLabel.isHidden = true
@@ -79,12 +96,14 @@ class OrderController: BaseController {
 
 extension OrderController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return self.dataArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as! OrderCell
+        let model = self.dataArray[indexPath.row]
+        cell.model = model as! OrderModel
         
         return cell
     }
@@ -99,7 +118,14 @@ extension OrderController: UITableViewDelegate, UITableViewDataSource {
 //        self.navigationController?.pushViewController(detail, animated: true)
         
         tableView.deselectRow(at: indexPath, animated: true)
-        print(indexPath.row)
+        
+        let model = self.dataArray[indexPath.row] as! OrderModel
+        
+        //[[UIApplication sharedApplication] openURL:[NSURL URLWithString:ServiceTel]];
+        let mobileStr: String = "tel:\(model.mobile ?? "")"
+        if mobileStr.count > 0 {
+            UIApplication.shared.openURL(URL.init(string: mobileStr)!)
+        }
     }
 
 }
@@ -127,6 +153,30 @@ extension OrderController: CityListViewDelegate {
     
     }
     
+}
+
+extension OrderController {
+    func requestData() {
+        let pid = UserModel.shared.pid ?? ""
+        let mobile = UserModel.shared.mobile ?? ""
+        let curPage = self.page
+        let custCode = UserModel.shared.custCode ?? ""
+        let params = ["pid": pid, "mobile": mobile, "curPage": curPage, "custCode": custCode] as [String : Any]
+        print(params)
+        OrderViewModel.requestData(params: params as NSDictionary) { (resultModelArray, requestStatu) in
+            print(resultModelArray)
+            print(requestStatu)
+            if self.page == 1 {
+                self.dataArray .removeAllObjects()
+                self.dataArray.addObjects(from: resultModelArray as! [Any])
+            }else {
+                self.dataArray.addObjects(from: resultModelArray as! [Any])
+            }
+            self.tableView.reloadData()
+            //结束刷新
+            self.tableView.mj_header.endRefreshing()
+        }
+    }
 }
 
 

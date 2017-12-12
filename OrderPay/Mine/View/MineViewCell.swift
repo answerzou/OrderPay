@@ -15,13 +15,13 @@ class MineViewCell: UITableViewCell {
     @IBOutlet weak var descLabel: UILabel!
     
     fileprivate var cellIconDic: Dictionary<String, NSArray> {
-        let dic = ["0": ["tradingRecord_bg", "personalInfo_bg"], "1": ["feedback", "about"]]
+        let dic = ["0": ["tradingRecord_bg", "personalInfo_bg"], "1": ["about"]]
         
         return dic as Dictionary
     }
     
     fileprivate var cellTitleDic: Dictionary<String, NSArray> {
-        let dic = ["0": ["我的派单", "个人信息"], "1": ["问题反馈", "关于我们"]]
+        let dic = ["0": ["我的派单", "个人信息"], "1": ["关于我们"]]
         
         return dic as Dictionary
     }
@@ -50,7 +50,7 @@ class MineViewCell: UITableViewCell {
         self.iconImageView.image = UIImage(named: imageName)
         self.descLabel.text = title
         
-        if indexPath.row == 1 {
+        if indexPath.row == 1 || indexPath.section == 1{
             self.seperatorLine.isHidden = true
         }else {
             self.seperatorLine.isHidden = false

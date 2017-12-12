@@ -13,6 +13,8 @@ class NameAuthenticationController: UIViewController {
     fileprivate lazy var nameAuthenticationView: NameAuthenticationView = {
         
         let view = Bundle.main.loadNibNamed("NameAuthenticationView", owner: nil, options: nil)?.first as! NameAuthenticationView
+        view.nameLabel.text = JYUtilities.replaceAsterisk(UserModel.shared.name, start: 0, length: UserModel.shared.name!.count - 1)
+        view.idCardLabel.text = JYUtilities.replaceAsterisk(UserModel.shared.cardNo, start: 3, length: 11)
         return view
     }()
     

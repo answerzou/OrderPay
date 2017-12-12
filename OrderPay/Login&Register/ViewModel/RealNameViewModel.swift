@@ -15,9 +15,12 @@ class RealNameViewModel: NSObject {
             if (tip?.success)! {
                 
                 //let params = ["pid": pid, "custCode": custCode, "mobile": mobile, "name": name, "cardNo": cardNo, "cityCode": cityCode, "companyName": companyName]
+                
+                //用户信息存本地
                 UserModel.shared.cardNo = params["cardNo"] as? String
                 UserModel.shared.cityCode = params["cityCode"] as? String
                 UserModel.shared.companyName = params["companyName"] as? String
+                UserModel.shared.name = params["name"] as? String
                 SVProgressHUD.dismiss()
                 returnBlock()
                 

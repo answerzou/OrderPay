@@ -23,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         UIApplication.shared.statusBarStyle = .lightContent
-        
+         UserModel.shared.pid = UIDevice.current.identifierForVendor?.uuidString ?? ""
         SVProgressHUD.setMinimumDismissTimeInterval(1)
         NotificationCenter.default.addObserver(self, selector: #selector(saveContance), name: NSNotification.Name(rawValue: "SAVECONTANCT"), object: nil)
         

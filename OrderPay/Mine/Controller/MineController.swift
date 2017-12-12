@@ -154,9 +154,17 @@ extension MineController: UITableViewDelegate, UITableViewDataSource {
             if indexPath.row == 0 {
                 self.tabBarController?.selectedIndex = 1
             }else {
-                let userInfo = NameAuthenticationController()
                 
-                self.navigationController?.pushViewController(userInfo, animated: true)
+                let name = UserModel.shared.name ?? ""
+                
+                if name.isEmpty {
+                    let realName = RealNameController()
+                    self.navigationController?.pushViewController(realName, animated: true)
+                }else {
+                    
+                    let userInfo = NameAuthenticationController()
+                    self.navigationController?.pushViewController(userInfo, animated: true)
+                }
             }
         }
         tableView.deselectRow(at: indexPath, animated: true)
@@ -167,7 +175,11 @@ extension MineController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return RowNum
+        if section == 0 {
+            return RowNum
+        }else {
+            return 1
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -190,10 +202,6 @@ extension MineController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return HeightForHeader
-    }
-    
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        
     }
     
 }

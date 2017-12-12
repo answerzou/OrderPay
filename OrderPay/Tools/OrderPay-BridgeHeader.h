@@ -44,5 +44,5 @@
 #import "FMDB.h"
 #import "JYDBEngineManage.h"
 #import "CMFile.h"
-
+#import "MJExtension.h"
 #endif /* OrderPay_BridgeHeader_h */

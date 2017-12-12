@@ -48,10 +48,6 @@ class RealNameView: UIView {
             
             print(cityName ?? "")
             
-            let provinceCode = UserDefaults.standard.object(forKey: "LiveProvinceCode")
-            let cityCode = UserDefaults.standard.object(forKey: "LiveCityCode")
-            let countyCode = UserDefaults.standard.object(forKey: "LiveCountyCode")
-            print(cityName)
             if (cityName?.isEmpty)! {
                 
             }else {

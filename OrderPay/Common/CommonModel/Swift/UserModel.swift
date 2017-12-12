@@ -152,6 +152,16 @@ class UserModel: BaseModel {
         }
     }
    
+    ///pid
+    var pid: String? {
+        set {
+            JYUserDefault.set(newValue, forKey: "pid")
+            JYUserDefault.synchronize()
+        }
+        get {
+            return JYUserDefault.object(forKey: "pid") as? String
+        }
+    }
     
     // MARK:- 系统函数
     private override init() {
@@ -169,6 +179,7 @@ class UserModel: BaseModel {
         strVipBeginTime = JYUserDefault.object(forKey: "strVipBeginTime") as? String ?? ""
         strVipEndTime = JYUserDefault.object(forKey: "strVipEndTime") as? String ?? ""
         cityCode = JYUserDefault.object(forKey: "cityCode") as? String ?? ""
+        pid = JYUserDefault.object(forKey: "pid") as? String ?? ""
     }
     
     deinit {
@@ -185,14 +196,12 @@ extension UserModel {
         city = "\(dict["city"] ?? "")"
         cityName = "\(dict["cityName"] ?? "")"
         companyName = "\(dict["companyName"] ?? "")"
-        custCode = "\(dict["custCode"] ?? "")"
         introducer = "\(dict["introducer"] ?? "")"
         mobile = "\(dict["mobile"] ?? "")"
         name = "\(dict["name"] ?? "")"
         nickName = "\(dict["nickName"] ?? "")"
         strVipBeginTime = "\(dict["strVipBeginTime"] ?? "")"
         strVipEndTime = "\(dict["strVipEndTime"] ?? "")"
-        cityCode = "\(dict["strVipEndTime"] ?? "")"
     }
  
     /// 清除用户信息
@@ -209,6 +218,7 @@ extension UserModel {
         nickName = nil
         strVipBeginTime = nil
         strVipEndTime = nil
-       cityCode = nil
+        cityCode = nil
+        pid = nil
     }
 }

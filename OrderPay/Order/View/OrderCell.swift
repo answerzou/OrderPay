@@ -28,6 +28,19 @@ class OrderCell: UITableViewCell {
     
     @IBOutlet weak var timeLocationBottomConstraint: NSLayoutConstraint!
     
+    var model: OrderModel {
+        set {
+            self.userNameLabel.text = newValue.name
+            self.timeLocationLabel.text = newValue.createTime
+            self.mobileLabel.text = newValue.mobile
+        }
+        
+        get {
+            return self.model
+        }
+        
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         

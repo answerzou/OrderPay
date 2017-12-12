@@ -70,7 +70,7 @@ typedef NS_ENUM(NSInteger, JYRequestType){
     JYRequestTypeMyLoanHistory,         //我的历史记录
     JYRequestTypeMyAccountInfo,         //我的账户余额
     JYRequestTypeAccountInfo,              //查询用户可用余额
-    
+    JYRequestTypeMyGetList,              //我的订单
     
 };
 //type for request flag
