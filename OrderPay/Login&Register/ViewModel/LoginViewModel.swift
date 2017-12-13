@@ -15,7 +15,6 @@ class LoginViewModel: NSObject {
         CMRequestEngine.sharedInstance().post(withUrl: API_POST_LOGIN, parameters: params as! [AnyHashable : Any], type: .requestTypeLogin) { (tip, result) in
             if (tip?.success)! {
                 
-                print("+++\(result)")
                 UserModel.shared.setUserLoginInfo(dict: result as! Dictionary)
                 SVProgressHUD.dismiss()
                 returnBlock()

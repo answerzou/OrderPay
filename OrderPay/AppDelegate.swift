@@ -69,12 +69,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //            self.window?.rootViewController?.present(xxx, animated: true, completion: nil)
             let rootVC = UIApplication.shared.keyWindow?.rootViewController as! MainTabBarController
             rootVC.selectedIndex = 1
+            
+            let nav = rootVC.viewControllers?.first as! BaseNavigationController
+            nav.popToRootViewController(animated: true)
             UIApplication.shared.keyWindow?.rootViewController = rootVC
 //
         }else if shortcutItem.type == "roborder" {
             print("我的抢单")
             let rootVC = UIApplication.shared.keyWindow?.rootViewController as! MainTabBarController
             rootVC.selectedIndex = 0
+            let nav = rootVC.viewControllers?.first as! BaseNavigationController
+            nav.popToRootViewController(animated: true)
             UIApplication.shared.keyWindow?.rootViewController = rootVC
         }
             completionHandler(false)

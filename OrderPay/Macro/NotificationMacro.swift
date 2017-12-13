@@ -9,3 +9,5 @@
 // 推送通知
 let NotificationName_ReceivePush = "NotificationName_ReceivePush"
 let NotificationObject_Sueecess  = "NotificationObject_Sueecess"
+
+let NotificationOrderRequestReload = "NotificationOrderRequestReload"

@@ -9,7 +9,7 @@
 import UIKit
 import SwiftyJSON
 
-typealias OrderViewModelBolck = (NSArray, Bool) ->()
+typealias OrderViewModelBolck = (NSArray, Bool, NSInteger) ->()
 
 class OrderViewModel: NSObject {
     class func requestData(params: NSDictionary, returnBlock: @escaping OrderViewModelBolck) {
@@ -18,22 +18,13 @@ class OrderViewModel: NSObject {
                 SVProgressHUD.dismiss()
                 
                 let resultDic = result as! NSDictionary
-//                let model = OrderModel()
-//                let dataJson = JSON(result)["detailList"].rawValue
-               let modelArray = OrderModel.mj_objectArray(withKeyValuesArray: resultDic["detailList"])
-                print(modelArray)
-                print(result)
-//                let dataDic = 
-//                print(resultDic)
-//                
-                returnBlock(modelArray!, true)
+                let modelArray = OrderModel.mj_objectArray(withKeyValuesArray: resultDic["detailList"])
+                
+                returnBlock(modelArray!, true, resultDic.object(forKey: "totalRows") as! NSInteger)
                 
             }else {
                 
-                returnBlock(NSArray(), false)
-//                headerView.registerBtn.setTitle("确定", for: .normal)
-//                headerView.indicatorView.stopAnimating()
-//                headerView.registerBtn.isEnabled = true
+                returnBlock(NSArray(), false, 0)
                 SVProgressHUD.showError(withStatus: tip?.errorDesc)
             }
         }

@@ -194,6 +194,7 @@ extension UserModel {
         authStatus = "\(dict["authStatus"] ?? "")"
         cardNo = "\(dict["cardNo"] ?? "")"
         city = "\(dict["city"] ?? "")"
+        custCode = "\(dict["custCode"] ?? "")"
         cityName = "\(dict["cityName"] ?? "")"
         companyName = "\(dict["companyName"] ?? "")"
         introducer = "\(dict["introducer"] ?? "")"

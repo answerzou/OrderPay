@@ -9,13 +9,15 @@
 import UIKit
 
 let BackgroundView_Height = CGFloat(75)
+let PageSize = 10
+let PlaceHolderHintViewTag = 999
 
 class OrderController: BaseController {
     
     let reuseIdentifier = "OrderCell"
     
     //页码
-    let page: NSInteger = 1
+    var page: NSInteger = 1
     
     // 顶部刷新
     var header = MJRefreshNormalHeader()
@@ -74,17 +76,20 @@ class OrderController: BaseController {
         
         self.header = MJRefreshNormalHeader(refreshingBlock: {
             print("下拉刷新.")
-            
-            self.requestData()
+            self.page = 1
+            self.requestData(type: self.tableView.mj_header)
             
         })
         self.tableView.mj_header = self.header
-        self.header.lastUpdatedTimeLabel.isHidden = true
-        
         self.tableView.mj_footer = MJRefreshAutoNormalFooter(refreshingBlock: {
             print("上拉刷新")
-            self.tableView.mj_footer.endRefreshing()
+            
+            self.page += 1
+            
+            self.requestData(type: self.tableView.mj_footer)
         })
+        self.tableView.mj_footer.isHidden = true
+        self.header.lastUpdatedTimeLabel.isHidden = true
     }
     
     override func viewWillLayoutSubviews() {
@@ -114,14 +119,10 @@ extension OrderController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-//        let detail = OrderDetailController()
-//        self.navigationController?.pushViewController(detail, animated: true)
-        
         tableView.deselectRow(at: indexPath, animated: true)
         
         let model = self.dataArray[indexPath.row] as! OrderModel
         
-        //[[UIApplication sharedApplication] openURL:[NSURL URLWithString:ServiceTel]];
         let mobileStr: String = "tel:\(model.mobile ?? "")"
         if mobileStr.count > 0 {
             UIApplication.shared.openURL(URL.init(string: mobileStr)!)
@@ -156,26 +157,77 @@ extension OrderController: CityListViewDelegate {
 }
 
 extension OrderController {
-    func requestData() {
+    func requestData(type: MJRefreshComponent) {
         let pid = UserModel.shared.pid ?? ""
         let mobile = UserModel.shared.mobile ?? ""
         let curPage = self.page
+        print(self.page)
         let custCode = UserModel.shared.custCode ?? ""
         let params = ["pid": pid, "mobile": mobile, "curPage": curPage, "custCode": custCode] as [String : Any]
         print(params)
-        OrderViewModel.requestData(params: params as NSDictionary) { (resultModelArray, requestStatu) in
+        OrderViewModel.requestData(params: params as NSDictionary) { [unowned self] (resultModelArray, requestStatu, totalRows) in
             print(resultModelArray)
             print(requestStatu)
-            if self.page == 1 {
-                self.dataArray .removeAllObjects()
-                self.dataArray.addObjects(from: resultModelArray as! [Any])
+            
+            if requestStatu == true {
+                if self.page == 1 {
+                    self.dataArray .removeAllObjects()
+                    self.dataArray.addObjects(from: resultModelArray as! [Any])
+                    
+                }else {
+                    if resultModelArray.count > 0 {
+                        self.dataArray.addObjects(from: resultModelArray as! [Any])
+                    }
+                }
+                
+                //没有数据展示占位图
+                if self.dataArray.count == 0 {
+                    
+                    //保证只有一个占位图放在view上
+                    if (self.view.viewWithTag(PlaceHolderHintViewTag) == nil) {
+                        
+                        CMDefaultInfoViewTool.showNoDataView(self.view, action: {
+                            self.requestData(type: self.tableView.mj_header)
+                            self.tableView.mj_footer.resetNoMoreData()
+                        })
+                        
+                    }
+                    
+                }else {
+                    CMDefaultInfoViewTool.dismiss(from: self.view)
+                    self.tableView.mj_footer.isHidden = false
+                }
+                
+                self.tableView.reloadData()
+                
+                //结束刷新
+                if type.isKind(of: MJRefreshHeader.self) {
+                    
+                    type.endRefreshing()
+                }else {
+                    if self.dataArray.count == totalRows {
+                        self.tableView.mj_footer.endRefreshingWithNoMoreData()
+                    }else {
+                        self.tableView.mj_footer.endRefreshing()
+                    }
+                }
+                
             }else {
-                self.dataArray.addObjects(from: resultModelArray as! [Any])
+                
+                
+                //保证只有一个占位图放在view上
+                if (self.view.viewWithTag(PlaceHolderHintViewTag) == nil) {
+                    
+                    CMDefaultInfoViewTool.showNoNetView(self.view, action: {
+                        self.requestData(type: self.tableView.mj_header)
+                        self.tableView.mj_footer.resetNoMoreData()
+                    })
+                    
+                }
             }
-            self.tableView.reloadData()
-            //结束刷新
-            self.tableView.mj_header.endRefreshing()
+            
         }
+        
     }
 }
 
