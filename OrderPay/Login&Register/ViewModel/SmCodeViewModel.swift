@@ -19,7 +19,7 @@ class SmCodeViewModel: NSObject {
         
         CMRequestEngine.sharedInstance().post(withUrl: API_POST_VERIFICATION, parameters: params as! [AnyHashable : Any], type: .requestTypeGetPhoneMsg) { (tip, result) in
             
-            if (tip?.success)! {
+            if tip?.success == true {
                 
                 SVProgressHUD.dismiss()
                 returnBlock()

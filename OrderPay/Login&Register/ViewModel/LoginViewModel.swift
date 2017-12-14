@@ -13,7 +13,7 @@ class LoginViewModel: NSObject {
     
     class func requestData(headerView: LoginHeaderView, params: NSDictionary, returnBlock: @escaping LoginViewModelBlock) {
         CMRequestEngine.sharedInstance().post(withUrl: API_POST_LOGIN, parameters: params as! [AnyHashable : Any], type: .requestTypeLogin) { (tip, result) in
-            if (tip?.success)! {
+            if tip?.success == true {
                 
                 UserModel.shared.setUserLoginInfo(dict: result as! Dictionary)
                 SVProgressHUD.dismiss()

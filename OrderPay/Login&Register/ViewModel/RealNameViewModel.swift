@@ -12,7 +12,7 @@ typealias RealNameViewModelBolck = () ->()
 class RealNameViewModel: NSObject {
     class func requestData(headerView: RealNameView, params: NSDictionary, returnBlock: @escaping RealNameViewModelBolck) {
         CMRequestEngine.sharedInstance().post(withUrl: API_POST_APPAUTH, parameters: params as! [AnyHashable : Any], type: .requestTypeAppRegister) { (tip, result) in
-            if (tip?.success)! {
+            if tip?.success == true {
                 
                 //let params = ["pid": pid, "custCode": custCode, "mobile": mobile, "name": name, "cardNo": cardNo, "cityCode": cityCode, "companyName": companyName]
                 

@@ -14,7 +14,7 @@ class RegisterViewModel: NSObject {
     
     class func requestData(headerView: RegisterHeaderView, params: NSDictionary, returnBlock: @escaping RegisterViewModelBolck) {
         CMRequestEngine.sharedInstance().post(withUrl: API_POST_REGISTER, parameters: params as! [AnyHashable : Any], type: .requestTypeRegister) { (tip, result) in
-            if (tip?.success)! {
+            if tip?.success == true {
                 SVProgressHUD.dismiss()
                 
                 let resultDic = result as! NSDictionary
