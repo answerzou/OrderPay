@@ -18,13 +18,9 @@ class JYCommonObj : NSObject {
     var addressBook:ABAddressBook?
     
     fileprivate var timer:Timer?
+    var updateURL:String?
 
     static let instance = JYCommonObj() //这个位置使用 static，static修饰的变量会懒加载
-    
-//    fileprivate override init(){
-//        JYAPPLog("create JYCommonObj...");
-//        appUUID = ""
-//    }
     
     
     class func showChangePassword(_ title:String?,content:String?,delegate:AnyObject?) {
@@ -37,6 +33,53 @@ class JYCommonObj : NSObject {
         alertView.addButton(withTitle: "修改密码")
         alertView.cancelButtonIndex=0
         alertView.show()
+    }
+    
+    //MARK:版本验证
+    func appVersionCheck() {
+        let parameters:NSDictionary = ["appVersion":JYAppVerionNum,
+                                       "operatSystem":"ios"]
+
+        CMRequestEngine.sharedInstance().post(withUrl: "API_POST_UPAPPVERSION", parameters:parameters as! [AnyHashable : Any], type: JYRequestType.requestTypeGoUpAPPVersion) { (tip, obj) in
+            if tip?.success == true {
+                let userDic = obj as? NSDictionary
+                if userDic?["forceState"] as? String=="0" {
+                    return
+                }
+                if userDic?["forceState"] as? String=="2" {
+                    appDelegate.logoutApp()
+                }
+                self.updateURL = (userDic?["appURL"] as? String)
+                JYCommonObj.showUpdateVersion(self,type:userDic?["forceState"] as? String, content:userDic?["versionContent"] as? String)
+                JYAPPLog("\(userDic)")
+            }else{
+                JYAPPLog("失败了")
+                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1, execute: {
+                   // self.reAppVersionCheck()
+                })
+            }
+        }
+    }
+    
+    func reAppVersionCheck() {
+        let parameters:NSDictionary = ["appVersion":JYAppVerionNum,
+                                       "operatSystem":"ios"]
+        CMRequestEngine.sharedInstance().post(withUrl: "API_POST_UPAPPVERSION", parameters:parameters as! [AnyHashable : Any], type: JYRequestType.requestTypeGoUpAPPVersion) { (tip, obj) in
+            if tip?.success == true {
+                let userDic = obj as? NSDictionary
+                if userDic?["forceState"] as? String=="0" {
+                    return
+                }
+                if userDic?["forceState"] as? String=="2" {
+                    appDelegate.logoutApp()
+                }
+                self.updateURL = (userDic?["appURL"] as? String)
+                JYCommonObj.showUpdateVersion(self,type:userDic?["forceState"] as? String, content:userDic?["versionContent"] as? String)
+                JYAPPLog("\(userDic)")
+            }else{
+                JYAPPLog("失败了")
+            }
+        }
     }
     
     //MARK: - 保存手机通讯录
@@ -60,18 +103,6 @@ class JYCommonObj : NSObject {
         }
         contactDic["addressBooks"] = cdicArr as AnyObject?
         print(contactDic)
-//        JYNetRequestLogic.requestAppAPI(API_POST_SAVE_CONTACTS, body: contactDic as NSDictionary) { ( dic, error) -> Void in
-//            if((dic) != nil){
-//                let ddd: String = dic!["retCode"]! as! String
-//                if Int(ddd) != 200 {
-////                    SVProgressHUD.showInfoWithStatus(dic!["errorDesc"]! as! String)
-//                }else {
-//                    JYAPPLog("保存手机通讯录")
-//                }
-//            }else{
-//                JYAPPLog("保存手机通讯录失败了")
-//            }
-//        }
     }
     
     //AES加密
@@ -115,6 +146,54 @@ class JYCommonObj : NSObject {
     
     
 }
+ 
+ extension JYCommonObj{
+    class func showUpdateVersion(_ delegate:AnyObject,type:String?,content:String?){
+        let alertView = UIAlertView()
+        alertView.title = "更新"
+        alertView.message = content
+        alertView.addButton(withTitle: "确定")
+        alertView.delegate=delegate;
+        if(type=="2"){
+            alertView.tag = 1
+        }else{
+            alertView.tag = 0
+            alertView.addButton(withTitle: "取消")
+        }
+        alertView.show()
+    }
+    
+ }
+ 
+ extension JYCommonObj {
+    func alertView(_ alertView:UIAlertView, clickedButtonAtIndex buttonIndex: Int){
+        if(alertView.tag==0){
+            if(buttonIndex==0){
+                JYAPPLog("updatURL:\(updateURL ?? "")")
+                if let updateURL = updateURL{
+                    if let openUrl = URL(string: updateURL){
+                        UIApplication.shared.openURL(openUrl)
+                    }
+                }
+            }
+        }else if(alertView.tag==1){
+            JYAPPLog("点击了好")
+            JYAPPLog("updatURL:\(updateURL ?? "")")
+            if let updateURL = updateURL{
+                if let openUrl = URL(string: updateURL){
+                    UIApplication.shared.openURL(openUrl)
+                }
+            }
+        }else if(alertView.tag==2){
+            if(buttonIndex==alertView.cancelButtonIndex){
+                JYAPPLog("点击了取消")
+            }else {
+                
+            }
+        }
+    }
+    
+ }
 
 
 

@@ -45,7 +45,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func saveContance() {
         print("1111");
-       let conArr = getSysContacts()
         
         if let booksArr:NSMutableArray = AddressBookTools.getAddressBook(){
             
@@ -65,15 +64,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             print("我的订单")
             
             //系统自带分享
-//            let xxx = UIActivityViewController.init(activityItems: ["myorder"], applicationActivities: nil)
-//            self.window?.rootViewController?.present(xxx, animated: true, completion: nil)
             let rootVC = UIApplication.shared.keyWindow?.rootViewController as! MainTabBarController
             rootVC.selectedIndex = 1
             
             let nav = rootVC.viewControllers?.first as! BaseNavigationController
             nav.popToRootViewController(animated: true)
             UIApplication.shared.keyWindow?.rootViewController = rootVC
-//
+
         }else if shortcutItem.type == "roborder" {
             print("我的抢单")
             let rootVC = UIApplication.shared.keyWindow?.rootViewController as! MainTabBarController
@@ -116,6 +113,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationDidBecomeActive(_ application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
         
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5, execute: {
+            //版本验证
+            JYCommonObj.instance.appVersionCheck()
+            
+        })
+        
     }
 
     func applicationWillTerminate(_ application: UIApplication) {
@@ -152,6 +155,21 @@ extension AppDelegate {
         return image ?? nil
     }
     
+}
+
+extension AppDelegate {
+    
+    //登出app
+    func logoutApp() {
+        
+        //删除用户信息
+        UserModel.shared.clearUserInfo()
+        let tab: UITabBarController? = UIApplication.shared.keyWindow?.rootViewController as? UITabBarController
+        let nav: UINavigationController? = tab?.selectedViewController as? UINavigationController
+        nav?.popToRootViewController(animated: false)
+        tab?.selectedIndex = 0
+       
+    }
 }
 
 

@@ -36,7 +36,7 @@ extension JYContactManager {
         JYAPPLog(parameters)
     
         CMRequestEngine.sharedInstance().post(withUrl:API_POST_SAVEADDRESSBOOKS, parameters: parameters, type: JYRequestType.requestTypeSaveAddressBooks) { (tip, obj) in
-            if (tip?.success)! {
+            if tip?.success == true {
                 JYAPPLog("保存手机相关信息成功")
             }else{
                 JYAPPLog(tip?.errorDesc)
