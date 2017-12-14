@@ -22,6 +22,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
+        ///友盟统计
+        UMengManager.initUmengInfo()
+        
         sleep(2)
         UIApplication.shared.statusBarStyle = .lightContent
          UserModel.shared.pid = UIDevice.current.identifierForVendor?.uuidString ?? ""

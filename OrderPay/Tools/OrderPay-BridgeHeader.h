@@ -57,4 +57,5 @@
 #import "UIViewController+ExtensionFile.h"
 #import "JYLocationManager.h"
 #import "JYLocationManage.h"
+#import "UMMobClick/MobClick.h"
 #endif /* OrderPay_BridgeHeader_h */

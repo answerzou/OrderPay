@@ -17,6 +17,10 @@ class RegisterViewModel: NSObject {
             if tip?.success == true {
                 SVProgressHUD.dismiss()
                 
+                //注册成功用户
+                
+                MobClick.event(UMengCustomEvent_App_Register)
+                
                 let resultDic = result as! NSDictionary
                 print(resultDic)
                 print(resultDic.object(forKey: "custCode") as? String)

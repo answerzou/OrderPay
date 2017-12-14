@@ -49,6 +49,8 @@
 		04CBE53C1FE255E100BAF930 /* JYLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CBE53B1FE255E000BAF930 /* JYLocationManager.m */; };
 		04CBE5421FE2570D00BAF930 /* WGS84TOGCJ02.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CBE53E1FE2570C00BAF930 /* WGS84TOGCJ02.m */; };
 		04CBE5431FE2570D00BAF930 /* JYLocationManage.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CBE5411FE2570D00BAF930 /* JYLocationManage.m */; };
+		04CBE5451FE2863C00BAF930 /* UmengCustomEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CBE5441FE2863C00BAF930 /* UmengCustomEvents.swift */; };
+		04CBE5471FE2895000BAF930 /* UMengManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CBE5461FE2895000BAF930 /* UMengManager.swift */; };
 		04E1214E1FB9AD0E004419A6 /* AddressBookTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E1214C1FB9AD0E004419A6 /* AddressBookTools.m */; };
 		04E121511FB9AD4E004419A6 /* JYContactManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E1214F1FB9AD4E004419A6 /* JYContactManager.swift */; };
 		04E121521FB9AD4E004419A6 /* JYContactManager+SaveContact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E121501FB9AD4E004419A6 /* JYContactManager+SaveContact.swift */; };
@@ -203,6 +205,8 @@
 		04CBE53F1FE2570C00BAF930 /* WGS84TOGCJ02.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGS84TOGCJ02.h; sourceTree = "<group>"; };
 		04CBE5401FE2570C00BAF930 /* JYLocationManage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYLocationManage.h; sourceTree = "<group>"; };
 		04CBE5411FE2570D00BAF930 /* JYLocationManage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYLocationManage.m; sourceTree = "<group>"; };
+		04CBE5441FE2863C00BAF930 /* UmengCustomEvents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UmengCustomEvents.swift; sourceTree = "<group>"; };
+		04CBE5461FE2895000BAF930 /* UMengManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UMengManager.swift; sourceTree = "<group>"; };
 		04E1214C1FB9AD0E004419A6 /* AddressBookTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddressBookTools.m; sourceTree = "<group>"; };
 		04E1214D1FB9AD0E004419A6 /* AddressBookTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddressBookTools.h; sourceTree = "<group>"; };
 		04E1214F1FB9AD4E004419A6 /* JYContactManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JYContactManager.swift; sourceTree = "<group>"; };
@@ -976,6 +980,7 @@
 				803E19061F97581900745D65 /* CustomButtonImageEdgeInsets.swift */,
 				803E19201F9A214100745D65 /* OrderPay-BridgeHeader.h */,
 				047DD1691FCD3D3A00A27E45 /* VisibleController.swift */,
+				04CBE5461FE2895000BAF930 /* UMengManager.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -998,6 +1003,7 @@
 				8041CCCA1F78ADC300ACD236 /* GlobalMacro.swift */,
 				8041CCCB1F78ADC300ACD236 /* NotificationMacro.swift */,
 				8041CCCC1F78ADC300ACD236 /* VendorMacro.swift */,
+				04CBE5441FE2863C00BAF930 /* UmengCustomEvents.swift */,
 			);
 			path = Macro;
 			sourceTree = "<group>";
@@ -1248,6 +1254,7 @@
 				047B85591FE0D4EB00B51FA8 /* UIViewController+ExtensionFile.m in Sources */,
 				040667E61FCFFB1F00DD666A /* HomeModel.swift in Sources */,
 				803E19011F97566E00745D65 /* PinyinFormatter.m in Sources */,
+				04CBE5451FE2863C00BAF930 /* UmengCustomEvents.swift in Sources */,
 				803E1A1D1F9A25F900745D65 /* CMNotification.m in Sources */,
 				04E1214E1FB9AD0E004419A6 /* AddressBookTools.m in Sources */,
 				803E18D21F8F8D0300745D65 /* NSData+AES256.m in Sources */,
@@ -1318,6 +1325,7 @@
 				803E19301F9A231600745D65 /* CMRequestEngine+HttpTools.m in Sources */,
 				803E18F91F97566E00745D65 /* CityButton.m in Sources */,
 				047B85541FE0D4EB00B51FA8 /* UIColor+JYColor.m in Sources */,
+				04CBE5471FE2895000BAF930 /* UMengManager.swift in Sources */,
 				8041CCD01F78ADC300ACD236 /* NotificationMacro.swift in Sources */,
 				04140B0A1FCC1C8A000C97F7 /* JYCitySelectManager.m in Sources */,
 				803E18D11F8F8D0300745D65 /* AESCrypt.m in Sources */,

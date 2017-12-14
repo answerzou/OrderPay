@@ -13,12 +13,6 @@ import UIKit
 //#define OrganizationNumber  @"30110105201601002"                  //捷越机构代码--生产 30110105201601002
 //#define OrganizationModel   1
 
-
-/// 友盟统计----------------------------
-let UMENG_APPKEY = "59a37c895312dd01b30008b8"
-let UMENG_CHANNELID = "JYEnterpriseApplication_iOS"
-///-----------------------------------
-
 /// 极光----------------------------
 //9843d046ca63edd77d2ae61f--新版企业级Key
 //6445f25aa4bdffe08c5c8e79--新版公司级
