@@ -14,6 +14,7 @@ typedef void(^LocationStatus)(CLAuthorizationStatus status);
 
 @interface JYLocationManager : NSObject
 
+
 + (instancetype)sharedInstance;
 
 - (void)getLocationPlacemark:(LocationPlacemark)placemark status:(LocationStatus)status didFailWithError:(LocationFailed)error;

@@ -55,4 +55,6 @@
 #import "UILabel+JYExtension.h"
 #import "UIView+JYExtension.h"
 #import "UIViewController+ExtensionFile.h"
+#import "JYLocationManager.h"
+#import "JYLocationManage.h"
 #endif /* OrderPay_BridgeHeader_h */

@@ -17,6 +17,9 @@ class LoginViewModel: NSObject {
                 
                 UserModel.shared.setUserLoginInfo(dict: result as! Dictionary)
                 SVProgressHUD.dismiss()
+                
+                //登录成功获取通讯录权限
+                AddressBookTools.addressBookRequestAccess()
                 returnBlock()
                 
             }else {

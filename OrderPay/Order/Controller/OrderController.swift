@@ -68,7 +68,6 @@ class OrderController: BaseController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "派单"
-//        UserModel.shared.custCode = "20171212173233101830"
 //        self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: self.rightButton)
         self.view.addSubview(self.topView)
         self.view.addSubview(self.tableView)

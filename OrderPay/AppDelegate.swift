@@ -28,9 +28,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         SVProgressHUD.setMinimumDismissTimeInterval(1)
         NotificationCenter.default.addObserver(self, selector: #selector(saveContance), name: NSNotification.Name(rawValue: "SAVECONTANCT"), object: nil)
         
-        //保存用户通讯录
-//        JYCommonObj.saveContanctInfo(getSysContacts() as NSArray)
-        AddressBookTools.addressBookRequestAccess()
+        //定位
+        JYLocationManage.sharedInstance().requestLocation()
         
         window?.rootViewController = MainTabBarController()
         setAppSubject()
