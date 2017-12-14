@@ -24,8 +24,6 @@
 	<true/>
 	<key>NSContactsUsageDescription</key>
 	<string>“有单客”需要您的同意才能访问通讯录</string>
-	<key>UILaunchStoryboardName</key>
-	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
 	<key>UIRequiredDeviceCapabilities</key>
