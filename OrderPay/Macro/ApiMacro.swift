@@ -29,6 +29,9 @@ let API_POST_APPAUTH     = APP_SERVER_API+"/xdyWeiXinServer/api/APPBizRest/appAu
 ///我的订单
 let API_POST_MYGETLIST     = APP_SERVER_API+"/xdyWeiXinServer/api/APPBizRest/queryMyGetList/v1/"
 
+///版本控制
+let API_POST_UPAPPVERSION     = APP_SERVER_API+"/xdyWeiXinServer/api/APPBizRest/goUpAppVersion/v1/"
+
 
 
 

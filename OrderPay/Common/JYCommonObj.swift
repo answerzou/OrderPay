@@ -37,19 +37,21 @@ class JYCommonObj : NSObject {
     
     //MARK:版本验证
     func appVersionCheck() {
+        let pid = UserModel.shared.pid ?? ""
         let parameters:NSDictionary = ["appVersion":JYAppVerionNum,
-                                       "operatSystem":"ios"]
+                                       "operatSystem":"ios",
+                                       "pid": pid]
 
-        CMRequestEngine.sharedInstance().post(withUrl: "API_POST_UPAPPVERSION", parameters:parameters as! [AnyHashable : Any], type: JYRequestType.requestTypeGoUpAPPVersion) { (tip, obj) in
+        CMRequestEngine.sharedInstance().post(withUrl: API_POST_UPAPPVERSION, parameters:parameters as! [AnyHashable : Any], type: JYRequestType.requestTypeGoUpAPPVersion) { (tip, obj) in
             if tip?.success == true {
                 let userDic = obj as? NSDictionary
-                if userDic?["forceState"] as? String=="0" {
+                if userDic?["forceState"] as? String == "0" {
                     return
                 }
-                if userDic?["forceState"] as? String=="2" {
-                    appDelegate.logoutApp()
-                }
-                self.updateURL = (userDic?["appURL"] as? String)
+//                if userDic?["forceState"] as? String=="2" {
+//                    appDelegate.logoutApp()
+//                }
+                self.updateURL = (userDic?["appDownUrl"] as? String)
                 JYCommonObj.showUpdateVersion(self,type:userDic?["forceState"] as? String, content:userDic?["versionContent"] as? String)
                 JYAPPLog("\(userDic)")
             }else{
@@ -62,17 +64,19 @@ class JYCommonObj : NSObject {
     }
     
     func reAppVersionCheck() {
+        let pid = UserModel.shared.pid ?? ""
         let parameters:NSDictionary = ["appVersion":JYAppVerionNum,
-                                       "operatSystem":"ios"]
-        CMRequestEngine.sharedInstance().post(withUrl: "API_POST_UPAPPVERSION", parameters:parameters as! [AnyHashable : Any], type: JYRequestType.requestTypeGoUpAPPVersion) { (tip, obj) in
+                                       "operatSystem":"ios",
+                                       "pid": pid]
+        CMRequestEngine.sharedInstance().post(withUrl: API_POST_UPAPPVERSION, parameters:parameters as! [AnyHashable : Any], type: JYRequestType.requestTypeGoUpAPPVersion) { (tip, obj) in
             if tip?.success == true {
                 let userDic = obj as? NSDictionary
                 if userDic?["forceState"] as? String=="0" {
                     return
                 }
-                if userDic?["forceState"] as? String=="2" {
-                    appDelegate.logoutApp()
-                }
+//                if userDic?["forceState"] as? String=="2" {
+//                    appDelegate.logoutApp()
+//                }
                 self.updateURL = (userDic?["appURL"] as? String)
                 JYCommonObj.showUpdateVersion(self,type:userDic?["forceState"] as? String, content:userDic?["versionContent"] as? String)
                 JYAPPLog("\(userDic)")
@@ -154,9 +158,13 @@ class JYCommonObj : NSObject {
         alertView.message = content
         alertView.addButton(withTitle: "确定")
         alertView.delegate=delegate;
+        
+        //强制升级
         if(type=="2"){
             alertView.tag = 1
         }else{
+            
+            //非强制升级
             alertView.tag = 0
             alertView.addButton(withTitle: "取消")
         }
@@ -167,6 +175,8 @@ class JYCommonObj : NSObject {
  
  extension JYCommonObj {
     func alertView(_ alertView:UIAlertView, clickedButtonAtIndex buttonIndex: Int){
+        
+        
         if(alertView.tag==0){
             if(buttonIndex==0){
                 JYAPPLog("updatURL:\(updateURL ?? "")")
