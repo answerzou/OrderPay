@@ -8,6 +8,6 @@
 
 import UIKit
 
-class WeChatPayMacro: NSObject {
-   let WeChatPay_AppKey = ""
-}
+//微信支付相关信息
+    let WeChatPay_AppKey = ""
+

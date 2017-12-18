@@ -25,6 +25,7 @@
 		044002BD1FE3D7BB00519D6F /* company.html in Resources */ = {isa = PBXBuildFile; fileRef = 044002BC1FE3D7BB00519D6F /* company.html */; };
 		044002BF1FE7978000519D6F /* WeChatPayManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044002BE1FE7978000519D6F /* WeChatPayManager.swift */; };
 		044002C11FE797D800519D6F /* WeChatPayMacro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044002C01FE797D800519D6F /* WeChatPayMacro.swift */; };
+		044002C31FE7CA1200519D6F /* AboutUsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044002C21FE7CA1200519D6F /* AboutUsController.swift */; };
 		0468EA601FBEB8AB005E9BAA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0468EA5B1FBEB8AB005E9BAA /* LaunchScreen.storyboard */; };
 		0468EA611FBEB8AB005E9BAA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0468EA5D1FBEB8AB005E9BAA /* Main.storyboard */; };
 		0468EA621FBEB8AB005E9BAA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0468EA5F1FBEB8AB005E9BAA /* Assets.xcassets */; };
@@ -169,6 +170,7 @@
 		044002BC1FE3D7BB00519D6F /* company.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = company.html; sourceTree = "<group>"; };
 		044002BE1FE7978000519D6F /* WeChatPayManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeChatPayManager.swift; sourceTree = "<group>"; };
 		044002C01FE797D800519D6F /* WeChatPayMacro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeChatPayMacro.swift; sourceTree = "<group>"; };
+		044002C21FE7CA1200519D6F /* AboutUsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AboutUsController.swift; path = OrderPay/Mine/Controller/AboutUsController.swift; sourceTree = SOURCE_ROOT; };
 		0468EA5C1FBEB8AB005E9BAA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0468EA5E1FBEB8AB005E9BAA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Main.storyboard; sourceTree = "<group>"; };
 		0468EA5F1FBEB8AB005E9BAA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -977,6 +979,7 @@
 				803E1A4F1FAE0ADB00745D65 /* NameAuthenticationController.swift */,
 				803408821FBED4F3003DC30C /* MineController.swift */,
 				047B85291FE0C8E600B51FA8 /* RealNameController.swift */,
+				044002C21FE7CA1200519D6F /* AboutUsController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1363,6 +1366,7 @@
 				8041CCFB1F7969E000ACD236 /* OrderCell.swift in Sources */,
 				803E18C51F8F8C3D00745D65 /* JYUtilities.m in Sources */,
 				803E1A1F1F9A25F900745D65 /* CMRegular.m in Sources */,
+				044002C31FE7CA1200519D6F /* AboutUsController.swift in Sources */,
 				8041CCB71F78ABF900ACD236 /* HomeController.swift in Sources */,
 				04E121521FB9AD4E004419A6 /* JYContactManager+SaveContact.swift in Sources */,
 				047DD1831FCE9EC000A27E45 /* people.m in Sources */,

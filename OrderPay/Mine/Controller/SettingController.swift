@@ -30,6 +30,7 @@ class SettingController: UIViewController {
         super.viewDidLoad()
 
         self.title = "设置"
+        
         let userName = UserModel.shared.name
         if userName?.count == 0 || userName == nil {
             let mobile = UserModel.shared.mobile

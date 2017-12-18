@@ -101,7 +101,7 @@ class MineController: BaseController {
             //结束刷新
             self.tableView.mj_header.endRefreshing()
         })
-        self.tableView.mj_header = self.header
+//        self.tableView.mj_header = self.header
         self.header.lastUpdatedTimeLabel.isHidden = true
         
     }

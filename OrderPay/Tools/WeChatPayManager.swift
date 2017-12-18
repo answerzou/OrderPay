@@ -9,5 +9,7 @@
 import UIKit
 
 class WeChatPayManager: NSObject {
-
+    class func initWeChatPayInfo() {
+        WXApi.registerApp(WeChatPay_AppKey)
+    }
 }

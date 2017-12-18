@@ -57,5 +57,9 @@
 #import "UIViewController+ExtensionFile.h"
 #import "JYLocationManager.h"
 #import "JYLocationManage.h"
+#import "CMBaseWebViewController.h"
+
+//---------第三方-----------
 #import "UMMobClick/MobClick.h"
+#import "WXApi.h"
 #endif /* OrderPay_BridgeHeader_h */
