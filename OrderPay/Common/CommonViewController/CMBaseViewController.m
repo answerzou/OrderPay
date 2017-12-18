@@ -106,8 +106,8 @@
 /*init left navigationitem*/
 - (void)initLeftNavigationItem
 {
-    UIImage *backImage = IMG(@"nav_back");
-    UIImage *backImageP = IMG(@"nav_back");
+    UIImage *backImage = IMG(@"goback");
+    UIImage *backImageP = IMG(@"goback");
     UIButton *tmpBackButton = [UIButton buttonWithType:UIButtonTypeCustom];
     tmpBackButton.showsTouchWhenHighlighted = YES;
     [tmpBackButton setImage:backImage forState:UIControlStateNormal];

@@ -16,7 +16,7 @@ class LoginController: UIViewController {
         backBtn.showsTouchWhenHighlighted = true
         backBtn.isExclusiveTouch = true
         let btnW: CGFloat = ScreenWidth > 375.0 ? 44 : 44
-        backBtn.frame = CGRect(x:0, y:0, width:15, height:15)
+        backBtn.frame = CGRect(x:0, y:0, width:30, height:30)
         backBtn.setImage(UIImage(named: "login_close"), for: .normal)
         backBtn.setImage(UIImage(named: "login_close"), for: .highlighted)
         backBtn.titleLabel?.isHidden = true

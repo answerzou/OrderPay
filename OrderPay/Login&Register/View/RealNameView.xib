@@ -190,6 +190,7 @@
                 <outlet property="indicatorView" destination="fUU-py-0Rs" id="50M-rG-a7N"/>
                 <outlet property="realNameTextField" destination="3aD-mu-fXg" id="wrv-LK-eNV"/>
                 <outlet property="registerBtn" destination="RA0-O3-7N4" id="eFP-sT-a4g"/>
+                <outlet property="skipBtn" destination="5MH-E4-Jb7" id="23n-1k-y8p"/>
             </connections>
             <point key="canvasLocation" x="48.5" y="142.5"/>
         </view>

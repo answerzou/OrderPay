@@ -26,8 +26,9 @@ class RealNameView: UIView {
     @IBOutlet weak var registerBtn: UIButton!
     
     @IBOutlet weak var indicatorView: UIActivityIndicatorView!
-    
+    @IBOutlet weak var skipBtn: UIButton!
     @IBOutlet weak var cityBtn: UIButton!
+    
     var registerBtnBlock: RegisterBtnBlock?
     var skipBtnBlock: SkipBtnBlock?
     

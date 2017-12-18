@@ -12,6 +12,13 @@ class AboutUsController: CMBaseWebViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.cleanWebViewCache()
+        
+        let path = Bundle.main.path(forResource: "company", ofType: "html")
+        let url = URL.init(fileURLWithPath: path!)
+        let reuqest = URLRequest.init(url: url)
+        
+        self.webView.load(reuqest)
     }
 
 }

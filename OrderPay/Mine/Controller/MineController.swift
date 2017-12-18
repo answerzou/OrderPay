@@ -166,6 +166,9 @@ extension MineController: UITableViewDelegate, UITableViewDataSource {
                     self.navigationController?.pushViewController(userInfo, animated: true)
                 }
             }
+        }else {
+            let aboutUs = AboutUsController()
+            self.navigationController?.pushViewController(aboutUs, animated: true)
         }
         tableView.deselectRow(at: indexPath, animated: true)
     }
