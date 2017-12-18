@@ -27,6 +27,9 @@ class RealNameController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.title = "实名认证"
+        self.realNameView.skipBtn.isHidden = true
         self.realNameView.registerBtnBlock = { [unowned self] in
             self.navigationController?.popViewController(animated: true)
         }
