@@ -41,16 +41,13 @@ class JYCommonObj : NSObject {
         let parameters:NSDictionary = ["appVersion":JYAppVerionNum,
                                        "operatSystem":"ios",
                                        "pid": pid]
-
         CMRequestEngine.sharedInstance().post(withUrl: API_POST_UPAPPVERSION, parameters:parameters as! [AnyHashable : Any], type: JYRequestType.requestTypeGoUpAPPVersion) { (tip, obj) in
             if tip?.success == true {
                 let userDic = obj as? NSDictionary
                 if userDic?["forceState"] as? String == "0" {
                     return
                 }
-//                if userDic?["forceState"] as? String=="2" {
-//                    appDelegate.logoutApp()
-//                }
+
                 self.updateURL = (userDic?["appDownUrl"] as? String)
                 JYCommonObj.showUpdateVersion(self,type:userDic?["forceState"] as? String, content:userDic?["versionContent"] as? String)
                 JYAPPLog("\(userDic)")

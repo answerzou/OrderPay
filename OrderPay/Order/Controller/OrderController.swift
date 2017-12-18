@@ -120,6 +120,15 @@ extension OrderController: UITableViewDelegate, UITableViewDataSource {
         
         tableView.deselectRow(at: indexPath, animated: true)
         
+        //如果没有实名认证则跳转到实名认证
+        if UserModel.shared.cardNo?.isEmpty == true {
+            
+            let realName = RealNameController()
+            self.navigationController?.pushViewController(realName, animated: true)
+            
+            return
+        }
+        
         let model = self.dataArray[indexPath.row] as! OrderModel
         
         let mobileStr: String = "tel:\(model.mobile ?? "")"

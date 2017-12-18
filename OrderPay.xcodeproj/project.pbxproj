@@ -23,6 +23,8 @@
 		044002B21FE3CDDD00519D6F /* CMWeakScriptMessageDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 044002AA1FE3CDDD00519D6F /* CMWeakScriptMessageDelegate.m */; };
 		044002B61FE3CFCC00519D6F /* CMCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 044002B51FE3CFCC00519D6F /* CMCollectionViewCell.m */; };
 		044002BD1FE3D7BB00519D6F /* company.html in Resources */ = {isa = PBXBuildFile; fileRef = 044002BC1FE3D7BB00519D6F /* company.html */; };
+		044002BF1FE7978000519D6F /* WeChatPayManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044002BE1FE7978000519D6F /* WeChatPayManager.swift */; };
+		044002C11FE797D800519D6F /* WeChatPayMacro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044002C01FE797D800519D6F /* WeChatPayMacro.swift */; };
 		0468EA601FBEB8AB005E9BAA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0468EA5B1FBEB8AB005E9BAA /* LaunchScreen.storyboard */; };
 		0468EA611FBEB8AB005E9BAA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0468EA5D1FBEB8AB005E9BAA /* Main.storyboard */; };
 		0468EA621FBEB8AB005E9BAA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0468EA5F1FBEB8AB005E9BAA /* Assets.xcassets */; };
@@ -165,6 +167,8 @@
 		044002B41FE3CFCC00519D6F /* CMCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMCollectionViewCell.h; sourceTree = "<group>"; };
 		044002B51FE3CFCC00519D6F /* CMCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMCollectionViewCell.m; sourceTree = "<group>"; };
 		044002BC1FE3D7BB00519D6F /* company.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = company.html; sourceTree = "<group>"; };
+		044002BE1FE7978000519D6F /* WeChatPayManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeChatPayManager.swift; sourceTree = "<group>"; };
+		044002C01FE797D800519D6F /* WeChatPayMacro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeChatPayMacro.swift; sourceTree = "<group>"; };
 		0468EA5C1FBEB8AB005E9BAA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0468EA5E1FBEB8AB005E9BAA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Main.storyboard; sourceTree = "<group>"; };
 		0468EA5F1FBEB8AB005E9BAA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -1028,6 +1032,7 @@
 				803E19201F9A214100745D65 /* OrderPay-BridgeHeader.h */,
 				047DD1691FCD3D3A00A27E45 /* VisibleController.swift */,
 				04CBE5461FE2895000BAF930 /* UMengManager.swift */,
+				044002BE1FE7978000519D6F /* WeChatPayManager.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -1051,6 +1056,7 @@
 				8041CCCB1F78ADC300ACD236 /* NotificationMacro.swift */,
 				8041CCCC1F78ADC300ACD236 /* VendorMacro.swift */,
 				04CBE5441FE2863C00BAF930 /* UmengCustomEvents.swift */,
+				044002C01FE797D800519D6F /* WeChatPayMacro.swift */,
 			);
 			path = Macro;
 			sourceTree = "<group>";
@@ -1307,6 +1313,7 @@
 				04E1214E1FB9AD0E004419A6 /* AddressBookTools.m in Sources */,
 				803E18D21F8F8D0300745D65 /* NSData+AES256.m in Sources */,
 				803E19321F9A231600745D65 /* NSURLSessionTask+UserInfo.m in Sources */,
+				044002C11FE797D800519D6F /* WeChatPayMacro.swift in Sources */,
 				04E121511FB9AD4E004419A6 /* JYContactManager.swift in Sources */,
 				803E1A441FADC08D00745D65 /* YYWeakProxy.m in Sources */,
 				047DD1811FCE9EBF00A27E45 /* JYFMDBtest.m in Sources */,
@@ -1314,6 +1321,7 @@
 				047DD16A1FCD3D3A00A27E45 /* VisibleController.swift in Sources */,
 				8041CCF31F7966BF00ACD236 /* OrderCell.xib in Sources */,
 				803E1A4E1FAE09D000745D65 /* NameAuthenticationView.swift in Sources */,
+				044002BF1FE7978000519D6F /* WeChatPayManager.swift in Sources */,
 				803E18FD1F97566E00745D65 /* ChineseInclude.m in Sources */,
 				803E18F81F97566E00745D65 /* ButtonGroupView.m in Sources */,
 				047B85371FE0D0FB00B51FA8 /* CMDefaultInfoView.m in Sources */,
@@ -1536,7 +1544,7 @@
 				INFOPLIST_FILE = OrderPay/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.buyiJinFu.OrderPay;
+				PRODUCT_BUNDLE_IDENTIFIER = com.BuYiJinFu.OrderPay;
 				PRODUCT_MODULE_NAME = "$(PRODUCT_NAME:c99extidentifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/OrderPay/Tools/OrderPay-BridgeHeader.h";
@@ -1559,7 +1567,7 @@
 				INFOPLIST_FILE = OrderPay/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.buyiJinFu.OrderPay;
+				PRODUCT_BUNDLE_IDENTIFIER = com.BuYiJinFu.OrderPay;
 				PRODUCT_MODULE_NAME = "$(PRODUCT_NAME:c99extidentifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/OrderPay/Tools/OrderPay-BridgeHeader.h";
