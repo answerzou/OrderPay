@@ -53,6 +53,7 @@
 		047DD1831FCE9EC000A27E45 /* people.m in Sources */ = {isa = PBXBuildFile; fileRef = 047DD17B1FCE9EBF00A27E45 /* people.m */; };
 		047DD1841FCE9EC000A27E45 /* JYDBEngineManage.m in Sources */ = {isa = PBXBuildFile; fileRef = 047DD17D1FCE9EBF00A27E45 /* JYDBEngineManage.m */; };
 		047DD1881FCE9F2F00A27E45 /* CMFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 047DD1871FCE9F2F00A27E45 /* CMFile.m */; };
+		04A97F7A1FEA6C40003DE7D1 /* RealNameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A97F791FEA6C40003DE7D1 /* RealNameController.swift */; };
 		04CBE53C1FE255E100BAF930 /* JYLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CBE53B1FE255E000BAF930 /* JYLocationManager.m */; };
 		04CBE5421FE2570D00BAF930 /* WGS84TOGCJ02.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CBE53E1FE2570C00BAF930 /* WGS84TOGCJ02.m */; };
 		04CBE5431FE2570D00BAF930 /* JYLocationManage.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CBE5411FE2570D00BAF930 /* JYLocationManage.m */; };
@@ -217,6 +218,7 @@
 		047DD17D1FCE9EBF00A27E45 /* JYDBEngineManage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYDBEngineManage.m; sourceTree = "<group>"; };
 		047DD1861FCE9F2F00A27E45 /* CMFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMFile.h; sourceTree = "<group>"; };
 		047DD1871FCE9F2F00A27E45 /* CMFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMFile.m; sourceTree = "<group>"; };
+		04A97F791FEA6C40003DE7D1 /* RealNameController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealNameController.swift; sourceTree = "<group>"; };
 		04CBE53A1FE255E000BAF930 /* JYLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYLocationManager.h; sourceTree = "<group>"; };
 		04CBE53B1FE255E000BAF930 /* JYLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYLocationManager.m; sourceTree = "<group>"; };
 		04CBE53E1FE2570C00BAF930 /* WGS84TOGCJ02.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGS84TOGCJ02.m; sourceTree = "<group>"; };
@@ -973,6 +975,7 @@
 		8041CCB81F78AC1F00ACD236 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				04A97F791FEA6C40003DE7D1 /* RealNameController.swift */,
 				803E1A491FADFF8E00745D65 /* SettingController.swift */,
 				803E1A4F1FAE0ADB00745D65 /* NameAuthenticationController.swift */,
 				803408821FBED4F3003DC30C /* MineController.swift */,
@@ -1358,6 +1361,7 @@
 				8041CCD41F78AE8200ACD236 /* UIKit+Extension.swift in Sources */,
 				803E19051F97566E00745D65 /* ZYPinYinSearch.m in Sources */,
 				044002B21FE3CDDD00519D6F /* CMWeakScriptMessageDelegate.m in Sources */,
+				04A97F7A1FEA6C40003DE7D1 /* RealNameController.swift in Sources */,
 				802402611FAEED4800A6F4C6 /* JYBaseModel.swift in Sources */,
 				802402531FAEE7CC00A6F4C6 /* RegisterController.swift in Sources */,
 				8041CCFB1F7969E000ACD236 /* OrderCell.swift in Sources */,
