@@ -31,7 +31,6 @@
 		0468EA621FBEB8AB005E9BAA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0468EA5F1FBEB8AB005E9BAA /* Assets.xcassets */; };
 		047B85241FDFC4CA00B51FA8 /* OrderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047B85231FDFC4CA00B51FA8 /* OrderModel.swift */; };
 		047B85261FDFC64B00B51FA8 /* OrderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047B85251FDFC64B00B51FA8 /* OrderViewModel.swift */; };
-		047B852A1FE0C8E600B51FA8 /* RealNameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047B85291FE0C8E600B51FA8 /* RealNameController.swift */; };
 		047B85351FE0D0FB00B51FA8 /* CMTitleAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 047B852E1FE0D0FB00B51FA8 /* CMTitleAlertView.m */; };
 		047B85361FE0D0FB00B51FA8 /* CMTitleAlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 047B852F1FE0D0FB00B51FA8 /* CMTitleAlertView.xib */; };
 		047B85371FE0D0FB00B51FA8 /* CMDefaultInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 047B85321FE0D0FB00B51FA8 /* CMDefaultInfoView.m */; };
@@ -176,7 +175,6 @@
 		0468EA5F1FBEB8AB005E9BAA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		047B85231FDFC4CA00B51FA8 /* OrderModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderModel.swift; sourceTree = "<group>"; };
 		047B85251FDFC64B00B51FA8 /* OrderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewModel.swift; sourceTree = "<group>"; };
-		047B85291FE0C8E600B51FA8 /* RealNameController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealNameController.swift; sourceTree = "<group>"; };
 		047B852D1FE0D0FB00B51FA8 /* CMTitleAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMTitleAlertView.h; sourceTree = "<group>"; };
 		047B852E1FE0D0FB00B51FA8 /* CMTitleAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMTitleAlertView.m; sourceTree = "<group>"; };
 		047B852F1FE0D0FB00B51FA8 /* CMTitleAlertView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CMTitleAlertView.xib; sourceTree = "<group>"; };
@@ -978,7 +976,6 @@
 				803E1A491FADFF8E00745D65 /* SettingController.swift */,
 				803E1A4F1FAE0ADB00745D65 /* NameAuthenticationController.swift */,
 				803408821FBED4F3003DC30C /* MineController.swift */,
-				047B85291FE0C8E600B51FA8 /* RealNameController.swift */,
 				044002C21FE7CA1200519D6F /* AboutUsController.swift */,
 			);
 			path = Controller;
@@ -1381,7 +1378,6 @@
 				8024024F1FAEE40100A6F4C6 /* RegisterHeaderView.swift in Sources */,
 				047DD1821FCE9EBF00A27E45 /* NSObject+BGModel.m in Sources */,
 				803E18C11F8F89BA00745D65 /* JYCommonObj.swift in Sources */,
-				047B852A1FE0C8E600B51FA8 /* RealNameController.swift in Sources */,
 				047B85571FE0D4EB00B51FA8 /* UILabel+JYExtension.m in Sources */,
 				803E19021F97566E00745D65 /* PinYinForObjc.m in Sources */,
 				803E19301F9A231600745D65 /* CMRequestEngine+HttpTools.m in Sources */,
