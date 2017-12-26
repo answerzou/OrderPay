@@ -157,7 +157,7 @@ extension MineController: UITableViewDelegate, UITableViewDataSource {
                 
                 let name = UserModel.shared.name ?? ""
                 
-                if name.isEmpty {
+                if name.isEmpty || name == "<null>" {
                     let realName = RealNameController()
                     self.navigationController?.pushViewController(realName, animated: true)
                 }else {

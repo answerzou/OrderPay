@@ -36,7 +36,6 @@ class RegisterController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.title = "注册"
         
         if self.forgetPassword == true{
@@ -54,7 +53,7 @@ class RegisterController: UIViewController {
             let pid = UIDevice.current.identifierForVendor?.uuidString ?? ""
             let introducer = self.registerHeaderView.inviteCodeTextField.text ?? ""
             
-            let params = ["mobile": mobile, "pwd": pwd, "smCode": smCode, "pid": pid, "inviteCode": introducer] as NSDictionary
+            let params = ["mobile": mobile, "pwd": JYUtilities.md5(pwd), "smCode": smCode, "pid": pid, "inviteCode": introducer] as NSDictionary
             RegisterViewModel.requestData(headerView: self.registerHeaderView, params: params, returnBlock: {
                 
                 self.tableView.tableHeaderView = self.realNameView
@@ -76,6 +75,7 @@ class RegisterController: UIViewController {
             print(params)
             RealNameViewModel.requestData(headerView: self.realNameView, params: params as NSDictionary, returnBlock: {
                 //实名认证成功
+                SVProgressHUD.showSuccess(withStatus: "实名认证成功")
                 self.navigationController?.popToRootViewController(animated: true)
             })
         }

@@ -32,7 +32,9 @@ class SettingController: UIViewController {
         self.title = "设置"
         
         let userName = UserModel.shared.name
-        if userName?.count == 0 || userName == nil {
+        
+        print(userName)
+        if userName?.count == 0 || userName == nil || userName == "<null>"{
             let mobile = UserModel.shared.mobile
           
             JYUtilities.replaceAsterisk(mobile, start: 3, length: 4)
