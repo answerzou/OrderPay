@@ -9,5 +9,5 @@
 import UIKit
 
 //微信支付相关信息
-    let WeChatPay_AppKey = ""
+    let WeChatPay_AppKey = "wx45641af57f004d51"
 
