@@ -9,7 +9,11 @@
 import SnapKit
 
 /// 测试环境地址
-let APP_SERVER_API = "http://192.168.32.174:8080"
+//let APP_SERVER_API = "http://192.168.32.174:8080"
+
+/// 正式环境地址
+let APP_SERVER_API = "http://app.buyijinfu.com/xdyAppServer"
+
 
 //--------用户登录及相关接口--------//
 ///登录
