@@ -63,7 +63,6 @@ class OrderController: BaseController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.hideSV = true
         self.tableView.mj_header.beginRefreshing()
     }
     
@@ -78,7 +77,7 @@ class OrderController: BaseController {
         
         self.header = MJRefreshNormalHeader(refreshingBlock: {
             print("下拉刷新.")
-            self.hideSV = false
+            self.hideSV = true
             self.page = 1
             self.requestData(type: self.tableView.mj_header)
             
@@ -86,7 +85,7 @@ class OrderController: BaseController {
         self.tableView.mj_header = self.header
         self.tableView.mj_footer = MJRefreshAutoNormalFooter(refreshingBlock: {
             print("上拉刷新")
-            self.hideSV = false
+            self.hideSV = true
             self.page += 1
             
             self.requestData(type: self.tableView.mj_footer)
@@ -199,10 +198,10 @@ extension OrderController {
                 
                 //没有数据展示占位图
                 if self.dataArray.count == 0 {
-                    
+                    self.hideSV = false
+                    SVProgressHUD.showError(withStatus: "暂无数据")
                     //保证只有一个占位图放在view上
                     if (self.view.viewWithTag(PlaceHolderHintViewTag) == nil) {
-                        self.hideSV = false
                         CMDefaultInfoViewTool.showNoDataView(self.view, action: {
                             self.requestData(type: self.tableView.mj_header)
                             self.tableView.mj_footer.resetNoMoreData()
@@ -231,10 +230,9 @@ extension OrderController {
                 
             }else {
                 
-                
+                self.hideSV = false
                 //保证只有一个占位图放在view上
                 if (self.view.viewWithTag(PlaceHolderHintViewTag) == nil) {
-                    self.hideSV = false
                     CMDefaultInfoViewTool.showNoNetView(self.view, action: {
                         self.requestData(type: self.tableView.mj_header)
                         self.tableView.mj_footer.resetNoMoreData()

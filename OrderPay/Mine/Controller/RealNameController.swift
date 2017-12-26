@@ -32,6 +32,22 @@ class RealNameController: UIViewController {
         self.title = "实名认证"
         self.realNameView.skipBtn.isHidden = true
         self.realNameView.registerBtnBlock = { [unowned self] in
+            
+            let pid = UIDevice.current.identifierForVendor?.uuidString ?? ""
+            let custCode = UserModel.shared.custCode
+            let mobile = UserModel.shared.mobile
+            let name = self.realNameView.realNameTextField.text
+            let cardNo = self.realNameView.idCardTextField.text
+            let cityCode = UserDefaults.standard.object(forKey: "LiveCityCode")
+            UserModel.shared.cityCode = cityCode as? String ?? ""
+            let companyName = self.realNameView.companyNameTextField.text
+            let params = ["pid": pid, "custCode": custCode, "mobile": mobile, "name": name, "cardNo": cardNo, "cityCode": cityCode, "companyName": companyName]
+            print(params)
+            RealNameViewModel.requestData(headerView: self.realNameView, params: params as NSDictionary, returnBlock: {
+                //实名认证成功
+                SVProgressHUD.showSuccess(withStatus: "实名认证成功")
+                self.navigationController?.popToRootViewController(animated: true)
+            })
             self.navigationController?.popViewController(animated: true)
         }
         self.view.addSubview(tableView)

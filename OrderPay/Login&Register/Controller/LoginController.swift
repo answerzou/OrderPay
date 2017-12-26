@@ -61,7 +61,7 @@ class LoginController: UIViewController {
             self.loginHeaderView.loginBtn.setTitle("", for: .normal)
             self.loginHeaderView.indicatorView.startAnimating()
             
-            let params = ["mobile": act, "pwd": JYUtilities.md5(psd), "pid": pid] as NSDictionary
+            let params = ["mobile": act, "pwd": JYUtilities.sha1(psd), "pid": pid] as NSDictionary
             LoginViewModel.requestData(headerView: self.loginHeaderView, params: params , returnBlock: {
                 self.dismiss(animated: true, completion: {
                     let rootVC = UIApplication.shared.keyWindow?.rootViewController as! MainTabBarController

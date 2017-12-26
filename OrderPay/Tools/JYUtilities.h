@@ -109,6 +109,14 @@ typedef NS_ENUM(int, RefreshType) {
 + (NSString *)md5:(NSString *)str;
 
 /**
+ sha1加密字符串
+ 
+ @param str 需要加密的字符串
+ @return 返回加密字符串
+ */
++ (NSString *)sha1:(NSString *)str;
+
+/**
  *  去除字符串两边空格
  * *  @param kgString 所要去两边空格的字符串
  *  @return 返回去除两边空格的字符串
