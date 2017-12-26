@@ -11,12 +11,15 @@ typealias RealNameViewModelBolck = () ->()
 
 class RealNameViewModel: NSObject {
     class func requestData(headerView: RealNameView, params: NSDictionary, returnBlock: @escaping RealNameViewModelBolck) {
+        SVProgressHUD.show()
         CMRequestEngine.sharedInstance().post(withUrl: API_POST_APPAUTH, parameters: params as! [AnyHashable : Any], type: .requestTypeAppRegister) { (tip, result) in
             if tip?.success == true {
                 
                 //let params = ["pid": pid, "custCode": custCode, "mobile": mobile, "name": name, "cardNo": cardNo, "cityCode": cityCode, "companyName": companyName]
                 
                 //用户信息存本地
+                SVProgressHUD.dismiss()
+                
                 UserModel.shared.cardNo = params["cardNo"] as? String
                 UserModel.shared.cityCode = params["cityCode"] as? String
                 UserModel.shared.companyName = params["companyName"] as? String

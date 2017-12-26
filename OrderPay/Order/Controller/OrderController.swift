@@ -22,6 +22,9 @@ class OrderController: BaseController {
     // 顶部刷新
     var header = MJRefreshNormalHeader()
     
+    //是否显示svhud
+    var hideSV: Bool = false
+    
     
     fileprivate lazy var topView:UIView = {
         let topView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: ScreenWidth, height: 70))
@@ -60,7 +63,7 @@ class OrderController: BaseController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+        self.hideSV = true
         self.tableView.mj_header.beginRefreshing()
     }
     
@@ -75,6 +78,7 @@ class OrderController: BaseController {
         
         self.header = MJRefreshNormalHeader(refreshingBlock: {
             print("下拉刷新.")
+            self.hideSV = false
             self.page = 1
             self.requestData(type: self.tableView.mj_header)
             
@@ -82,7 +86,7 @@ class OrderController: BaseController {
         self.tableView.mj_header = self.header
         self.tableView.mj_footer = MJRefreshAutoNormalFooter(refreshingBlock: {
             print("上拉刷新")
-            
+            self.hideSV = false
             self.page += 1
             
             self.requestData(type: self.tableView.mj_footer)
@@ -173,10 +177,15 @@ extension OrderController {
         let custCode = UserModel.shared.custCode ?? ""
         let params = ["pid": pid, "mobile": mobile, "curPage": curPage, "custCode": custCode] as [String : Any]
         print(params)
+        
+        if self.hideSV == false {
+            SVProgressHUD.show()
+        }
+        
         OrderViewModel.requestData(params: params as NSDictionary) { [unowned self] (resultModelArray, requestStatu, totalRows) in
             print(resultModelArray)
             print(requestStatu)
-            
+            SVProgressHUD.dismiss()
             if requestStatu == true {
                 if self.page == 1 {
                     self.dataArray .removeAllObjects()
@@ -193,7 +202,7 @@ extension OrderController {
                     
                     //保证只有一个占位图放在view上
                     if (self.view.viewWithTag(PlaceHolderHintViewTag) == nil) {
-                        
+                        self.hideSV = false
                         CMDefaultInfoViewTool.showNoDataView(self.view, action: {
                             self.requestData(type: self.tableView.mj_header)
                             self.tableView.mj_footer.resetNoMoreData()
@@ -225,7 +234,7 @@ extension OrderController {
                 
                 //保证只有一个占位图放在view上
                 if (self.view.viewWithTag(PlaceHolderHintViewTag) == nil) {
-                    
+                    self.hideSV = false
                     CMDefaultInfoViewTool.showNoNetView(self.view, action: {
                         self.requestData(type: self.tableView.mj_header)
                         self.tableView.mj_footer.resetNoMoreData()
