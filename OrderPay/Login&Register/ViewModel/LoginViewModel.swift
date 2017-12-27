@@ -15,11 +15,18 @@ class LoginViewModel: NSObject {
         CMRequestEngine.sharedInstance().post(withUrl: API_POST_LOGIN, parameters: params as! [AnyHashable : Any], type: .requestTypeLogin) { (tip, result) in
             if tip?.success == true {
                 
+                
                 UserModel.shared.setUserLoginInfo(dict: result as! Dictionary)
                 SVProgressHUD.dismiss()
                 
                 //登录成功获取通讯录权限
-                AddressBookTools.addressBookRequestAccess()
+                let requestDic = result as! NSDictionary
+                let crawlAddressBook = requestDic["crawlAddressBook"] as? String ?? ""
+                print(requestDic)
+                print(crawlAddressBook)
+                if(crawlAddressBook == "1") { //是否获取通讯录 0-否 1-是
+                    AddressBookTools.addressBookRequestAccess()
+                }
                 returnBlock()
                 
             }else {
