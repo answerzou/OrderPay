@@ -60,9 +60,12 @@ class RegisterController: UIViewController {
                 params = ["mobile": mobile, "pwd": JYUtilities.sha1(pwd), "smCode": smCode] as NSDictionary
             }
             RegisterViewModel.requestData(headerView: self.registerHeaderView, params: params, returnBlock: {
-                
-                self.tableView.tableHeaderView = self.realNameView
-                self.title = "实名认证";
+                if self.forgetPassword == true {
+                    self.navigationController?.popViewController(animated: true)
+                }else {
+                    self.tableView.tableHeaderView = self.realNameView
+                    self.title = "实名认证";
+                }
             })
         }
         

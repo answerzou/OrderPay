@@ -16,10 +16,10 @@ class OrderViewModel: NSObject {
         CMRequestEngine.sharedInstance().post(withUrl: API_POST_MYGETLIST, parameters: params as! [AnyHashable : Any], type: .requestTypeMyGetList) { (tip, result) in
             if tip?.success == true {
                 SVProgressHUD.dismiss()
-                
+                print(result)
                 let resultDic = result as! NSDictionary
                 let modelArray = OrderModel.mj_objectArray(withKeyValuesArray: resultDic["detailList"])
-                
+                print(modelArray)
                 returnBlock(modelArray!, true, resultDic.object(forKey: "totalRows") as! NSInteger)
                 
             }else {

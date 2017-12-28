@@ -22,10 +22,6 @@ class OrderController: BaseController {
     // 顶部刷新
     var header = MJRefreshNormalHeader()
     
-    //是否显示svhud
-    var hideSV: Bool = false
-    
-    
     fileprivate lazy var topView:UIView = {
         let topView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: ScreenWidth, height: 70))
         return topView
@@ -77,7 +73,6 @@ class OrderController: BaseController {
         
         self.header = MJRefreshNormalHeader(refreshingBlock: {
             print("下拉刷新.")
-            self.hideSV = true
             self.page = 1
             self.requestData(type: self.tableView.mj_header)
             
@@ -85,7 +80,6 @@ class OrderController: BaseController {
         self.tableView.mj_header = self.header
         self.tableView.mj_footer = MJRefreshAutoNormalFooter(refreshingBlock: {
             print("上拉刷新")
-            self.hideSV = true
             self.page += 1
             
             self.requestData(type: self.tableView.mj_footer)
@@ -177,10 +171,6 @@ extension OrderController {
         let params = ["pid": pid, "mobile": mobile, "curPage": curPage, "custCode": custCode] as [String : Any]
         print(params)
         
-        if self.hideSV == false {
-            SVProgressHUD.show()
-        }
-        
         OrderViewModel.requestData(params: params as NSDictionary) { [unowned self] (resultModelArray, requestStatu, totalRows) in
             SVProgressHUD.dismiss()
             
@@ -203,7 +193,6 @@ extension OrderController {
                 
                 //没有数据展示占位图
                 if self.dataArray.count == 0 {
-                    self.hideSV = false                    
                     //保证只有一个占位图放在view上
                     if (self.tableView.viewWithTag(PlaceHolderHintViewTag) == nil) {
                         CMDefaultInfoViewTool.showNoDataView(self.tableView)
@@ -218,6 +207,9 @@ extension OrderController {
                 //结束刷新
                 if type.isKind(of: MJRefreshHeader.self) {
                     type.endRefreshing()
+                    if self.dataArray.count == totalRows {
+                        self.tableView.mj_footer.endRefreshingWithNoMoreData()
+                    }
                 }else {
                     if self.dataArray.count == totalRows {
                         self.tableView.mj_footer.endRefreshingWithNoMoreData()
@@ -228,7 +220,6 @@ extension OrderController {
                 
             }else { //请求失败
                 
-                self.hideSV = false
                 //保证只有一个占位图放在view上
                 self.tableView.mj_header.endRefreshing()
                 if (self.tableView.viewWithTag(PlaceHolderHintViewTag) == nil) {
