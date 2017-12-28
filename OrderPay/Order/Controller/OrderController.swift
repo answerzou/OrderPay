@@ -182,10 +182,15 @@ extension OrderController {
         }
         
         OrderViewModel.requestData(params: params as NSDictionary) { [unowned self] (resultModelArray, requestStatu, totalRows) in
-            print(resultModelArray)
-            print(requestStatu)
             SVProgressHUD.dismiss()
+            
+            if self.tableView.viewWithTag(PlaceHolderHintViewTag) != nil {
+                self.tableView.viewWithTag(PlaceHolderHintViewTag)?.removeFromSuperview()
+            }
+            
+            //请求成功
             if requestStatu == true {
+                
                 if self.page == 1 {
                     self.dataArray .removeAllObjects()
                     self.dataArray.addObjects(from: resultModelArray as! [Any])
@@ -198,19 +203,13 @@ extension OrderController {
                 
                 //没有数据展示占位图
                 if self.dataArray.count == 0 {
-                    self.hideSV = false
-                    SVProgressHUD.showError(withStatus: "暂无数据")
+                    self.hideSV = false                    
                     //保证只有一个占位图放在view上
-                    if (self.view.viewWithTag(PlaceHolderHintViewTag) == nil) {
-                        CMDefaultInfoViewTool.showNoDataView(self.view, action: {
-                            self.requestData(type: self.tableView.mj_header)
-                            self.tableView.mj_footer.resetNoMoreData()
-                        })
-                        
+                    if (self.tableView.viewWithTag(PlaceHolderHintViewTag) == nil) {
+                        CMDefaultInfoViewTool.showNoDataView(self.tableView)
                     }
                     
                 }else {
-                    CMDefaultInfoViewTool.dismiss(from: self.view)
                     self.tableView.mj_footer.isHidden = false
                 }
                 
@@ -218,7 +217,6 @@ extension OrderController {
                 
                 //结束刷新
                 if type.isKind(of: MJRefreshHeader.self) {
-                    
                     type.endRefreshing()
                 }else {
                     if self.dataArray.count == totalRows {
@@ -228,16 +226,13 @@ extension OrderController {
                     }
                 }
                 
-            }else {
+            }else { //请求失败
                 
                 self.hideSV = false
                 //保证只有一个占位图放在view上
-                if (self.view.viewWithTag(PlaceHolderHintViewTag) == nil) {
-                    CMDefaultInfoViewTool.showNoNetView(self.view, action: {
-                        self.requestData(type: self.tableView.mj_header)
-                        self.tableView.mj_footer.resetNoMoreData()
-                    })
-                    
+                self.tableView.mj_header.endRefreshing()
+                if (self.tableView.viewWithTag(PlaceHolderHintViewTag) == nil) {
+                    CMDefaultInfoViewTool.showNoNetView(self.tableView, action: nil)
                 }
             }
             

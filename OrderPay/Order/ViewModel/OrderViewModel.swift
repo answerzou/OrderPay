@@ -25,7 +25,7 @@ class OrderViewModel: NSObject {
             }else {
                 
                 returnBlock(NSArray(), false, 0)
-                SVProgressHUD.showError(withStatus: tip?.errorDesc)
+//                SVProgressHUD.showError(withStatus: tip?.errorDesc)
             }
         }
     }

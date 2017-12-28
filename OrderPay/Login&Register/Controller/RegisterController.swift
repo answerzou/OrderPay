@@ -53,7 +53,12 @@ class RegisterController: UIViewController {
             let pid = UIDevice.current.identifierForVendor?.uuidString ?? ""
             let introducer = self.registerHeaderView.inviteCodeTextField.text ?? ""
             
-            let params = ["mobile": mobile, "pwd": JYUtilities.sha1(pwd), "smCode": smCode, "pid": pid, "inviteCode": introducer] as NSDictionary
+            var params = ["mobile": mobile, "pwd": JYUtilities.sha1(pwd), "smCode": smCode, "pid": pid, "inviteCode": introducer] as NSDictionary
+            
+            // 忘记密码-参数
+            if self.forgetPassword == true {
+                params = ["mobile": mobile, "pwd": JYUtilities.sha1(pwd), "smCode": smCode] as NSDictionary
+            }
             RegisterViewModel.requestData(headerView: self.registerHeaderView, params: params, returnBlock: {
                 
                 self.tableView.tableHeaderView = self.realNameView

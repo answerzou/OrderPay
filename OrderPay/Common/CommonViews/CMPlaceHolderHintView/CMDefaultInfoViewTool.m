@@ -33,14 +33,15 @@
 }
 + (void)showNoNetView:(UIView *)view action:(void(^)())reloadActionBlock
 {
+    
     CMDefaultInfoView *defalutView = [CMDefaultInfoView defaultInfoViewWithFrame:view.bounds imageName:@"noNet" title:@"网络开小差了～" showButton:YES];
+    if (reloadActionBlock == nil) {
+        defalutView = [CMDefaultInfoView defaultInfoViewWithFrame:view.bounds imageName:@"noNet" title:@"网络开小差了～" showButton:NO];
+    }
     defalutView.centerX = view.centerX - view.x;
     defalutView.centerY = view.centerY- view.y;
     defalutView.tag = DefalutViewTag;
-    [defalutView.reloadButton setTitle:@"立即重试" forState:UIControlStateNormal];
-    defalutView.reloadActionBlock = ^{
-        reloadActionBlock();
-    };
+    
     [view addSubview:defalutView];
 }
 
@@ -73,7 +74,8 @@
 
 + (void)showNoDataView:(UIView *)view
 {
-    CMDefaultInfoView *defalutView = [CMDefaultInfoView defaultInfoViewWithFrame:view.bounds imageName:@"noData" title:@"没有数据" showButton:NO];
+    CMDefaultInfoView *defalutView = [CMDefaultInfoView defaultInfoViewWithFrame:view.bounds imageName:@"noData" title:@"暂无数据" showButton:NO];
+    defalutView.tag = DefalutViewTag;
     defalutView.center = view.center;
     [view addSubview:defalutView];
 }

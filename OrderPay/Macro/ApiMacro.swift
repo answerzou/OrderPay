@@ -22,6 +22,8 @@ let API_POST_LOGIN         = APP_SERVER_API+"/api/APPBizRest/appLogin/v1/"
 let API_POST_REGISTER         = APP_SERVER_API+"/api/APPBizRest/appRegister/v1/"
 ///验证码
 let API_POST_VERIFICATION     = APP_SERVER_API+"/api/APPBizRest/sendSMCode/v1/"
+///忘记密码
+let API_POST_FINDPWD     = APP_SERVER_API+"/api/APPBizRest/findPwd/v1/"
 ///保存用户通讯录
 let API_POST_SAVEADDRESSBOOKS     = APP_SERVER_API+"/api/APPBizRest/saveAddressBooks/v1/"
 ///实名认证

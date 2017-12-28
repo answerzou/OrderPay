@@ -21,7 +21,7 @@ class SmCodeViewModel: NSObject {
             
             if tip?.success == true {
                 
-                SVProgressHUD.dismiss()
+                SVProgressHUD.showSuccess(withStatus: "验证码已发送，注意查收")
                 returnBlock()
                 
             }else {
