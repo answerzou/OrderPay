@@ -24,8 +24,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         ///友盟统计
         UMengManager.initUmengInfo()
-        
-        sleep(2)
+    
+        sleep(1)
         UIApplication.shared.statusBarStyle = .lightContent
          UserModel.shared.pid = UIDevice.current.identifierForVendor?.uuidString ?? ""
         SVProgressHUD.setMinimumDismissTimeInterval(1)
@@ -56,9 +56,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 JYContactManager.saveContanctInfo(booksArr)
             }
         }
-        
-//        JYContactManager.saveContanctInfo(conArr as NSArray)
-    }
+}
     
     @available(iOS 9.0, *)
     func application(_ application: UIApplication, performActionFor shortcutItem: UIApplicationShortcutItem, completionHandler: @escaping (Bool) -> Void) {
