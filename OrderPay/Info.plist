@@ -19,15 +19,22 @@
 	<key>CFBundleShortVersionString</key>
 	<string>1.0.0</string>
 	<key>CFBundleVersion</key>
-	<string>1</string>
+	<string>1.0.1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
 	<key>NSContactsUsageDescription</key>
-	<string>“有单客”需要您的同意才能访问通讯录</string>
+	<string>需要您的同意，才能访问通讯录</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
 	<string>需要您的同意,才能访问位置</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>需要您的同意,才能在使用期间访问位置</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>需要访问您的相册</string>
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
 	<key>UIRequiredDeviceCapabilities</key>
@@ -39,15 +46,8 @@
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
-		<string>UIInterfaceOrientationLandscapeLeft</string>
-		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
-	<key>NSAppTransportSecurity</key>
-	<dict>
-		<key>NSAllowsArbitraryLoads</key>
-		<true/>
-	</dict>
 </dict>
 </plist>
