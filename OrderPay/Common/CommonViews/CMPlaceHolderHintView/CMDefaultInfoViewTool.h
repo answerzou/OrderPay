@@ -14,6 +14,7 @@
 + (void)showLoadFailureView:(UIView *)view;
 + (void)showNoNetView:(UIView *)view action:(void(^)(void))reloadActionBlock;
 + (void)showNoDataView:(UIView *)view action:(void(^)(void))reloadActionBlock;
++ (void)showNoLoginView:(UIView *)view action:(void(^)(void))reloadActionBlock;
 + (void)showNoMessgaeView:(UIView *)view;
 + (void)showNoSearchView:(UIView *)view;
 + (void)showNoDataView:(UIView *)view;

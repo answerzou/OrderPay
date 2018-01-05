@@ -222,6 +222,20 @@ extension OrderController {
                 
                 //保证只有一个占位图放在view上
                 self.tableView.mj_header.endRefreshing()
+                
+                if UserModel.shared.name == nil || UserModel.shared.name == ""{
+                    CMDefaultInfoViewTool.showNoLoginView(self.tableView, action: {
+                       
+                            let login = LoginController()
+                            let nav = BaseNavigationController(rootViewController: login)
+                            
+                            self.navigationController?.present(nav, animated: true, completion: nil)
+                    })
+                    
+                    return
+                }
+                
+                
                 if (self.tableView.viewWithTag(PlaceHolderHintViewTag) == nil) {
                     CMDefaultInfoViewTool.showNoNetView(self.tableView, action: nil)
                 }

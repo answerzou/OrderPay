@@ -45,13 +45,25 @@
     [view addSubview:defalutView];
 }
 
-+ (void)showNoDataView:(UIView *)view action:(void(^)())reloadActionBlock
++ (void)showNoDataView:(UIView *)view action:(void(^)(void))reloadActionBlock
 {
     CMDefaultInfoView *defalutView = [CMDefaultInfoView defaultInfoViewWithFrame:view.bounds imageName:@"noData" title:@"暂无数据" showButton:YES];
     defalutView.centerX = view.centerX - view.x;
     defalutView.centerY = view.centerY- view.y;
     defalutView.tag = DefalutViewTag;
     [defalutView.reloadButton setTitle:@"重新加载" forState:UIControlStateNormal];
+    defalutView.reloadActionBlock = ^{
+        reloadActionBlock();
+    };
+    [view addSubview:defalutView];
+}
+
++ (void)showNoLoginView:(UIView *)view action:(void(^)(void))reloadActionBlock {
+    CMDefaultInfoView *defalutView = [CMDefaultInfoView defaultInfoViewWithFrame:view.bounds imageName:@"noData" title:@"还没登录" showButton:YES];
+    defalutView.centerX = view.centerX - view.x;
+    defalutView.centerY = view.centerY- view.y;
+    defalutView.tag = DefalutViewTag;
+    [defalutView.reloadButton setTitle:@"请登录" forState:UIControlStateNormal];
     defalutView.reloadActionBlock = ^{
         reloadActionBlock();
     };
