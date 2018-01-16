@@ -59,7 +59,27 @@ class OrderController: BaseController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.tableView.mj_header.beginRefreshing()
+        print( UserModel.shared.mobile)
+        
+        if UserModel.shared.mobile?.isEmpty == true || UserModel.shared.mobile == "" || UserModel.shared.mobile == nil{
+            self.dataArray.removeAllObjects()
+            self.header.endRefreshing()
+            if (self.tableView.viewWithTag(PlaceHolderHintViewTag) == nil) {
+                CMDefaultInfoViewTool.showNoDataView(self.tableView)
+            }
+        }else {
+            self.tableView.mj_header.beginRefreshing()
+        }
+        
+//        if UserModel.shared.mobile?.isEmpty != true {
+//            self.tableView.mj_header.beginRefreshing()
+//        }else {
+//            self.dataArray.removeAllObjects()
+//            self.header.endRefreshing()
+//            if (self.tableView.viewWithTag(PlaceHolderHintViewTag) == nil) {
+//                CMDefaultInfoViewTool.showNoDataView(self.tableView)
+//            }
+//        }
     }
     
 
@@ -74,7 +94,16 @@ class OrderController: BaseController {
         self.header = MJRefreshNormalHeader(refreshingBlock: {
             print("下拉刷新.")
             self.page = 1
-            self.requestData(type: self.tableView.mj_header)
+            
+            if UserModel.shared.mobile?.isEmpty == true || UserModel.shared.mobile == "" || UserModel.shared.mobile == nil{
+                self.dataArray.removeAllObjects()
+                self.header.endRefreshing()
+                if (self.tableView.viewWithTag(PlaceHolderHintViewTag) == nil) {
+                    CMDefaultInfoViewTool.showNoDataView(self.tableView)
+                }
+            }else {
+                self.requestData(type: self.tableView.mj_header)
+            }
             
         })
         self.tableView.mj_header = self.header

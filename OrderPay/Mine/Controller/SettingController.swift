@@ -38,9 +38,6 @@ class SettingController: UIViewController {
             let mobile = UserModel.shared.mobile
           
             JYUtilities.replaceAsterisk(mobile, start: 3, length: 4)
-//            let startIndex = mobile?.index((mobile?.startIndex)!, offsetBy:3)
-//            let endIndex = mobile?.index(startIndex!, offsetBy:4)
-//            let newMobile = mobile?.replacingCharacters(in: startIndex..<endIndex, with:"****")
             self.settingView.userNameLabel.text = JYUtilities.replaceAsterisk(mobile, start: 3, length: 4)
             self.settingView.approveBtn.setImage(UIImage.init(named: "unapprove"), for: .normal)
             self.settingView.approveBtn.setTitle(" 未认证", for: .normal)

@@ -138,19 +138,20 @@ extension MineController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        if UserModel.shared.name == nil || UserModel.shared.name == ""{
-            let login = LoginController()
-            let nav = BaseNavigationController(rootViewController: login)
-            
-            self.navigationController?.present(nav, animated: true, completion: nil)
-            
-            tableView.deselectRow(at: indexPath, animated: true)
-            
-            return
-        }
-        
         
         if indexPath.section == 0 {
+            
+            if UserModel.shared.name == nil || UserModel.shared.name == ""{
+                let login = LoginController()
+                let nav = BaseNavigationController(rootViewController: login)
+                
+                self.navigationController?.present(nav, animated: true, completion: nil)
+                
+                tableView.deselectRow(at: indexPath, animated: true)
+                
+                return
+            }
+            
             if indexPath.row == 0 {
                 self.tabBarController?.selectedIndex = 1
             }else {
