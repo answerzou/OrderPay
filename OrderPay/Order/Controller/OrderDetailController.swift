@@ -52,7 +52,7 @@ class OrderDetailController: BaseController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "订单详情"
+        self.title = "详情"
     
         self.view.addSubview(self.tableView)
 

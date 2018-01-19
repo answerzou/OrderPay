@@ -1165,7 +1165,7 @@
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = D4C84A9PGW;
 						LastSwiftMigration = 0820;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -1543,7 +1543,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = D4C84A9PGW;
 				INFOPLIST_FILE = OrderPay/Info.plist;
@@ -1552,8 +1552,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.BuYiJinFu.OrderPay;
 				PRODUCT_MODULE_NAME = "$(PRODUCT_NAME:c99extidentifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "787b8648-d481-4e9d-b3a1-34b6e0debb39";
-				PROVISIONING_PROFILE_SPECIFIER = OrderPayProfile;
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/OrderPay/Tools/OrderPay-BridgeHeader.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
@@ -1569,7 +1569,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = D4C84A9PGW;
 				INFOPLIST_FILE = OrderPay/Info.plist;
@@ -1578,8 +1578,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.BuYiJinFu.OrderPay;
 				PRODUCT_MODULE_NAME = "$(PRODUCT_NAME:c99extidentifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "787b8648-d481-4e9d-b3a1-34b6e0debb39";
-				PROVISIONING_PROFILE_SPECIFIER = OrderPayProfile;
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/OrderPay/Tools/OrderPay-BridgeHeader.h";
 				SWIFT_VERSION = 3.0;
 				USER_HEADER_SEARCH_PATHS = "${SRCROOT}/**";
