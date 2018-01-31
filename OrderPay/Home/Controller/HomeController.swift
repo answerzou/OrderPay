@@ -108,7 +108,7 @@ extension HomeController: UITableViewDelegate, UITableViewDataSource {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as! HomeCell
         cell.usernameLabel.text = self.usernameArray[indexPath.row]
-        cell.loanMoneyBtn.setTitle(self.loanMoneyArray[indexPath.row], for: .normal)
+//        cell.loanMoneyBtn.setTitle(self.loanMoneyArray[indexPath.row], for: .normal)
         cell.mobileLabel.text = self.mobileArray[indexPath.row]
         cell.applyTimeLabel.text = self.applyTimeArray[indexPath.row]
         
@@ -140,22 +140,22 @@ extension HomeController: UITableViewDelegate, UITableViewDataSource {
 
 
 extension HomeController: UITabBarControllerDelegate {
-    func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
-        
-        if tabBarController.viewControllers?.index(of: viewController) == 1 {
-            
-            if UserModel.shared.name == nil || UserModel.shared.name == ""{
-                let login = LoginController()
-                let nav = BaseNavigationController(rootViewController: login)
-                
-                self.navigationController?.present(nav, animated: true, completion: nil)
-                
-                return false
-            }else {
-                return true
-            }
-        }else {
-            return true
-        }
-    }
+//    func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
+//        
+//        if tabBarController.viewControllers?.index(of: viewController) == 1 {
+//            
+//            if UserModel.shared.name == nil || UserModel.shared.name == ""{
+//                let login = LoginController()
+//                let nav = BaseNavigationController(rootViewController: login)
+//                
+//                self.navigationController?.present(nav, animated: true, completion: nil)
+//                
+//                return false
+//            }else {
+//                return true
+//            }
+//        }else {
+//            return true
+//        }
+//    }
 }

@@ -59,14 +59,17 @@ class OrderController: BaseController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        print( UserModel.shared.mobile)
         
         if UserModel.shared.mobile?.isEmpty == true || UserModel.shared.mobile == "" || UserModel.shared.mobile == nil{
             self.dataArray.removeAllObjects()
+            let tempArr = [["createTime": "2017-12-28 13:04:30", "mobile": "17611249219", "name": "邹先生"]];
+            self.dataArray.addObjects(from: OrderModel.mj_objectArray(withKeyValuesArray: tempArr) as! [Any])
+            self.tableView .reloadData()
             self.header.endRefreshing()
-            if (self.tableView.viewWithTag(PlaceHolderHintViewTag) == nil) {
-                CMDefaultInfoViewTool.showNoDataView(self.tableView)
-            }
+            self.tableView.mj_footer.endRefreshingWithNoMoreData()
+//            if (self.tableView.viewWithTag(PlaceHolderHintViewTag) == nil) {
+//                CMDefaultInfoViewTool.showNoDataView(self.tableView)
+//            }
         }else {
             self.tableView.mj_header.beginRefreshing()
         }
@@ -97,10 +100,13 @@ class OrderController: BaseController {
             
             if UserModel.shared.mobile?.isEmpty == true || UserModel.shared.mobile == "" || UserModel.shared.mobile == nil{
                 self.dataArray.removeAllObjects()
+                let tempArr = [["createTime": "2017-12-28 13:04:30", "mobile": "17611249219", "name": "邹先生"]];
+                self.dataArray.addObjects(from: OrderModel.mj_objectArray(withKeyValuesArray: tempArr) as! [Any])
+                self.tableView .reloadData()
                 self.header.endRefreshing()
-                if (self.tableView.viewWithTag(PlaceHolderHintViewTag) == nil) {
-                    CMDefaultInfoViewTool.showNoDataView(self.tableView)
-                }
+//                if (self.tableView.viewWithTag(PlaceHolderHintViewTag) == nil) {
+//                    CMDefaultInfoViewTool.showNoDataView(self.tableView)
+//                }
             }else {
                 self.requestData(type: self.tableView.mj_header)
             }
@@ -113,7 +119,7 @@ class OrderController: BaseController {
             
             self.requestData(type: self.tableView.mj_footer)
         })
-        self.tableView.mj_footer.isHidden = true
+//        self.tableView.mj_footer.isHidden = true
         self.header.lastUpdatedTimeLabel.isHidden = true
     }
     
@@ -146,20 +152,24 @@ extension OrderController: UITableViewDelegate, UITableViewDataSource {
         
         tableView.deselectRow(at: indexPath, animated: true)
         
-        //如果没有实名认证则跳转到实名认证
-        if UserModel.shared.cardNo?.isEmpty == true {
+        if UserModel.shared.mobile?.isEmpty == true || UserModel.shared.mobile == "" || UserModel.shared.mobile == nil {
             
-            let realName = RealNameController()
-            self.navigationController?.pushViewController(realName, animated: true)
+        }else {
+            //如果没有实名认证则跳转到实名认证
+            if UserModel.shared.cardNo?.isEmpty == true {
+                
+                let realName = RealNameController()
+                self.navigationController?.pushViewController(realName, animated: true)
+                
+                return
+            }
             
-            return
-        }
-        
-        let model = self.dataArray[indexPath.row] as! OrderModel
-        
-        let mobileStr: String = "tel:\(model.mobile ?? "")"
-        if mobileStr.count > 0 {
-            UIApplication.shared.openURL(URL.init(string: mobileStr)!)
+//            let model = self.dataArray[indexPath.row] as! OrderModel
+//            
+//            let mobileStr: String = "tel:\(model.mobile ?? "")"
+//            if mobileStr.count > 0 {
+//                UIApplication.shared.openURL(URL.init(string: mobileStr)!)
+//            }
         }
     }
 
@@ -228,7 +238,7 @@ extension OrderController {
                     }
                     
                 }else {
-                    self.tableView.mj_footer.isHidden = false
+//                    self.tableView.mj_footer.isHidden = false
                 }
                 
                 self.tableView.reloadData()
