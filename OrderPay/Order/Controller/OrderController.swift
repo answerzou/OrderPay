@@ -88,7 +88,7 @@ class OrderController: BaseController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "派单"
+        self.title = "订单"
 //        self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: self.rightButton)
         self.view.addSubview(self.topView)
         self.view.addSubview(self.tableView)
@@ -152,8 +152,10 @@ extension OrderController: UITableViewDelegate, UITableViewDataSource {
         
         tableView.deselectRow(at: indexPath, animated: true)
         
+//        let cell = tableView.cellForRow(at: indexPath) as! OrderCell
+//        cell.selectionStyle = .none
+        
         if UserModel.shared.mobile?.isEmpty == true || UserModel.shared.mobile == "" || UserModel.shared.mobile == nil {
-            
         }else {
             //如果没有实名认证则跳转到实名认证
             if UserModel.shared.cardNo?.isEmpty == true {

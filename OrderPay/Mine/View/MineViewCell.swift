@@ -21,7 +21,7 @@ class MineViewCell: UITableViewCell {
     }
     
     fileprivate var cellTitleDic: Dictionary<String, NSArray> {
-        let dic = ["0": ["我的派单", "个人信息"], "1": ["关于我们"]]
+        let dic = ["0": ["我的订单", "个人信息"], "1": ["关于我们"]]
         
         return dic as Dictionary
     }

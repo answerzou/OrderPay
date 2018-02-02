@@ -92,7 +92,7 @@ class MineController: BaseController {
         
         self.mineView.cornerMarkClick = { [unowned self] in
             print("2222")
-            CMTitleAlertView.show(withTitle: "关注公众号：\"有单客\"，充值立即获取订单", completion: { (selecIndex) in
+            CMTitleAlertView.show(withTitle: "关注公众号：\"有单客\"，立即获取订单", completion: { (selecIndex) in
                 print(selecIndex)
             })
         }

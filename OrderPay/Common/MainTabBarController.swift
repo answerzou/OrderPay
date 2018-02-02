@@ -33,7 +33,7 @@ class MainTabBarController: UITabBarController {
 
         tabBarControllerAddChildViewController(childView: HomeController(), title: "首页", imageName: "tab_jkcg", selectedImageName: "tab_jkdj")
         
-        tabBarControllerAddChildViewController(childView: OrderController(), title: "派单", imageName: "tab_zdcg", selectedImageName: "tab_zddj")
+        tabBarControllerAddChildViewController(childView: OrderController(), title: "订单", imageName: "tab_zdcg", selectedImageName: "tab_zddj")
         
         tabBarControllerAddChildViewController(childView: MineController(), title: "我的", imageName: "tab_wdcg", selectedImageName: "tab_wddj")
     }
